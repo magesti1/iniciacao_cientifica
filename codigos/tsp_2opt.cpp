@@ -30,7 +30,7 @@ void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &pa
     srand(time(0));
     vector<bool> visited(n, false);
     total_cost = 0;
-    int current_city = 0;
+    int current_city = rand()%n;
 
     while(true)
     {
@@ -70,9 +70,9 @@ void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &pa
         total_cost += min_dist;
     }
 
-    for(auto p : path) cout << p << " ";
-    cout << endl;
-    cout << "Cost: " << total_cost << endl;
+    //for(auto p : path) cout << p << " ";
+    //cout << endl;
+    //cout << "Cost: " << total_cost << endl;
 
 }
 
@@ -112,10 +112,10 @@ void first_improvement_2opt(vector<int> &path, vector<vector<int>> &distance_cos
 
                     new_path.push_back(new_path[0]);
 
-                    cout << j << " " << k << endl;
-                    cout << "Now: \n";
-                    for(auto p : new_path) cout << p << " ";
-                    cout << "\nNew cost: " << current_cost << endl;
+                    //cout << j << " " << k << endl;
+                    //cout << "Now: \n";
+                    //for(auto p : new_path) cout << p << " ";
+                    //cout << "\nNew cost: " << current_cost << endl;
                     cost = current_cost;
                     path = new_path;
                     improved = true;
@@ -163,10 +163,10 @@ void best_improvement_2opt(vector<int> &path, vector<vector<int>> &distance_cost
 
                     new_path.push_back(new_path[0]);
 
-                    cout << j << " " << k << endl;
-                    cout << "Now: \n";
-                    for(auto p : new_path) cout << p << " ";
-                    cout << "\nNew cost: " << current_cost << endl;
+                    //cout << j << " " << k << endl;
+                    //cout << "Now: \n";
+                    //for(auto p : new_path) cout << p << " ";
+                    //cout << "\nNew cost: " << current_cost << endl;
                     cost = current_cost;
                     path = new_path;
                     improved = true;
@@ -176,7 +176,7 @@ void best_improvement_2opt(vector<int> &path, vector<vector<int>> &distance_cost
     } while(improved);
 }
 
-int main()
+int main(int argc, char ** argv) // 1: first improvement, 2: best improvement
 {
 
     ifstream fin("input.txt");
@@ -189,7 +189,12 @@ int main()
 
     le_entrada(fin, num_of_cities, coordinates, distance_cost, cities);
     nearest_neighbor(num_of_cities, distance_cost, path, total_cost);
-    first_improvement_2opt(path, distance_cost, num_of_cities, total_cost);
+    if(argv[0] == "1")
+        first_improvement_2opt(path, distance_cost, num_of_cities, total_cost);
+    else if(argv[0] == "2")
+        best_improvement_2opt(path, distance_cost, num_of_cities, total_cost);
+
+    for(auto p : path) cout << p << " "; cout << endl; cout << total_cost << endl;
 
     return 0;
 }

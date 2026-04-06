@@ -45,7 +45,7 @@ void imprime_saida(ofstream &fout, int num_of_cities, vector<pair<int,int>> &coo
     }
 }
 
-int main()
+int main(int argc, char ** argv) // 1: first improvement, 2: best improvement
 {   
     srand(time(0));
     ofstream fout("input.txt");
