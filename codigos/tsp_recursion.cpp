@@ -32,16 +32,67 @@ void le_entrada(ifstream &fin)
     
 }
 
+void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &path, int &total_cost)
+{
+    srand(time(0));
+    vector<bool> visited(n, false);
+    total_cost = 0;
+    int current_city = 0;
+
+    while(true)
+    {
+        path.push_back(current_city);
+        visited[current_city] = true;
+        int min_dist = INT_MAX; //pode falhar para distâncias muito grandes
+        int next_city = -1;
+        bool inicio = false;
+
+        for(int i = 0; i<n; i++)
+        {
+            if(visited[i]) continue;
+            if(distance_cost[current_city][i] < min_dist)
+            {
+                min_dist = distance_cost[current_city][i];
+                next_city = i;
+            }
+            if(distance_cost[i][path[0]] < min_dist)
+            {
+                min_dist = distance_cost[i][path[0]];
+                next_city = i;
+                inicio = true;
+            }
+        }
+        
+        if(inicio) reverse(path.begin(), path.end());
+
+        //for(auto p : path) cout << p << " "; cout << endl;
+
+        if(next_city == -1) 
+        {
+            total_cost += distance_cost[path[n-1]][path[0]];
+            path.push_back(path[0]);   
+            break;
+        }
+        else current_city = next_city;
+        total_cost += min_dist;
+    }
+
+    for(auto p : path) cout << p << " ";
+    cout << endl;
+    cout << "Cost: " << total_cost << endl;
+
+}
+
 void search(vector<int> cities, int cost, int &best_cost, vector<int> &best_path)
 {
     if(cities.size() == num_of_cities)
     {
         cost += distance_cost[cities[num_of_cities-1]][cities[0]];
         cities.push_back(cities[0]);
-        for(auto c : cities)
-                cout << c << " ";
-            cout << endl << cost;
-        cout << endl;
+        //for(auto c : cities)
+        //        cout << c << " ";
+        //    cout << endl << cost;
+        //cout << endl;
         if(cost < best_cost)
         {
             best_cost = cost;
@@ -77,8 +128,11 @@ int main()
     le_entrada(fin);
     
     vector<int> a;
-    int best_cost = 10e8;
+    int best_cost;
     vector<int> best_path;
+
+    nearest_neighbor(num_of_cities, distance_cost, best_path, best_cost);
+
     search(a, 0, best_cost, best_path);
     for(auto c : best_path) cout << c << " ";
     cout << endl;
