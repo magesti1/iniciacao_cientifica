@@ -30,7 +30,7 @@ void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &pa
     srand(time(0));
     vector<bool> visited(n, false);
     total_cost = 0;
-    int current_city = rand()%n;
+    int current_city = 0;
 
     while(true)
     {
@@ -76,7 +76,7 @@ void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &pa
 
 }
 
-void first_improvement_2opt(vector<int> &path, vector<vector<int>> &distance_cost, int n, int cost)
+void first_improvement_2opt(vector<int> &path, vector<vector<int>> &distance_cost, int n, int &cost)
 {
     bool improved;
     do
@@ -127,7 +127,7 @@ void first_improvement_2opt(vector<int> &path, vector<vector<int>> &distance_cos
     } while(improved);
 }
 
-void best_improvement_2opt(vector<int> &path, vector<vector<int>> &distance_cost, int n, int cost)
+void best_improvement_2opt(vector<int> &path, vector<vector<int>> &distance_cost, int n, int &cost)
 {
     bool improved;
     do
@@ -168,8 +168,8 @@ void best_improvement_2opt(vector<int> &path, vector<vector<int>> &distance_cost
                     //for(auto p : new_path) cout << p << " ";
                     //cout << "\nNew cost: " << current_cost << endl;
                     cost = current_cost;
-                    path = new_path;
                     improved = true;
+                    path = new_path;
                 }
             }
         }
@@ -189,10 +189,14 @@ int main(int argc, char ** argv) // 1: first improvement, 2: best improvement
 
     le_entrada(fin, num_of_cities, coordinates, distance_cost, cities);
     nearest_neighbor(num_of_cities, distance_cost, path, total_cost);
-    if(argv[0] == "1")
+    if(argc > 1 && strcmp(argv[1], "1") == 0)
+    {
         first_improvement_2opt(path, distance_cost, num_of_cities, total_cost);
-    else if(argv[0] == "2")
+    }
+    else if(argc > 1 && strcmp(argv[1], "2") == 0)
+    {
         best_improvement_2opt(path, distance_cost, num_of_cities, total_cost);
+    }
 
     for(auto p : path) cout << p << " "; cout << endl; cout << total_cost << endl;
 
