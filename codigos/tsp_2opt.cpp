@@ -30,7 +30,7 @@ void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &pa
     srand(time(0));
     vector<bool> visited(n, false);
     total_cost = 0;
-    int current_city = 0;
+    int current_city = 8;
 
     while(true)
     {
@@ -47,6 +47,7 @@ void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &pa
             {
                 min_dist = distance_cost[current_city][i];
                 next_city = i;
+                inicio = false;
             }
             if(distance_cost[i][path[0]] < min_dist)
             {
@@ -55,10 +56,13 @@ void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &pa
                 inicio = true;
             }
         }
-        
+
+        //cout << inicio << endl;
+        //for(auto p : path) cout << p << " "; cout << endl;
         if(inicio) reverse(path.begin(), path.end());
 
         //for(auto p : path) cout << p << " "; cout << endl;
+        //cout << path[path.size()-1] << " " << next_city << " " << distance_cost[path[path.size()-1]][next_city] << " " << min_dist << endl;
 
         if(next_city == -1) 
         {
@@ -70,9 +74,9 @@ void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &pa
         total_cost += min_dist;
     }
 
-    //for(auto p : path) cout << p << " ";
-    //cout << endl;
-    //cout << "Cost: " << total_cost << endl;
+    for(auto p : path) cout << p << " ";
+    cout << endl;
+    cout << "Cost: " << total_cost << endl;
 
 }
 
