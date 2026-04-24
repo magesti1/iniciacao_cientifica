@@ -202,7 +202,8 @@ int main(int argc, char ** argv) // 1: first improvement, 2: best improvement
         best_improvement_2opt(path, distance_cost, num_of_cities, total_cost);
     }
 
-    for(auto p : path) cout << p << " "; cout << endl; cout << total_cost << endl;
+    for(auto p : path) cout << p << " "; cout << endl; 
+    cout << "Custo: " << total_cost << endl;
 
     return 0;
 }

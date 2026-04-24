@@ -137,19 +137,11 @@ int main()
 
     nearest_neighbor(num_of_cities, distance_cost, best_path, best_cost);
 
-    //search(a, 0, best_cost, best_path);
-    
-    int custo = 0;
-    for(int i = 0; i<num_of_cities-1; i++) 
-    {
-        custo += distance_cost[best_path[i]][best_path[i+1]];
-        cout << best_path[i] << " " << best_path[i+1] << " " << distance_cost[best_path[i]][best_path[i+1]] << endl;
-    }
-    custo += distance_cost[best_path[0]][best_path[num_of_cities-1]];
+    search(a, 0, best_cost, best_path);
     
     for(auto c : best_path) cout << c << " ";
     cout << endl;
-    cout << "Real cost: " << custo << endl;
+    cout << "Min cost: " << best_cost << endl;
 
     return 0;
 }
