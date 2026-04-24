@@ -37,7 +37,7 @@ void nearest_neighbor(int n, vector<vector<int>> &distance_cost, vector<int> &pa
     srand(time(0));
     vector<bool> visited(n, false);
     total_cost = 0;
-    int current_city = 8;
+    int current_city = rand()%n;
 
     while(true)
     {
