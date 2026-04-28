@@ -4,15 +4,37 @@
 //the calculus of some points
 
 using namespace std;
+#define earthRadiusKm 6371.0
 
-void search(vector<int> cities, int cost, int &best_cost, vector<int> &best_path, int num_of_cities, vector<vector<int>> &distance_cost, vector<bool> &disponivel, vector<int> &points);
+// This function converts decimal degrees to radians
+double deg2rad(double deg) {
+  return (deg * M_PI / 180);
+}
 
-double calculateGeoDistance(double lat1,double long1,double lat2,double long2) {
-    double dist;
-    dist = sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(long1 - long2);
-    dist = acos(dist);
-    dist = (6371 * M_PI * dist) / 180;
-    return dist;
+//  This function converts radians to decimal degrees
+double rad2deg(double rad) {
+  return (rad * 180 / M_PI);
+}
+
+/**
+ * Returns the distance between two points on the Earth.
+ * Direct translation from http://en.wikipedia.org/wiki/Haversine_formula
+ * @param lat1d Latitude of the first point in degrees
+ * @param lon1d Longitude of the first point in degrees
+ * @param lat2d Latitude of the second point in degrees
+ * @param lon2d Longitude of the second point in degrees
+ * @return The distance between the two points in kilometers
+ */
+double calculateGeoDistance(double lat1d, double lon1d, double lat2d, double lon2d) 
+{
+  double lat1r, lon1r, lat2r, lon2r, u, v;
+  lat1r = deg2rad(lat1d);
+  lon1r = deg2rad(lon1d);
+  lat2r = deg2rad(lat2d);
+  lon2r = deg2rad(lon2d);
+  u = sin((lat2r - lat1r)/2);
+  v = sin((lon2r - lon1r)/2);
+  return 2.0 * earthRadiusKm * asin(sqrt(u * u + cos(lat1r) * cos(lat2r) * v * v));
 }
 
 double calculateEUC_2DDistance(double x1, double y1, double x2, double y2)
