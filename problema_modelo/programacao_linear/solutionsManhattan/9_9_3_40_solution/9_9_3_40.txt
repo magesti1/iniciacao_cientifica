@@ -1,0 +1,62 @@
+Notas do experimento usando:
+Largura: 9
+Altura: 9
+Número de rotas: 3
+Máximo de voos: 40
+--------------------
+Custo total otimizado: 44.00
+
+--- Rotas dos Drones (Arcos Ativos) ---
+Drone 0:  De 14 para 15: Distância 1.00
+  De 15 para 16: Distância 1.00
+  De 16 para 25: Distância 1.00
+  De 23 para 14: Distância 1.00
+  De 24 para 23: Distância 1.00
+  De 25 para 34: Distância 1.00
+  De 32 para 33: Distância 1.00
+  De 33 para 24: Distância 1.00
+  De 34 para 43: Distância 1.00
+  De 41 para 32: Distância 1.00
+  De 42 para 41: Distância 1.00
+  De 43 para 52: Distância 1.00
+  De 50 para 51: Distância 1.00
+  De 51 para 42: Distância 1.00
+  De 52 para 53: Distância 1.00
+  De 59 para 50: Distância 1.00
+  De 60 para 69: Distância 1.00
+  De 61 para 60: Distância 1.00
+  De 68 para 59: Distância 1.00
+  De 69 para 68: Distância 1.00
+  De 70 para 61: Distância 1.00
+  De 79 para 70: Distância 1.00
+
+Drone 1:  Este drone não realizou voos (apenas deslocamento via trator).
+Drone 2:  De 10 para 19: Distância 1.00
+  De 11 para 10: Distância 1.00
+  De 12 para 11: Distância 1.00
+  De 19 para 28: Distância 1.00
+  De 20 para 21: Distância 1.00
+  De 21 para 12: Distância 1.00
+  De 28 para 37: Distância 1.00
+  De 29 para 20: Distância 1.00
+  De 30 para 29: Distância 1.00
+  De 37 para 46: Distância 1.00
+  De 38 para 39: Distância 1.00
+  De 39 para 30: Distância 1.00
+  De 46 para 45: Distância 1.00
+  De 47 para 38: Distância 1.00
+  De 48 para 57: Distância 1.00
+  De 55 para 56: Distância 1.00
+  De 56 para 47: Distância 1.00
+  De 57 para 66: Distância 1.00
+  De 64 para 55: Distância 1.00
+  De 65 para 64: Distância 1.00
+  De 66 para 65: Distância 1.00
+  De 49 para 48: Distância 1.00
+
+Pontos de Campo (V): [10, 11, 12, 14, 15, 16, 19, 20, 21, 23, 24, 25, 28, 29, 30, 32, 33, 34, 37, 38, 39, 41, 42, 43, 46, 47, 48, 50, 51, 52, 55, 56, 57, 59, 60, 61, 64, 65, 66, 68, 69, 70]
+Pontos de Estrada (R): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 17, 18, 22, 26, 27, 31, 35, 36, 40, 44, 45, 49, 53, 54, 58, 62, 63, 67, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80]
+--- Sequência das Rotas Corrigida ---
+Drone 0: Trator (O) -> 79 -> 70 -> 61 -> 60 -> 69 -> 68 -> 59 -> 50 -> 51 -> 42 -> 41 -> 32 -> 33 -> 24 -> 23 -> 14 -> 15 -> 16 -> 25 -> 34 -> 43 -> 52 -> 53 -> Trator (O)
+Drone 1: Trator (O) -> 22 -> Trator (O)
+Drone 2: Trator (O) -> 49 -> 48 -> 57 -> 66 -> 65 -> 64 -> 55 -> 56 -> 47 -> 38 -> 39 -> 30 -> 29 -> 20 -> 21 -> 12 -> 11 -> 10 -> 19 -> 28 -> 37 -> 46 -> 45 -> Trator (O)
