@@ -1,0 +1,38 @@
+Notas do experimento usando:
+Largura: 7
+Altura: 7
+Número de rotas: 2
+Máximo de voos: 20
+--------------------
+Custo total otimizado: 22.00
+
+--- Rotas dos Drones (Arcos Ativos) ---
+Drone 0:  De 8 para 15: Distância 1.00
+  De 9 para 8: Distância 1.00
+  De 15 para 22: Distância 1.00
+  De 16 para 9: Distância 1.00
+  De 22 para 23: Distância 1.00
+  De 23 para 30: Distância 1.00
+  De 29 para 28: Distância 1.00
+  De 30 para 37: Distância 1.00
+  De 36 para 29: Distância 1.00
+  De 37 para 36: Distância 1.00
+  De 17 para 16: Distância 1.00
+
+Drone 1:  De 11 para 12: Distância 1.00
+  De 12 para 19: Distância 1.00
+  De 18 para 17: Distância 1.00
+  De 19 para 26: Distância 1.00
+  De 25 para 18: Distância 1.00
+  De 26 para 33: Distância 1.00
+  De 32 para 25: Distância 1.00
+  De 33 para 40: Distância 1.00
+  De 39 para 32: Distância 1.00
+  De 40 para 39: Distância 1.00
+  De 10 para 11: Distância 1.00
+
+Pontos de Campo (V): [8, 9, 11, 12, 15, 16, 18, 19, 22, 23, 25, 26, 29, 30, 32, 33, 36, 37, 39, 40]
+Pontos de Estrada (R): [0, 1, 2, 3, 4, 5, 6, 7, 10, 13, 14, 17, 20, 21, 24, 27, 28, 31, 34, 35, 38, 41, 42, 43, 44, 45, 46, 47, 48]
+--- Sequência das Rotas Corrigida ---
+Drone 0: Trator (O) -> 17 -> 16 -> 9 -> 8 -> 15 -> 22 -> 23 -> 30 -> 37 -> 36 -> 29 -> 28 -> Trator (O)
+Drone 1: Trator (O) -> 10 -> 11 -> 12 -> 19 -> 26 -> 33 -> 40 -> 39 -> 32 -> 25 -> 18 -> 17 -> Trator (O)

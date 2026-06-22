@@ -15,8 +15,8 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
         return n // largura, n % largura
 
     def isRua(n):
-        cx, cy = get_coords(n)
-        return cx == 0 or cx == altura-1 or cy == 0 or cy == largura-1 or cy == largura // 2
+        x, y = get_coords(n)
+        return x == 0 or x == altura-1 or y == 0 or y == largura-1 or y == largura // 2
 
     R = [n for n in range(totalPontos) if isRua(n)]
     V = [n for n in range(totalPontos) if not isRua(n)]
@@ -26,49 +26,68 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     # Matriz de Distâncias
     dists = {}
     for i in nodes:
-        xi, yi = get_coords(i) if i < totalPontos else (0, 0)
+        # Ajuste: Coordenadas do depot agora são (-1,-1) para visualização fora do campo
+        xi, yi = get_coords(i) if i < totalPontos else (-1, -1)
         for j in nodes:
-            xj, yj = get_coords(j) if j < totalPontos else (0, 0)
-            if i in R and j in R: 
-                dists[i, j] = 0.0
-            elif i == depot or j == depot:
-                dists[i, j] = (abs(xi-xj) + abs(yi-yj)) if (i in R or j in R) else math.sqrt((xi-xj)**2 + (yi-yj)**2)
-            else: 
-                dists[i, j] = math.sqrt((xi-xj)**2 + (yi-yj)**2)
+            # Ajuste: Coordenadas do depot agora são (-1,-1) para visualização fora do campo
+            xj, yj = get_coords(j) if j < totalPontos else (-1, -1)
 
+            # REVISÃO: Caso 1: Depot para/de um ponto da rua -> distância 0
+            if (i == depot and j in R) or (j == depot and i in R):
+                dists[i, j] = 0.0
+            # REVISÃO: Caso 2: Ponto da rua para/de outro ponto da rua -> distância de Manhattan
+            elif i in R and j in R:
+                dists[i, j] = abs(xi - xj) + abs(yi - yj)
+            # Caso 3: Depot para/de um ponto de campo (não-Rua) -> distância Euclidiana (comportamento anterior)
+            elif i == depot or j == depot:
+                # Se chegamos aqui, é depot para/de um ponto de campo (V)
+                dists[i, j] = math.sqrt((xi - xj)**2 + (yi - yj)**2)
+            # Caso 4: Qualquer outra combinação (Campo-Campo, Campo-Rua, Rua-Campo) -> distância Euclidiana
+            else:
+                dists[i, j] = math.sqrt((xi - xj)**2 + (yi - yj)**2)
+
+
+    # CORREÇÃO: Passando o 'env' criado na célula anterior para validar a licença acadêmica
     model = Model("Drone_Routing_Aligned")
 
     arcos = [(i, j, k) for i in nodes for j in nodes for k in K if i != j]
-    
-    # 'x' e 'k' matemáticos mantidos em segurança aqui
     x = model.addVars(arcos, vtype=GRB.BINARY, name="x")
     f = model.addVars(arcos, vtype=GRB.CONTINUOUS, name="f")
 
-    # Função Objetivo
+    # Função Objetivo: Minimizar sum d_ij * x_ij
     model.setObjective(quicksum(dists[i, j] * x[i, j, k] for i, j, k in arcos), GRB.MINIMIZE)
 
-    for k_idx in K:
-        model.addConstr(quicksum(x[i, j, k_idx] for i, j, _k in arcos if _k == k_idx) <= D)
-        model.addConstr(quicksum(x[depot, j, k_idx] for j in R) == 1)
-        model.addConstr(quicksum(x[j, depot, k_idx] for j in R) == 1)
+    for k in K:
+        # Restrição: sum sum x_ij <= D (Limite da rota)
+        model.addConstr(quicksum(x[i, j, k] for i, j, _k in arcos if _k == k) <= D)
 
+        # Restrição: Sai e chega na rua via depósito O
+        model.addConstr(quicksum(x[depot, j, k] for j in R) == 1)
+        model.addConstr(quicksum(x[j, depot, k] for j in R) == 1)
+
+        # Conservação de fluxo nos nós visitados
         for j in V + R:
-            model.addConstr(quicksum(x[i, j, k_idx] for i in nodes if i != j) ==
-                            quicksum(x[j, i, k_idx] for i in nodes if i != j))
+            model.addConstr(quicksum(x[i, j, k] for i in nodes if i != j) ==
+                            quicksum(x[j, i, k] for i in nodes if i != j))
 
+    # Restrição: Cobertura exata para pontos de Campo (V)
     for j in V:
-        model.addConstr(quicksum(x[i, j, k_idx] for i, _, k_idx in arcos if _ == j) == 1)
+        model.addConstr(quicksum(x[i, j, k] for i, _, k in arcos if _ == j) == 1)
 
-    for k_idx in K:
-        model.addConstr(quicksum(f[depot, j, k_idx] for j in R) == D - 1)
+    # Restrições de Fluxo (Eliminação de Sub-rotas conforme LaTeX)
+    for k in K:
+        # Sai com D-1 unidades de carga
+        model.addConstr(quicksum(f[depot, j, k] for j in R) == D - 1)
+
         for i, j, _k in arcos:
-            if _k == k_idx:
-                model.addConstr(f[i, j, k_idx] <= (D - 1) * x[i, j, k_idx])
+            if _k == k:
+                model.addConstr(f[i, j, k] <= (D - 1) * x[i, j, k])
 
+        # Balanço: sai 1 unidade em cada ponto visitado
         for i in V + R:
-            model.addConstr(quicksum(f[j, i, k_idx] for j in nodes if j != i) -
-                            quicksum(f[i, j, k_idx] for j in nodes if i != j) ==
-                            quicksum(x[j, i, k_idx] for j in nodes if i != j))
+            model.addConstr(quicksum(f[j, i, k] for j in nodes if j != i) -
+                            quicksum(f[i, j, k] for j in nodes if i != j) ==
+                            quicksum(x[j, i, k] for j in nodes if i != j))
 
     model.optimize()
 
@@ -184,7 +203,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
 
     # 3. MUDANÇA AQUI: Criando a pasta usando os parâmetros corretos
     experimentFolderName = f'{largura_grid}_{altura_grid}_{total_rotas}_{max_voos}_solution'
-    folderName = os.path.join("solutions", experimentFolderName) 
+    folderName = os.path.join("solutionsManhattan", experimentFolderName) 
     imageName = f'{largura_grid}_{altura_grid}_{total_rotas}_{max_voos}.png'
     textName = f'{largura_grid}_{altura_grid}_{total_rotas}_{max_voos}.txt'
     
