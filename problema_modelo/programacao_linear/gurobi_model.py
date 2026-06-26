@@ -8,6 +8,8 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     largura, altura = largura_grid, altura_grid
     totalPontos = largura * altura
     D = max_voos # Limite de pontos por rota
+    # Fator de correção de velocidade do trator
+    alpha = 2 # aplha = 2 significa que o trator é 2x mais lento que o drone e alpha = 0.5 significa que é 2x mais rápido
     num_rotas = total_rotas
     K = range(num_rotas)
 
@@ -50,6 +52,9 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     # CORREÇÃO: Passando o 'env' criado na célula anterior para validar a licença acadêmica
     model = Model("Drone_Routing_Aligned")
 
+    #Limite de tempo para não ultrapassar 30 min
+    model.Params.TimeLimit = 60 # 1800 segundos, 30 min
+
     arcos = [(i, j, k) for i in nodes for j in nodes for k in K if i != j]
     x = model.addVars(arcos, vtype=GRB.BINARY, name="x")
     f = model.addVars(arcos, vtype=GRB.CONTINUOUS, name="f")
@@ -74,6 +79,49 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     for j in V:
         model.addConstr(quicksum(x[i, j, k] for i, _, k in arcos if _ == j) == 1)
 
+    # Variables to store total distance for each drone
+    total_drone_dist = model.addVars(K, vtype=GRB.CONTINUOUS, name="total_drone_dist")
+    for k in K:
+        model.addConstr(total_drone_dist[k] == quicksum(dists[p, q] * x[p, q, k]
+                                                        for p in nodes for q in nodes if (p, q, k) in arcos),
+                        name=f"calc_total_drone_dist_k_{k}")
+
+    # Define a sufficiently large Big M for implication constraints
+    # Max possible distance is from (-1,-1) to (6,6) which is sqrt(7^2+7^2) approx 9.9
+    # Max D is 15. So, D * max_dist_per_arc approx 15 * 10 = 150.
+    # Let's use 200 as a safe upper bound for M.
+    BIG_M_VALUE = 200.0
+
+    # Adicionar a nova restrição: Tempo mínimo que o trator precisa entre pontos i e i' na rua
+    # A restrição é: (x[depot, i, k] == 1 AND x[i_prime, depot, k] == 1) => total_drone_dist[k] >= alpha * dists[i, i_prime]
+    # para todos i, i_prime em R, e para todos k em K.
+    for k in K:
+        for i in R:  # 'i' representa o ponto da rua onde o drone k inicia do depot
+            for i_prime in R:  # 'i_prime' representa o ponto da rua onde o drone k retorna ao depot
+                if i == i_prime:
+                    continue # O trator deve viajar entre dois pontos da rua *diferentes*
+
+                # Variável binária auxiliar: premise_var = 1 se o drone k inicia em i E termina em i_prime
+                premise_var = model.addVar(vtype=GRB.BINARY, name=f"premise_k{k}_i{i}_iprime{i_prime}")
+
+                # Linearização da condição AND: premise_var == (x[depot, i, k] AND x[i_prime, depot, k])
+                # 1. premise_var <= x[depot, i, k]
+                model.addConstr(premise_var <= x[depot, i, k],
+                                name=f"premise_le1_k{k}_i{i}_iprime{i_prime}")
+                # 2. premise_var <= x[i_prime, depot, k]
+                model.addConstr(premise_var <= x[i_prime, depot, k],
+                                name=f"premise_le2_k{k}_i{i}_iprime{i_prime}")
+                # 3. premise_var >= x[depot, i, k] + x[i_prime, depot, k] - 1
+                model.addConstr(premise_var >= x[depot, i, k] + x[i_prime, depot, k] - 1,
+                                name=f"premise_ge_k{k}_i{i}_iprime{i_prime}")
+
+                # A implicação: SE premise_var == 1 ENTÃO total_drone_dist[k] >= alpha * dists[i, i_prime]
+                # Isso é modelado como: total_drone_dist[k] >= alpha * dists[i, i_prime] - BIG_M_VALUE * (1 - premise_var)
+                # Só adicionamos esta restrição se houver um custo de distância positivo para o trator cobrir
+                if dists[i, i_prime] > 0.0:
+                    model.addConstr(total_drone_dist[k] >= alpha * dists[i, i_prime] - BIG_M_VALUE * (1 - premise_var),
+                                    name=f"tractor_min_time_k{k}_i{i}_iprime{i_prime}")
+
     # Restrições de Fluxo (Eliminação de Sub-rotas conforme LaTeX)
     for k in K:
         # Sai com D-1 unidades de carga
@@ -88,6 +136,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
             model.addConstr(quicksum(f[j, i, k] for j in nodes if j != i) -
                             quicksum(f[i, j, k] for j in nodes if i != j) ==
                             quicksum(x[j, i, k] for j in nodes if i != j))
+            
 
     model.optimize()
 
@@ -101,7 +150,10 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
         "--------------------\n"
     )
 
-    if model.status == GRB.OPTIMAL:
+    if model.status == GRB.OPTIMAL or model.Status == GRB.TIME_LIMIT:
+
+        if model.Status == GRB.TIME_LIMIT:
+            notesContent += f"Não foi possível chegar a solução ótima, mas chegou com um gap de {model.MIPGap * 100:.2f}%\n"
         notesContent += f"Custo total otimizado: {model.objVal:.2f}\n"
         notesContent += "\n--- Rotas dos Drones (Arcos Ativos) ---"
         
@@ -158,7 +210,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
             ax.scatter(y_coord, x_coord, c='black', marker='o', s=50, alpha=0.3, label='Estrada (R)' if n == R[0] else "")
         ax.text(y_coord + 0.1, x_coord + 0.1, str(n), fontsize=8, color='black', alpha=0.7)
 
-    if model.status == GRB.OPTIMAL:
+    if model.status == GRB.OPTIMAL or model.Status == GRB.Status.TIME_LIMIT:
         adj = {k_idx: {} for k_idx in K}
         for (i, j, k_v), var in x.items():
             if var.X > 0.5:
@@ -203,7 +255,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
 
     # 3. MUDANÇA AQUI: Criando a pasta usando os parâmetros corretos
     experimentFolderName = f'{largura_grid}_{altura_grid}_{total_rotas}_{max_voos}_solution'
-    folderName = os.path.join("solutionsManhattan", experimentFolderName) 
+    folderName = os.path.join("solutionsTractor", experimentFolderName) 
     imageName = f'{largura_grid}_{altura_grid}_{total_rotas}_{max_voos}.png'
     textName = f'{largura_grid}_{altura_grid}_{total_rotas}_{max_voos}.txt'
     
