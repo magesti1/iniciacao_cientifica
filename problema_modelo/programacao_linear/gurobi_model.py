@@ -10,6 +10,8 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     D = max_voos # Limite de pontos por rota
     # Fator de correção de velocidade do trator
     alpha = 2 # aplha = 2 significa que o trator é 2x mais lento que o drone e alpha = 0.5 significa que é 2x mais rápido
+    T_c = 0.5
+
     num_rotas = total_rotas
     K = range(num_rotas)
 
@@ -53,14 +55,17 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     model = Model("Drone_Routing_Aligned")
 
     #Limite de tempo para não ultrapassar 30 min
-    model.Params.TimeLimit = 60 # 1800 segundos, 30 min
+    model.Params.TimeLimit = 1800 # 1800 segundos, 30 min
 
     arcos = [(i, j, k) for i in nodes for j in nodes for k in K if i != j]
     x = model.addVars(arcos, vtype=GRB.BINARY, name="x")
     f = model.addVars(arcos, vtype=GRB.CONTINUOUS, name="f")
 
+    y = model.addVars([(i, i_prime, k) for i in R for i_prime in R for k in K[:-1]], vtype=GRB.CONTINUOUS, name="y")
+
     # Função Objetivo: Minimizar sum d_ij * x_ij
-    model.setObjective(quicksum(dists[i, j] * x[i, j, k] for i, j, k in arcos), GRB.MINIMIZE)
+    model.setObjective(quicksum(dists[i, j] * x[i, j, k] for i, j, k in arcos) + 
+                   quicksum(y[i, i_prime, k] for i in R for i_prime in R for k in K[:-1]), GRB.MINIMIZE)
 
     for k in K:
         # Restrição: sum sum x_ij <= D (Limite da rota)
@@ -138,6 +143,26 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
                             quicksum(x[j, i, k] for j in nodes if i != j))
             
 
+        # --- Restries de Tempo do Trator e Carregamento ---
+
+        for k in K[:-1]:
+            for i in R: # Ponto onde o drone k TERMINA (chega no depot)
+                for i_prime in R: # Ponto onde o drone k+1 INICIA (sai do depot)
+                    
+                    # Premissa: Drone k termina em i AND Drone k+1 inicia em i_prime
+                    trans_var = model.addVar(vtype=GRB.BINARY, name=f"trans_k{k}_i{i}_ip{i_prime}")
+                    model.addConstr(trans_var <= x[i, depot, k])
+                    model.addConstr(trans_var <= x[depot, i_prime, k+1])
+                    model.addConstr(trans_var >= x[i, depot, k] + x[depot, i_prime, k+1] - 1)
+
+                    # Restrio: y deve ser no mnimo o tempo de viagem do trator E o tempo de carregamento
+                    # y  max(alpha * dist_ii', T_c)
+                    min_gap = max(alpha * dists[i, i_prime], T_c)
+                    
+                    model.addConstr(y[i, i_prime, k] >= min_gap - BIG_M_VALUE * (1 - trans_var),
+                                    name=f"y_gap_min_k{k}_i{i}_ip{i_prime}")
+
+
     model.optimize()
 
     
@@ -153,7 +178,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     if model.status == GRB.OPTIMAL or model.Status == GRB.TIME_LIMIT:
 
         if model.Status == GRB.TIME_LIMIT:
-            notesContent += f"Não foi possível chegar a solução ótima, mas chegou com um gap de {model.MIPGap * 100:.2f}%\n"
+            notesContent += f"Não foi possível chegar a solução ótima, mas chegou com um gap de {model.MIPGap * 100:.2f}%\nTempo procurado: {model.Params.TimeLimit}s"
         notesContent += f"Custo total otimizado: {model.objVal:.2f}\n"
         notesContent += "\n--- Rotas dos Drones (Arcos Ativos) ---"
         
@@ -255,7 +280,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
 
     # 3. MUDANÇA AQUI: Criando a pasta usando os parâmetros corretos
     experimentFolderName = f'{largura_grid}_{altura_grid}_{total_rotas}_{max_voos}_solution'
-    folderName = os.path.join("solutionsTractor", experimentFolderName) 
+    folderName = os.path.join("solutionsCarregamento", experimentFolderName) 
     imageName = f'{largura_grid}_{altura_grid}_{total_rotas}_{max_voos}.png'
     textName = f'{largura_grid}_{altura_grid}_{total_rotas}_{max_voos}.txt'
     
