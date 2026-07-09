@@ -1,0 +1,94 @@
+Notas do experimento usando:
+Largura: 12
+Altura: 9
+Número de rotas: 6
+Máximo de voos: 20
+--------------------
+Não foi possível chegar a solução ótima, mas chegou com um gap de 7.03%
+Tempo procurado: 3600.0s
+Custo total otimizado: 71.33
+
+--- Rotas dos Drones (Arcos Ativos) ---
+Drone 0:  Este drone não realizou voos (apenas deslocamento via trator).
+Drone 1:  De 55 para 67: Distância 1.00
+  De 56 para 55: Distância 1.00
+  De 57 para 56: Distância 1.00
+  De 58 para 57: Distância 1.00
+  De 67 para 68: Distância 1.00
+  De 68 para 80: Distância 1.00
+  De 69 para 70: Distância 1.00
+  De 70 para 58: Distância 1.00
+  De 79 para 78: Distância 1.00
+  De 80 para 92: Distância 1.00
+  De 81 para 69: Distância 1.00
+  De 82 para 94: Distância 1.00
+  De 91 para 79: Distância 1.00
+  De 92 para 91: Distância 1.00
+  De 93 para 81: Distância 1.00
+  De 94 para 93: Distância 1.00
+  De 83 para 82: Distância 1.00
+
+Drone 2:  De 38 para 50: Distância 1.00
+  De 39 para 38: Distância 1.00
+  De 50 para 62: Distância 1.00
+  De 51 para 39: Distância 1.00
+  De 52 para 64: Distância 1.00
+  De 53 para 52: Distância 1.00
+  De 62 para 74: Distância 1.00
+  De 63 para 51: Distância 1.00
+  De 64 para 63: Distância 1.00
+  De 65 para 53: Distância 1.00
+  De 74 para 75: Distância 1.00
+  De 75 para 76: Distância 1.00
+  De 76 para 77: Distância 1.00
+  De 77 para 78: Distância 1.00
+  De 78 para 65: Distância 1.41
+
+Drone 3:  De 13 para 14: Distância 1.00
+  De 14 para 26: Distância 1.00
+  De 15 para 16: Distância 1.00
+  De 16 para 17: Distância 1.00
+  De 17 para 18: Distância 1.00
+  De 25 para 13: Distância 1.00
+  De 26 para 27: Distância 1.00
+  De 27 para 15: Distância 1.00
+  De 37 para 25: Distância 1.00
+  De 49 para 37: Distância 1.00
+  De 61 para 49: Distância 1.00
+  De 73 para 61: Distância 1.00
+  De 85 para 73: Distância 1.00
+  De 86 para 85: Distância 1.00
+  De 87 para 86: Distância 1.00
+  De 88 para 87: Distância 1.00
+  De 89 para 88: Distância 1.00
+  De 78 para 89: Distância 1.41
+
+Drone 4:  De 19 para 20: Distância 1.00
+  De 20 para 21: Distância 1.00
+  De 21 para 22: Distância 1.00
+  De 22 para 34: Distância 1.00
+  De 28 para 40: Distância 1.00
+  De 29 para 28: Distância 1.00
+  De 31 para 30: Distância 1.00
+  De 32 para 44: Distância 1.00
+  De 33 para 32: Distância 1.00
+  De 34 para 46: Distância 1.00
+  De 40 para 41: Distância 1.00
+  De 41 para 42: Distância 1.00
+  De 43 para 31: Distância 1.00
+  De 44 para 43: Distância 1.00
+  De 45 para 33: Distância 1.00
+  De 46 para 45: Distância 1.00
+  De 18 para 19: Distância 1.00
+  De 30 para 29: Distância 1.00
+
+Drone 5:  Este drone não realizou voos (apenas deslocamento via trator).
+Pontos de Campo (V): [13, 14, 15, 16, 17, 19, 20, 21, 22, 25, 26, 27, 28, 29, 31, 32, 33, 34, 37, 38, 39, 40, 41, 43, 44, 45, 46, 49, 50, 51, 52, 53, 55, 56, 57, 58, 61, 62, 63, 64, 65, 67, 68, 69, 70, 73, 74, 75, 76, 77, 79, 80, 81, 82, 85, 86, 87, 88, 89, 91, 92, 93, 94]
+Pontos de Estrada (R): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 18, 23, 24, 30, 35, 36, 42, 47, 48, 54, 59, 60, 66, 71, 72, 78, 83, 84, 90, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107]
+--- Sequência das Rotas Corrigida ---
+Drone 0: Trator (O) -> 83 -> Trator (O)
+Drone 1: Trator (O) -> 83 -> 82 -> 94 -> 93 -> 81 -> 69 -> 70 -> 58 -> 57 -> 56 -> 55 -> 67 -> 68 -> 80 -> 92 -> 91 -> 79 -> 78 -> Trator (O)
+Drone 2: Trator (O) -> 78 -> 65 -> 53 -> 52 -> 64 -> 63 -> 51 -> 39 -> 38 -> 50 -> 62 -> 74 -> 75 -> 76 -> 77 -> 78 -> Trator (O)
+Drone 3: Trator (O) -> 78 -> 89 -> 88 -> 87 -> 86 -> 85 -> 73 -> 61 -> 49 -> 37 -> 25 -> 13 -> 14 -> 26 -> 27 -> 15 -> 16 -> 17 -> 18 -> Trator (O)
+Drone 4: Trator (O) -> 18 -> 19 -> 20 -> 21 -> 22 -> 34 -> 46 -> 45 -> 33 -> 32 -> 44 -> 43 -> 31 -> 30 -> 29 -> 28 -> 40 -> 41 -> 42 -> Trator (O)
+Drone 5: Trator (O) -> 42 -> Trator (O)

@@ -55,7 +55,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     model = Model("Drone_Routing_Aligned")
 
     #Limite de tempo para não ultrapassar 30 min
-    model.Params.TimeLimit = 1800 # 1800 segundos, 30 min
+    model.Params.TimeLimit = 3600 # 1800 segundos, 30 min
 
     arcos = [(i, j, k) for i in nodes for j in nodes for k in K if i != j]
     x = model.addVars(arcos, vtype=GRB.BINARY, name="x")
