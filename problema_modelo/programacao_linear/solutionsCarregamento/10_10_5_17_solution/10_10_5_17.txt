@@ -1,0 +1,85 @@
+Notas do experimento usando:
+Largura: 10
+Altura: 10
+Número de rotas: 5
+Máximo de voos: 17
+--------------------
+Não foi possível chegar a solução ótima, mas chegou com um gap de 7.37%
+Tempo procurado: 1800.0s
+Custo total otimizado: 64.24
+
+--- Rotas dos Drones (Arcos Ativos) ---
+Drone 0:  De 41 para 42: Distância 1.00
+  De 42 para 52: Distância 1.00
+  De 51 para 41: Distância 1.00
+  De 52 para 62: Distância 1.00
+  De 61 para 51: Distância 1.00
+  De 62 para 72: Distância 1.00
+  De 71 para 61: Distância 1.00
+  De 72 para 82: Distância 1.00
+  De 81 para 71: Distância 1.00
+  De 82 para 83: Distância 1.00
+  De 83 para 84: Distância 1.00
+  De 84 para 94: Distância 1.00
+  De 91 para 81: Distância 1.00
+
+Drone 1:  De 57 para 67: Distância 1.00
+  De 58 para 57: Distância 1.00
+  De 66 para 65: Distância 1.00
+  De 67 para 77: Distância 1.00
+  De 68 para 58: Distância 1.00
+  De 76 para 66: Distância 1.00
+  De 77 para 76: Distância 1.00
+  De 78 para 68: Distância 1.00
+  De 86 para 87: Distância 1.00
+  De 87 para 88: Distância 1.00
+  De 88 para 78: Distância 1.00
+  De 94 para 86: Distância 2.24
+
+Drone 2:  De 53 para 54: Distância 1.00
+  De 54 para 55: Distância 1.00
+  De 63 para 53: Distância 1.00
+  De 64 para 74: Distância 1.00
+  De 73 para 63: Distância 1.00
+  De 74 para 73: Distância 1.00
+  De 65 para 64: Distância 1.00
+
+Drone 3:  De 16 para 15: Distância 1.00
+  De 17 para 16: Distância 1.00
+  De 18 para 17: Distância 1.00
+  De 26 para 27: Distância 1.00
+  De 27 para 37: Distância 1.00
+  De 28 para 18: Distância 1.00
+  De 36 para 26: Distância 1.00
+  De 37 para 47: Distância 1.00
+  De 38 para 28: Distância 1.00
+  De 46 para 36: Distância 1.00
+  De 47 para 48: Distância 1.00
+  De 48 para 38: Distância 1.00
+  De 56 para 46: Distância 1.00
+  De 55 para 56: Distância 1.00
+
+Drone 4:  De 11 para 21: Distância 1.00
+  De 12 para 11: Distância 1.00
+  De 13 para 12: Distância 1.00
+  De 14 para 13: Distância 1.00
+  De 21 para 22: Distância 1.00
+  De 22 para 23: Distância 1.00
+  De 23 para 24: Distância 1.00
+  De 24 para 34: Distância 1.00
+  De 31 para 30: Distância 1.00
+  De 32 para 31: Distância 1.00
+  De 33 para 32: Distância 1.00
+  De 34 para 44: Distância 1.00
+  De 43 para 33: Distância 1.00
+  De 44 para 43: Distância 1.00
+  De 15 para 14: Distância 1.00
+
+Pontos de Campo (V): [11, 12, 13, 14, 16, 17, 18, 21, 22, 23, 24, 26, 27, 28, 31, 32, 33, 34, 36, 37, 38, 41, 42, 43, 44, 46, 47, 48, 51, 52, 53, 54, 56, 57, 58, 61, 62, 63, 64, 66, 67, 68, 71, 72, 73, 74, 76, 77, 78, 81, 82, 83, 84, 86, 87, 88]
+Pontos de Estrada (R): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 19, 20, 25, 29, 30, 35, 39, 40, 45, 49, 50, 55, 59, 60, 65, 69, 70, 75, 79, 80, 85, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+--- Sequência das Rotas Corrigida ---
+Drone 0: Trator (O) -> 91 -> 81 -> 71 -> 61 -> 51 -> 41 -> 42 -> 52 -> 62 -> 72 -> 82 -> 83 -> 84 -> 94 -> Trator (O)
+Drone 1: Trator (O) -> 94 -> 86 -> 87 -> 88 -> 78 -> 68 -> 58 -> 57 -> 67 -> 77 -> 76 -> 66 -> 65 -> Trator (O)
+Drone 2: Trator (O) -> 65 -> 64 -> 74 -> 73 -> 63 -> 53 -> 54 -> 55 -> Trator (O)
+Drone 3: Trator (O) -> 55 -> 56 -> 46 -> 36 -> 26 -> 27 -> 37 -> 47 -> 48 -> 38 -> 28 -> 18 -> 17 -> 16 -> 15 -> Trator (O)
+Drone 4: Trator (O) -> 15 -> 14 -> 13 -> 12 -> 11 -> 21 -> 22 -> 23 -> 24 -> 34 -> 44 -> 43 -> 33 -> 32 -> 31 -> 30 -> Trator (O)

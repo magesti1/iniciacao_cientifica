@@ -178,7 +178,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     if model.status == GRB.OPTIMAL or model.Status == GRB.TIME_LIMIT:
 
         if model.Status == GRB.TIME_LIMIT:
-            notesContent += f"Não foi possível chegar a solução ótima, mas chegou com um gap de {model.MIPGap * 100:.2f}%\nTempo procurado: {model.Params.TimeLimit}s"
+            notesContent += f"Não foi possível chegar a solução ótima, mas chegou com um gap de {model.MIPGap * 100:.2f}%\nTempo procurado: {model.Params.TimeLimit}s\n"
         notesContent += f"Custo total otimizado: {model.objVal:.2f}\n"
         notesContent += "\n--- Rotas dos Drones (Arcos Ativos) ---"
         
