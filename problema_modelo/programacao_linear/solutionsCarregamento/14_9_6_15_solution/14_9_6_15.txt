@@ -1,0 +1,7 @@
+Notas do experimento usando:
+Largura: 14
+Altura: 9
+Número de rotas: 6
+Máximo de voos: 15
+--------------------
+O modelo não possui uma solução ótima para exibir.

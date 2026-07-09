@@ -10,7 +10,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     D = max_voos # Limite de pontos por rota
     # Fator de correção de velocidade do trator
     alpha = 2 # aplha = 2 significa que o trator é 2x mais lento que o drone e alpha = 0.5 significa que é 2x mais rápido
-    T_c = 20
+    T_c = 0.5
 
     num_rotas = total_rotas
     K = range(num_rotas)
@@ -55,7 +55,7 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     model = Model("Drone_Routing_Aligned")
 
     #Limite de tempo para não ultrapassar 30 min
-    model.Params.TimeLimit = 360 # 1800 segundos, 30 min
+    model.Params.TimeLimit = 1800 # 1800 segundos, 30 min
 
     arcos = [(i, j, k) for i in nodes for j in nodes for k in K if i != j]
     x = model.addVars(arcos, vtype=GRB.BINARY, name="x")
