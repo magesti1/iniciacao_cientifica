@@ -1,0 +1,63 @@
+Notas do experimento usando:
+Largura: 8
+Altura: 8
+Número de rotas: 7
+Máximo de voos: 10
+--------------------
+Não foi possível chegar a solução ótima, mas chegou com um gap de 12.69%
+Tempo procurado: 3600.0s
+Custo total otimizado: 39.24
+
+--- Rotas dos Drones (Arcos Ativos) ---
+Drone 0:  De 25 para 26: Distância 1.00
+  De 26 para 27: Distância 1.00
+  De 27 para 28: Distância 1.00
+  De 33 para 25: Distância 1.00
+  De 34 para 33: Distância 1.00
+  De 35 para 34: Distância 1.00
+  De 36 para 35: Distância 1.00
+
+Drone 1:  Este drone não realizou voos (apenas deslocamento via trator).
+Drone 2:  Este drone não realizou voos (apenas deslocamento via trator).
+Drone 3:  De 9 para 10: Distância 1.00
+  De 10 para 11: Distância 1.00
+  De 11 para 20: Distância 1.41
+  De 17 para 9: Distância 1.00
+  De 18 para 17: Distância 1.00
+  De 19 para 18: Distância 1.00
+  De 28 para 19: Distância 1.41
+
+Drone 4:  De 13 para 14: Distância 1.00
+  De 14 para 22: Distância 1.00
+  De 21 para 13: Distância 1.00
+  De 22 para 30: Distância 1.00
+  De 29 para 28: Distância 1.00
+  De 30 para 29: Distância 1.00
+  De 20 para 21: Distância 1.00
+
+Drone 5:  De 37 para 38: Distância 1.00
+  De 38 para 46: Distância 1.00
+  De 45 para 44: Distância 1.00
+  De 46 para 54: Distância 1.00
+  De 53 para 45: Distância 1.00
+  De 54 para 53: Distância 1.00
+  De 28 para 37: Distância 1.41
+
+Drone 6:  De 41 para 49: Distância 1.00
+  De 42 para 41: Distância 1.00
+  De 43 para 42: Distância 1.00
+  De 49 para 50: Distância 1.00
+  De 50 para 51: Distância 1.00
+  De 51 para 59: Distância 1.00
+  De 44 para 43: Distância 1.00
+
+Pontos de Campo (V): [9, 10, 11, 13, 14, 17, 18, 19, 21, 22, 25, 26, 27, 29, 30, 33, 34, 35, 37, 38, 41, 42, 43, 45, 46, 49, 50, 51, 53, 54]
+Pontos de Estrada (R): [0, 1, 2, 3, 4, 5, 6, 7, 8, 12, 15, 16, 20, 23, 24, 28, 31, 32, 36, 39, 40, 44, 47, 48, 52, 55, 56, 57, 58, 59, 60, 61, 62, 63]
+--- Sequência das Rotas Corrigida ---
+Drone 0: Trator (O) -> 36 -> 35 -> 34 -> 33 -> 25 -> 26 -> 27 -> 28 -> Trator (O)
+Drone 1: Trator (O) -> 28 -> Trator (O)
+Drone 2: Trator (O) -> 28 -> Trator (O)
+Drone 3: Trator (O) -> 28 -> 19 -> 18 -> 17 -> 9 -> 10 -> 11 -> 20 -> Trator (O)
+Drone 4: Trator (O) -> 20 -> 21 -> 13 -> 14 -> 22 -> 30 -> 29 -> 28 -> Trator (O)
+Drone 5: Trator (O) -> 28 -> 37 -> 38 -> 46 -> 54 -> 53 -> 45 -> 44 -> Trator (O)
+Drone 6: Trator (O) -> 44 -> 43 -> 42 -> 41 -> 49 -> 50 -> 51 -> 59 -> Trator (O)
