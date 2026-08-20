@@ -3,7 +3,15 @@ from gurobipy import Model, GRB, quicksum
 import matplotlib.pyplot as plt
 import math
 
-def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
+def isVertical(P, larguraGrid):
+    y = P % larguraGrid
+    return y == 0 or y == larguraGrid//2 or y == larguraGrid - 1
+
+def isHorizontal(P, larguraGrid, alturaGrid):
+    x = P // larguraGrid
+    return x == 0 or x == alturaGrid - 1
+
+def run_optmization(largura_grid, altura_grid, total_rotas, max_voos, first_sol):
     # Configurações de Grid baseadas na descrição
     largura, altura = largura_grid, altura_grid
     totalPontos = largura * altura
@@ -41,7 +49,24 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
                 dists[i, j] = 0.0
             # REVISÃO: Caso 2: Ponto da rua para/de outro ponto da rua -> distância de Manhattan
             elif i in R and j in R:
-                dists[i, j] = abs(xi - xj) + abs(yi - yj)
+                dx, dy = abs(xi-xj), abs(yi-yj)
+                if isHorizontal(i, largura_grid, altura_grid) and isVertical(j, largura_grid) or isVertical(i, largura_grid) and isHorizontal(j, largura_grid, altura_grid):
+                    dists[i, j] = dx + dy
+                elif isVertical(i, largura_grid) and isVertical(j, largura_grid):
+                    if dy == 0:
+                        dists[i, j] = dx
+                        continue
+                    c1 = dy + abs(xi - altura_grid) + abs(xj - altura_grid)
+                    c2 = dy + xi + xj
+                    dists[i, j] = min(c1, c2)
+                else:
+                    if dx == 0:
+                        dists[i ,j] = dy
+                        continue
+                    c1 = dx + abs(yi - largura_grid) + abs(yj - largura_grid)
+                    c2 = dx + yi + yj
+                    c3 = dx + abs(yi - largura_grid//2) + abs(yj - largura_grid//2)
+                    dists[i, j] = min(c1, min(c2, c3))
             # Caso 3: Depot para/de um ponto de campo (não-Rua) -> distância Euclidiana (comportamento anterior)
             elif i == depot or j == depot:
                 # Se chegamos aqui, é depot para/de um ponto de campo (V)
@@ -54,15 +79,20 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
     # CORREÇÃO: Passando o 'env' criado na célula anterior para validar a licença acadêmica
     model = Model("Drone_Routing_Aligned")
 
-    #Limite de tempo para não ultrapassar 30 min
-    model.Params.TimeLimit = 3600 # 1800 segundos, 30 min
-
     arcos = [(i, j, k) for i in nodes for j in nodes for k in K if i != j]
     x = model.addVars(arcos, vtype=GRB.BINARY, name="x")
     f = model.addVars(arcos, vtype=GRB.CONTINUOUS, name="f")
 
     y = model.addVars([(i, i_prime, k) for i in R for i_prime in R for k in K[:-1]], vtype=GRB.CONTINUOUS, name="y")
 
+    model.update()
+
+    #Limite de tempo para não ultrapassar x min
+    if(first_sol): 
+        model.Params.TimeLimit = 180
+    else: 
+        model.Params.TimeLimit = 300 # 1800 segundos, 30 min
+        
     # Função Objetivo: Minimizar sum d_ij * x_ij
     model.setObjective(quicksum(dists[i, j] * x[i, j, k] for i, j, k in arcos) + 
                    quicksum(y[i, i_prime, k] for i in R for i_prime in R for k in K[:-1]), GRB.MINIMIZE)
@@ -145,27 +175,34 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
 
         # --- Restries de Tempo do Trator e Carregamento ---
 
-        for k in K[:-1]:
-            for i in R: # Ponto onde o drone k TERMINA (chega no depot)
-                for i_prime in R: # Ponto onde o drone k+1 INICIA (sai do depot)
-                    
-                    # Premissa: Drone k termina em i AND Drone k+1 inicia em i_prime
-                    trans_var = model.addVar(vtype=GRB.BINARY, name=f"trans_k{k}_i{i}_ip{i_prime}")
-                    model.addConstr(trans_var <= x[i, depot, k])
-                    model.addConstr(trans_var <= x[depot, i_prime, k+1])
-                    model.addConstr(trans_var >= x[i, depot, k] + x[depot, i_prime, k+1] - 1)
+    for k in K[:-1]:
+        for i in R: # Ponto onde o drone k TERMINA (chega no depot)
+            for i_prime in R: # Ponto onde o drone k+1 INICIA (sai do depot)
+                
+                # Premissa: Drone k termina em i AND Drone k+1 inicia em i_prime
+                trans_var = model.addVar(vtype=GRB.BINARY, name=f"trans_k{k}_i{i}_ip{i_prime}")
+                model.addConstr(trans_var <= x[i, depot, k])
+                model.addConstr(trans_var <= x[depot, i_prime, k+1])
+                model.addConstr(trans_var >= x[i, depot, k] + x[depot, i_prime, k+1] - 1)
 
-                    # Restrio: y deve ser no mnimo o tempo de viagem do trator E o tempo de carregamento
-                    # y  max(alpha * dist_ii', T_c)
-                    min_gap = max(alpha * dists[i, i_prime], T_c)
-                    
-                    model.addConstr(y[i, i_prime, k] >= min_gap - BIG_M_VALUE * (1 - trans_var),
-                                    name=f"y_gap_min_k{k}_i{i}_ip{i_prime}")
+                # Restrio: y deve ser no mnimo o tempo de viagem do trator E o tempo de carregamento
+                # y  max(alpha * dist_ii', T_c)
+                min_gap = max(alpha * dists[i, i_prime], T_c)
+                
+                model.addConstr(y[i, i_prime, k] >= min_gap - BIG_M_VALUE * (1 - trans_var),
+                                name=f"y_gap_min_k{k}_i{i}_ip{i_prime}")
+
+    model.update()
+    if (not first_sol):
+        model.read("solucao_inicial.mst")
 
 
     model.optimize()
 
-    
+    if(first_sol): 
+        model.write("solucao_inicial.mst")
+        return
+
     notesContent = (
         "Notas do experimento usando:\n"
         f"Largura: {largura_grid}\n"
@@ -204,6 +241,13 @@ def run_optmization(largura_grid, altura_grid, total_rotas, max_voos):
                 if i not in arcos_ativos[k_v]:
                     arcos_ativos[k_v][i] = []
                 arcos_ativos[k_v][i].append(j)
+
+        for k in K:
+            notesContent+= (f"{k}: ")
+            for i, j, _ in arcos:
+                if (x[i, j, k].X > 0.5) and k == _:
+                    dist = dists[i, j]
+                    notesContent+=  (f"De {i} para {j}: Distância {dist:.2f}\n")
 
         for k_idx in K:
             atual = depot

@@ -1,3 +1,4 @@
+import os
 from gurobi_model import run_optmization
 
 def main():
@@ -12,7 +13,12 @@ def main():
             break
         k = int(linha[2])
         m = int(linha[3])
-        run_optmization(x,y,k,m)
+
+        if os.path.exists("solucao_inicial.mst"):
+            os.remove("solucao_inicial.mst")
+    
+        run_optmization(x,y,k,m, True)
+        run_optmization(x, y, k, m, False)
     
 
 if __name__ == "__main__":
