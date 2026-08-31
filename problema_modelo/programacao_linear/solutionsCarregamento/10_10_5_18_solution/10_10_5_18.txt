@@ -1,0 +1,16 @@
+Notas do experimento usando:
+Largura: 10
+Altura: 10
+Número de rotas: 5
+Máximo de voos: 18
+--------------------
+Não foi possível chegar a solução ótima, conseguindo um gap de 8.14%
+Tempo procurado: 800.0
+Custo total otimizado: 65.00
+
+----Sequência de rota dos drones----
+Drone 0: Trator (O) -> 35 -> 34 -> 24 -> 14 -> 13 -> 23 -> 33 -> 32 -> 42 -> 52 -> 62 -> 63 -> 53 -> 43 -> 44 -> 54 -> 55 -> Trator (O)
+Drone 1: Trator (O) -> 65 -> 64 -> 74 -> 75 -> 76 -> 77 -> 67 -> 66 -> 56 -> 46 -> 36 -> 26 -> 16 -> 17 -> 7 -> Trator (O)
+Drone 2: Trator (O) -> 8 -> 18 -> 28 -> 27 -> 37 -> 38 -> 48 -> 47 -> 57 -> 58 -> 68 -> 78 -> 88 -> 87 -> 86 -> 96 -> Trator (O)
+Drone 3: Trator (O) -> 95 -> Trator (O)
+Drone 4: Trator (O) -> 94 -> 84 -> 83 -> 73 -> 72 -> 82 -> 81 -> 71 -> 61 -> 51 -> 41 -> 31 -> 21 -> 22 -> 12 -> 11 -> 1 -> Trator (O)

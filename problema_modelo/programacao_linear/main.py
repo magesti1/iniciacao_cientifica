@@ -1,5 +1,5 @@
 import os
-from gurobi_model import run_optmization
+import gurobi_model
 
 def main():
     print('---Starting Execution---')
@@ -16,10 +16,36 @@ def main():
 
         if os.path.exists("solucao_inicial.mst"):
             os.remove("solucao_inicial.mst")
-    
-        run_optmization(x,y,k,m, True)
-        run_optmization(x, y, k, m, False)
-    
+
+        # Criando os dados do problema
+        dados = gurobi_model.dadosDoProblema(
+            x,      # larguraGrid
+            y,      # alturaGrid
+            k,      # totalRotas
+            m,      # maxVoos
+            True,   # firstSolution
+            1.0,    # alpha
+            1      # T_c
+        )
+        
+        # Rodando o modelo de programação linear pela primeira vez, para o MIP Start
+        modelo, varsX = gurobi_model.runModel(dados)
+
+        # Setando a variável firstSolution para False, para então gerar a solução definitiva
+        dados.firstSolution = False
+        modelo, varsX = gurobi_model.runModel(dados)
+
+        # Criando a pasta em que ficará salva a solução da instância
+        experimentFolderName = f'{x}_{y}_{k}_{m}_solution'
+        folderName = os.path.join("solutionsCarregamento", experimentFolderName) 
+
+        os.makedirs(folderName, exist_ok=True)
+
+        # Gerando o arquivo texto e imagem e os salvando na pasta da instância
+        gurobi_model.geraArquivoTexto(dados, modelo, folderName, varsX)
+
+        gurobi_model.geraImagemRotas(dados, modelo, folderName, varsX)
+            
 
 if __name__ == "__main__":
     main()

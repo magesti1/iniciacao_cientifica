@@ -1,0 +1,11 @@
+Notas do experimento usando:
+Largura: 3
+Altura: 3
+Número de rotas: 2
+Máximo de voos: 6
+--------------------
+Custo total otimizado: 10.00
+
+----Sequência de rota dos drones----
+Drone 0: Trator (O) -> 8 -> Trator (O)
+Drone 1: Trator (O) -> 3 -> Trator (O)
