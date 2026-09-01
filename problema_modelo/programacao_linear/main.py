@@ -1,5 +1,6 @@
 import os
 import gurobi_model
+import two_opt
 
 def main():
     print('---Starting Execution---')
@@ -14,8 +15,8 @@ def main():
         k = int(linha[2])
         m = int(linha[3])
 
-        if os.path.exists("solucao_inicial.mst"):
-            os.remove("solucao_inicial.mst")
+        if os.path.exists("solucao_inicial.sol"):
+            os.remove("solucao_inicial.sol")
 
         # Criando os dados do problema
         dados = gurobi_model.dadosDoProblema(
@@ -30,6 +31,10 @@ def main():
         
         # Rodando o modelo de programação linear pela primeira vez, para o MIP Start
         modelo, varsX = gurobi_model.runModel(dados)
+
+        # Caso tenha encontrado alguma solução viável, aplica 2-opt
+        if modelo.SolCount > 0:
+            two_opt.aplicar_2opt_e_atualizar_sol(dados, varsX)
 
         # Setando a variável firstSolution para False, para então gerar a solução definitiva
         dados.firstSolution = False

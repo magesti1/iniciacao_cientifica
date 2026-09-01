@@ -102,9 +102,9 @@ def runModel(dadosProblema):
 
     # Caso seja uma solução inicial, vai servir como um MIP Start para a próxima solução, então o limite de tempo será menor
     if(dadosProblema.firstSolution):
-        model.Params.TimeLimit = 600
+        model.Params.TimeLimit = 120
     else:
-        model.Params.TimeLimit = 1800
+        model.Params.TimeLimit = 300
         
     # Função Objetivo: Minimizar sum d_ij * x_ij
     model.setObjective(quicksum(dadosProblema.dists[i, j] * x[i, j, k] for i, j, k in dadosProblema.arcos) + 
@@ -226,9 +226,10 @@ def geraArquivoTexto(dadosProblema, model, folderName, x):
             f"Altura: {dadosProblema.altura}\n"
             f"Número de rotas: {dadosProblema.totalRotas}\n"
             f"Máximo de voos: {dadosProblema.maxVoos}\n"
-            f"Tempo de carregamento: {dadosProblema.T_c}"
-            f"Alpha: {dadosProblema.alpha}"
-            "--------------------\n"
+            f"Tempo de carregamento: {dadosProblema.T_c}\n"
+            f"Alpha: {dadosProblema.alpha}\n"
+            f"Foi utilizada a busca 2-opt no MIP Start apenas"
+            "--------------------\n\n"
         )
 
     if model.status != GRB.OPTIMAL and model.status != GRB.TIME_LIMIT:
