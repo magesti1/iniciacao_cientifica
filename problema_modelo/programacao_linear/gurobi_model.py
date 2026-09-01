@@ -226,6 +226,8 @@ def geraArquivoTexto(dadosProblema, model, folderName, x):
             f"Altura: {dadosProblema.altura}\n"
             f"Número de rotas: {dadosProblema.totalRotas}\n"
             f"Máximo de voos: {dadosProblema.maxVoos}\n"
+            f"Tempo de carregamento: {dadosProblema.T_c}"
+            f"Alpha: {dadosProblema.alpha}"
             "--------------------\n"
         )
 
