@@ -1,0 +1,16 @@
+Notas do experimento usando:
+Largura: 8
+Altura: 8
+Número de rotas: 2
+Máximo de voos: 40
+Tempo de carregamento: 1
+Alpha: 1.0
+Foi utilizada a busca 2-opt no MIP Start apenas--------------------
+
+Não foi possível chegar a solução ótima, conseguindo um gap de 6.64%
+Tempo procurado: 300.0
+Custo total otimizado: 33.00
+
+----Sequência de rota dos drones----
+Drone 0: Trator (O) -> 28 -> 27 -> 26 -> 18 -> 19 -> 11 -> 10 -> 9 -> 17 -> 25 -> 33 -> 41 -> 49 -> 50 -> 51 -> 43 -> 42 -> 34 -> 35 -> 36 -> 37 -> 29 -> 21 -> 13 -> 14 -> 22 -> 30 -> 38 -> 46 -> 45 -> 53 -> 54 -> 62 -> Trator (O)
+Drone 1: Trator (O) -> 63 -> Trator (O)
