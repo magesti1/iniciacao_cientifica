@@ -228,7 +228,7 @@ def geraArquivoTexto(dadosProblema, model, folderName, x):
             f"Máximo de voos: {dadosProblema.maxVoos}\n"
             f"Tempo de carregamento: {dadosProblema.T_c}\n"
             f"Alpha: {dadosProblema.alpha}\n"
-            f"Foi utilizada a busca 2-opt no MIP Start apenas"
+            f"Foi utilizada a busca 2-opt no MIP Start apenas\n"
             "--------------------\n\n"
         )
 
