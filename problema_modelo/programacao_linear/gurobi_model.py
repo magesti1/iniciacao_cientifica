@@ -102,7 +102,7 @@ def runModel(dadosProblema):
 
     # Caso seja uma solução inicial, vai servir como um MIP Start para a próxima solução, então o limite de tempo será menor
     if(dadosProblema.firstSolution):
-        model.Params.TimeLimit = 120
+        model.Params.TimeLimit = 60
     else:
         model.Params.TimeLimit = 300
         
