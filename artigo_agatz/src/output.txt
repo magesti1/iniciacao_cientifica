@@ -1,0 +1,1695 @@
+
+NUMBER OF OPERATIONS = 1616
+
+   0: start=0 end=0 drone=None internal=() truck=(0, 0) droneRoute=None cost=0.0000
+   1: start=0 end=1 drone=None internal=() truck=(0, 1) droneRoute=None cost=80.7909
+   2: start=0 end=2 drone=None internal=() truck=(0, 2) droneRoute=None cost=223.5862
+   3: start=0 end=3 drone=None internal=() truck=(0, 3) droneRoute=None cost=45.2496
+   4: start=0 end=4 drone=None internal=() truck=(0, 4) droneRoute=None cost=52.9564
+   5: start=0 end=5 drone=None internal=() truck=(0, 5) droneRoute=None cost=172.5492
+   6: start=1 end=0 drone=None internal=() truck=(1, 0) droneRoute=None cost=80.7909
+   7: start=1 end=2 drone=None internal=() truck=(1, 2) droneRoute=None cost=252.1061
+   8: start=1 end=3 drone=None internal=() truck=(1, 3) droneRoute=None cost=95.0727
+   9: start=1 end=4 drone=None internal=() truck=(1, 4) droneRoute=None cost=38.0396
+  10: start=1 end=5 drone=None internal=() truck=(1, 5) droneRoute=None cost=186.2673
+  11: start=2 end=0 drone=None internal=() truck=(2, 0) droneRoute=None cost=223.5862
+  12: start=2 end=1 drone=None internal=() truck=(2, 1) droneRoute=None cost=252.1061
+  13: start=2 end=3 drone=None internal=() truck=(2, 3) droneRoute=None cost=267.5716
+  14: start=2 end=4 drone=None internal=() truck=(2, 4) droneRoute=None cost=257.0432
+  15: start=2 end=5 drone=None internal=() truck=(2, 5) droneRoute=None cost=71.2363
+  16: start=3 end=0 drone=None internal=() truck=(3, 0) droneRoute=None cost=45.2496
+  17: start=3 end=1 drone=None internal=() truck=(3, 1) droneRoute=None cost=95.0727
+  18: start=3 end=2 drone=None internal=() truck=(3, 2) droneRoute=None cost=267.5716
+  19: start=3 end=4 drone=None internal=() truck=(3, 4) droneRoute=None cost=57.2184
+  20: start=3 end=5 drone=None internal=() truck=(3, 5) droneRoute=None cost=217.7981
+  21: start=4 end=0 drone=None internal=() truck=(4, 0) droneRoute=None cost=52.9564
+  22: start=4 end=1 drone=None internal=() truck=(4, 1) droneRoute=None cost=38.0396
+  23: start=4 end=2 drone=None internal=() truck=(4, 2) droneRoute=None cost=257.0432
+  24: start=4 end=3 drone=None internal=() truck=(4, 3) droneRoute=None cost=57.2184
+  25: start=4 end=5 drone=None internal=() truck=(4, 5) droneRoute=None cost=196.7155
+  26: start=5 end=0 drone=None internal=() truck=(5, 0) droneRoute=None cost=172.5492
+  27: start=5 end=1 drone=None internal=() truck=(5, 1) droneRoute=None cost=186.2673
+  28: start=5 end=2 drone=None internal=() truck=(5, 2) droneRoute=None cost=71.2363
+  29: start=5 end=3 drone=None internal=() truck=(5, 3) droneRoute=None cost=217.7981
+  30: start=5 end=4 drone=None internal=() truck=(5, 4) droneRoute=None cost=196.7155
+  31: start=0 end=0 drone=1 internal=() truck=(0, 0) droneRoute=(0, 1, 0) cost=80.7909
+  32: start=0 end=0 drone=1 internal=(2,) truck=(0, 2, 0) droneRoute=(0, 1, 0) cost=447.1725
+  33: start=0 end=0 drone=1 internal=(3,) truck=(0, 3, 0) droneRoute=(0, 1, 0) cost=90.4991
+  34: start=0 end=0 drone=1 internal=(4,) truck=(0, 4, 0) droneRoute=(0, 1, 0) cost=105.9128
+  35: start=0 end=0 drone=1 internal=(5,) truck=(0, 5, 0) droneRoute=(0, 1, 0) cost=345.0983
+  36: start=0 end=0 drone=1 internal=(2, 3) truck=(0, 2, 3, 0) droneRoute=(0, 1, 0) cost=536.4074
+  37: start=0 end=0 drone=1 internal=(2, 4) truck=(0, 2, 4, 0) droneRoute=(0, 1, 0) cost=533.5859
+  38: start=0 end=0 drone=1 internal=(2, 5) truck=(0, 2, 5, 0) droneRoute=(0, 1, 0) cost=467.3718
+  39: start=0 end=0 drone=1 internal=(3, 2) truck=(0, 3, 2, 0) droneRoute=(0, 1, 0) cost=536.4074
+  40: start=0 end=0 drone=1 internal=(3, 4) truck=(0, 3, 4, 0) droneRoute=(0, 1, 0) cost=155.4244
+  41: start=0 end=0 drone=1 internal=(3, 5) truck=(0, 3, 5, 0) droneRoute=(0, 1, 0) cost=435.5969
+  42: start=0 end=0 drone=1 internal=(4, 2) truck=(0, 4, 2, 0) droneRoute=(0, 1, 0) cost=533.5859
+  43: start=0 end=0 drone=1 internal=(4, 3) truck=(0, 4, 3, 0) droneRoute=(0, 1, 0) cost=155.4244
+  44: start=0 end=0 drone=1 internal=(4, 5) truck=(0, 4, 5, 0) droneRoute=(0, 1, 0) cost=422.2211
+  45: start=0 end=0 drone=1 internal=(5, 2) truck=(0, 5, 2, 0) droneRoute=(0, 1, 0) cost=467.3718
+  46: start=0 end=0 drone=1 internal=(5, 3) truck=(0, 5, 3, 0) droneRoute=(0, 1, 0) cost=435.5969
+  47: start=0 end=0 drone=1 internal=(5, 4) truck=(0, 5, 4, 0) droneRoute=(0, 1, 0) cost=422.2211
+  48: start=0 end=0 drone=1 internal=(2, 3, 4) truck=(0, 2, 3, 4, 0) droneRoute=(0, 1, 0) cost=601.3327
+  49: start=0 end=0 drone=1 internal=(2, 3, 5) truck=(0, 2, 3, 5, 0) droneRoute=(0, 1, 0) cost=881.5051
+  50: start=0 end=0 drone=1 internal=(2, 4, 3) truck=(0, 2, 4, 3, 0) droneRoute=(0, 1, 0) cost=583.0974
+  51: start=0 end=0 drone=1 internal=(2, 4, 5) truck=(0, 2, 4, 5, 0) droneRoute=(0, 1, 0) cost=849.8941
+  52: start=0 end=0 drone=1 internal=(2, 5, 3) truck=(0, 2, 5, 3, 0) droneRoute=(0, 1, 0) cost=557.8703
+  53: start=0 end=0 drone=1 internal=(2, 5, 4) truck=(0, 2, 5, 4, 0) droneRoute=(0, 1, 0) cost=544.4945
+  54: start=0 end=0 drone=1 internal=(3, 2, 4) truck=(0, 3, 2, 4, 0) droneRoute=(0, 1, 0) cost=622.8208
+  55: start=0 end=0 drone=1 internal=(3, 2, 5) truck=(0, 3, 2, 5, 0) droneRoute=(0, 1, 0) cost=556.6067
+  56: start=0 end=0 drone=1 internal=(3, 4, 2) truck=(0, 3, 4, 2, 0) droneRoute=(0, 1, 0) cost=583.0974
+  57: start=0 end=0 drone=1 internal=(3, 4, 5) truck=(0, 3, 4, 5, 0) droneRoute=(0, 1, 0) cost=471.7327
+  58: start=0 end=0 drone=1 internal=(3, 5, 2) truck=(0, 3, 5, 2, 0) droneRoute=(0, 1, 0) cost=557.8703
+  59: start=0 end=0 drone=1 internal=(3, 5, 4) truck=(0, 3, 5, 4, 0) droneRoute=(0, 1, 0) cost=512.7196
+  60: start=0 end=0 drone=1 internal=(4, 2, 3) truck=(0, 4, 2, 3, 0) droneRoute=(0, 1, 0) cost=622.8208
+  61: start=0 end=0 drone=1 internal=(4, 2, 5) truck=(0, 4, 2, 5, 0) droneRoute=(0, 1, 0) cost=553.7851
+  62: start=0 end=0 drone=1 internal=(4, 3, 2) truck=(0, 4, 3, 2, 0) droneRoute=(0, 1, 0) cost=601.3327
+  63: start=0 end=0 drone=1 internal=(4, 3, 5) truck=(0, 4, 3, 5, 0) droneRoute=(0, 1, 0) cost=500.5221
+  64: start=0 end=0 drone=1 internal=(4, 5, 2) truck=(0, 4, 5, 2, 0) droneRoute=(0, 1, 0) cost=544.4945
+  65: start=0 end=0 drone=1 internal=(4, 5, 3) truck=(0, 4, 5, 3, 0) droneRoute=(0, 1, 0) cost=512.7196
+  66: start=0 end=0 drone=1 internal=(5, 2, 3) truck=(0, 5, 2, 3, 0) droneRoute=(0, 1, 0) cost=556.6067
+  67: start=0 end=0 drone=1 internal=(5, 2, 4) truck=(0, 5, 2, 4, 0) droneRoute=(0, 1, 0) cost=553.7851
+  68: start=0 end=0 drone=1 internal=(5, 3, 2) truck=(0, 5, 3, 2, 0) droneRoute=(0, 1, 0) cost=881.5051
+  69: start=0 end=0 drone=1 internal=(5, 3, 4) truck=(0, 5, 3, 4, 0) droneRoute=(0, 1, 0) cost=500.5221
+  70: start=0 end=0 drone=1 internal=(5, 4, 2) truck=(0, 5, 4, 2, 0) droneRoute=(0, 1, 0) cost=849.8941
+  71: start=0 end=0 drone=1 internal=(5, 4, 3) truck=(0, 5, 4, 3, 0) droneRoute=(0, 1, 0) cost=471.7327
+  72: start=0 end=0 drone=1 internal=(2, 3, 4, 5) truck=(0, 2, 3, 4, 5, 0) droneRoute=(0, 1, 0) cost=917.6409
+  73: start=0 end=0 drone=1 internal=(2, 3, 5, 4) truck=(0, 2, 3, 5, 4, 0) droneRoute=(0, 1, 0) cost=958.6279
+  74: start=0 end=0 drone=1 internal=(2, 4, 3, 5) truck=(0, 2, 4, 3, 5, 0) droneRoute=(0, 1, 0) cost=928.1951
+  75: start=0 end=0 drone=1 internal=(2, 4, 5, 3) truck=(0, 2, 4, 5, 3, 0) droneRoute=(0, 1, 0) cost=940.3926
+  76: start=0 end=0 drone=1 internal=(2, 5, 3, 4) truck=(0, 2, 5, 3, 4, 0) droneRoute=(0, 1, 0) cost=622.7955
+  77: start=0 end=0 drone=1 internal=(2, 5, 4, 3) truck=(0, 2, 5, 4, 3, 0) droneRoute=(0, 1, 0) cost=594.0061
+  78: start=0 end=0 drone=1 internal=(3, 2, 4, 5) truck=(0, 3, 2, 4, 5, 0) droneRoute=(0, 1, 0) cost=939.1290
+  79: start=0 end=0 drone=1 internal=(3, 2, 5, 4) truck=(0, 3, 2, 5, 4, 0) droneRoute=(0, 1, 0) cost=633.7294
+  80: start=0 end=0 drone=1 internal=(3, 4, 2, 5) truck=(0, 3, 4, 2, 5, 0) droneRoute=(0, 1, 0) cost=603.2967
+  81: start=0 end=0 drone=1 internal=(3, 4, 5, 2) truck=(0, 3, 4, 5, 2, 0) droneRoute=(0, 1, 0) cost=594.0061
+  82: start=0 end=0 drone=1 internal=(3, 5, 2, 4) truck=(0, 3, 5, 2, 4, 0) droneRoute=(0, 1, 0) cost=644.2836
+  83: start=0 end=0 drone=1 internal=(3, 5, 4, 2) truck=(0, 3, 5, 4, 2, 0) droneRoute=(0, 1, 0) cost=940.3926
+  84: start=0 end=0 drone=1 internal=(4, 2, 3, 5) truck=(0, 4, 2, 3, 5, 0) droneRoute=(0, 1, 0) cost=967.9185
+  85: start=0 end=0 drone=1 internal=(4, 2, 5, 3) truck=(0, 4, 2, 5, 3, 0) droneRoute=(0, 1, 0) cost=644.2836
+  86: start=0 end=0 drone=1 internal=(4, 3, 2, 5) truck=(0, 4, 3, 2, 5, 0) droneRoute=(0, 1, 0) cost=621.5319
+  87: start=0 end=0 drone=1 internal=(4, 3, 5, 2) truck=(0, 4, 3, 5, 2, 0) droneRoute=(0, 1, 0) cost=622.7955
+  88: start=0 end=0 drone=1 internal=(4, 5, 2, 3) truck=(0, 4, 5, 2, 3, 0) droneRoute=(0, 1, 0) cost=633.7294
+  89: start=0 end=0 drone=1 internal=(4, 5, 3, 2) truck=(0, 4, 5, 3, 2, 0) droneRoute=(0, 1, 0) cost=958.6279
+  90: start=0 end=0 drone=1 internal=(5, 2, 3, 4) truck=(0, 5, 2, 3, 4, 0) droneRoute=(0, 1, 0) cost=621.5319
+  91: start=0 end=0 drone=1 internal=(5, 2, 4, 3) truck=(0, 5, 2, 4, 3, 0) droneRoute=(0, 1, 0) cost=603.2967
+  92: start=0 end=0 drone=1 internal=(5, 3, 2, 4) truck=(0, 5, 3, 2, 4, 0) droneRoute=(0, 1, 0) cost=967.9185
+  93: start=0 end=0 drone=1 internal=(5, 3, 4, 2) truck=(0, 5, 3, 4, 2, 0) droneRoute=(0, 1, 0) cost=928.1951
+  94: start=0 end=0 drone=1 internal=(5, 4, 2, 3) truck=(0, 5, 4, 2, 3, 0) droneRoute=(0, 1, 0) cost=939.1290
+  95: start=0 end=0 drone=1 internal=(5, 4, 3, 2) truck=(0, 5, 4, 3, 2, 0) droneRoute=(0, 1, 0) cost=917.6409
+  96: start=0 end=0 drone=2 internal=() truck=(0, 0) droneRoute=(0, 2, 0) cost=223.5862
+  97: start=0 end=0 drone=2 internal=(1,) truck=(0, 1, 0) droneRoute=(0, 2, 0) cost=223.5862
+  98: start=0 end=0 drone=2 internal=(3,) truck=(0, 3, 0) droneRoute=(0, 2, 0) cost=223.5862
+  99: start=0 end=0 drone=2 internal=(4,) truck=(0, 4, 0) droneRoute=(0, 2, 0) cost=223.5862
+ 100: start=0 end=0 drone=2 internal=(5,) truck=(0, 5, 0) droneRoute=(0, 2, 0) cost=345.0983
+ 101: start=0 end=0 drone=2 internal=(1, 3) truck=(0, 1, 3, 0) droneRoute=(0, 2, 0) cost=223.5862
+ 102: start=0 end=0 drone=2 internal=(1, 4) truck=(0, 1, 4, 0) droneRoute=(0, 2, 0) cost=223.5862
+ 103: start=0 end=0 drone=2 internal=(1, 5) truck=(0, 1, 5, 0) droneRoute=(0, 2, 0) cost=439.6073
+ 104: start=0 end=0 drone=2 internal=(3, 1) truck=(0, 3, 1, 0) droneRoute=(0, 2, 0) cost=223.5862
+ 105: start=0 end=0 drone=2 internal=(3, 4) truck=(0, 3, 4, 0) droneRoute=(0, 2, 0) cost=223.5862
+ 106: start=0 end=0 drone=2 internal=(3, 5) truck=(0, 3, 5, 0) droneRoute=(0, 2, 0) cost=435.5969
+ 107: start=0 end=0 drone=2 internal=(4, 1) truck=(0, 4, 1, 0) droneRoute=(0, 2, 0) cost=223.5862
+ 108: start=0 end=0 drone=2 internal=(4, 3) truck=(0, 4, 3, 0) droneRoute=(0, 2, 0) cost=223.5862
+ 109: start=0 end=0 drone=2 internal=(4, 5) truck=(0, 4, 5, 0) droneRoute=(0, 2, 0) cost=422.2211
+ 110: start=0 end=0 drone=2 internal=(5, 1) truck=(0, 5, 1, 0) droneRoute=(0, 2, 0) cost=439.6073
+ 111: start=0 end=0 drone=2 internal=(5, 3) truck=(0, 5, 3, 0) droneRoute=(0, 2, 0) cost=435.5969
+ 112: start=0 end=0 drone=2 internal=(5, 4) truck=(0, 5, 4, 0) droneRoute=(0, 2, 0) cost=422.2211
+ 113: start=0 end=0 drone=2 internal=(1, 3, 4) truck=(0, 1, 3, 4, 0) droneRoute=(0, 2, 0) cost=286.0384
+ 114: start=0 end=0 drone=2 internal=(1, 3, 5) truck=(0, 1, 3, 5, 0) droneRoute=(0, 2, 0) cost=566.2108
+ 115: start=0 end=0 drone=2 internal=(1, 4, 3) truck=(0, 1, 4, 3, 0) droneRoute=(0, 2, 0) cost=223.5862
+ 116: start=0 end=0 drone=2 internal=(1, 4, 5) truck=(0, 1, 4, 5, 0) droneRoute=(0, 2, 0) cost=488.0952
+ 117: start=0 end=0 drone=2 internal=(1, 5, 3) truck=(0, 1, 5, 3, 0) droneRoute=(0, 2, 0) cost=530.1059
+ 118: start=0 end=0 drone=2 internal=(1, 5, 4) truck=(0, 1, 5, 4, 0) droneRoute=(0, 2, 0) cost=516.7301
+ 119: start=0 end=0 drone=2 internal=(3, 1, 4) truck=(0, 3, 1, 4, 0) droneRoute=(0, 2, 0) cost=231.3183
+ 120: start=0 end=0 drone=2 internal=(3, 1, 5) truck=(0, 3, 1, 5, 0) droneRoute=(0, 2, 0) cost=499.1387
+ 121: start=0 end=0 drone=2 internal=(3, 4, 1) truck=(0, 3, 4, 1, 0) droneRoute=(0, 2, 0) cost=223.5862
+ 122: start=0 end=0 drone=2 internal=(3, 4, 5) truck=(0, 3, 4, 5, 0) droneRoute=(0, 2, 0) cost=471.7327
+ 123: start=0 end=0 drone=2 internal=(3, 5, 1) truck=(0, 3, 5, 1, 0) droneRoute=(0, 2, 0) cost=530.1059
+ 124: start=0 end=0 drone=2 internal=(3, 5, 4) truck=(0, 3, 5, 4, 0) droneRoute=(0, 2, 0) cost=512.7196
+ 125: start=0 end=0 drone=2 internal=(4, 1, 3) truck=(0, 4, 1, 3, 0) droneRoute=(0, 2, 0) cost=231.3183
+ 126: start=0 end=0 drone=2 internal=(4, 1, 5) truck=(0, 4, 1, 5, 0) droneRoute=(0, 2, 0) cost=449.8125
+ 127: start=0 end=0 drone=2 internal=(4, 3, 1) truck=(0, 4, 3, 1, 0) droneRoute=(0, 2, 0) cost=286.0384
+ 128: start=0 end=0 drone=2 internal=(4, 3, 5) truck=(0, 4, 3, 5, 0) droneRoute=(0, 2, 0) cost=500.5221
+ 129: start=0 end=0 drone=2 internal=(4, 5, 1) truck=(0, 4, 5, 1, 0) droneRoute=(0, 2, 0) cost=516.7301
+ 130: start=0 end=0 drone=2 internal=(4, 5, 3) truck=(0, 4, 5, 3, 0) droneRoute=(0, 2, 0) cost=512.7196
+ 131: start=0 end=0 drone=2 internal=(5, 1, 3) truck=(0, 5, 1, 3, 0) droneRoute=(0, 2, 0) cost=499.1387
+ 132: start=0 end=0 drone=2 internal=(5, 1, 4) truck=(0, 5, 1, 4, 0) droneRoute=(0, 2, 0) cost=449.8125
+ 133: start=0 end=0 drone=2 internal=(5, 3, 1) truck=(0, 5, 3, 1, 0) droneRoute=(0, 2, 0) cost=566.2108
+ 134: start=0 end=0 drone=2 internal=(5, 3, 4) truck=(0, 5, 3, 4, 0) droneRoute=(0, 2, 0) cost=500.5221
+ 135: start=0 end=0 drone=2 internal=(5, 4, 1) truck=(0, 5, 4, 1, 0) droneRoute=(0, 2, 0) cost=488.0952
+ 136: start=0 end=0 drone=2 internal=(5, 4, 3) truck=(0, 5, 4, 3, 0) droneRoute=(0, 2, 0) cost=471.7327
+ 137: start=0 end=0 drone=2 internal=(1, 3, 4, 5) truck=(0, 1, 3, 4, 5, 0) droneRoute=(0, 2, 0) cost=602.3466
+ 138: start=0 end=0 drone=2 internal=(1, 3, 5, 4) truck=(0, 1, 3, 5, 4, 0) droneRoute=(0, 2, 0) cost=643.3336
+ 139: start=0 end=0 drone=2 internal=(1, 4, 3, 5) truck=(0, 1, 4, 3, 5, 0) droneRoute=(0, 2, 0) cost=566.3962
+ 140: start=0 end=0 drone=2 internal=(1, 4, 5, 3) truck=(0, 1, 4, 5, 3, 0) droneRoute=(0, 2, 0) cost=578.5937
+ 141: start=0 end=0 drone=2 internal=(1, 5, 3, 4) truck=(0, 1, 5, 3, 4, 0) droneRoute=(0, 2, 0) cost=595.0311
+ 142: start=0 end=0 drone=2 internal=(1, 5, 4, 3) truck=(0, 1, 5, 4, 3, 0) droneRoute=(0, 2, 0) cost=566.2417
+ 143: start=0 end=0 drone=2 internal=(3, 1, 4, 5) truck=(0, 3, 1, 4, 5, 0) droneRoute=(0, 2, 0) cost=547.6265
+ 144: start=0 end=0 drone=2 internal=(3, 1, 5, 4) truck=(0, 3, 1, 5, 4, 0) droneRoute=(0, 2, 0) cost=576.2615
+ 145: start=0 end=0 drone=2 internal=(3, 4, 1, 5) truck=(0, 3, 4, 1, 5, 0) droneRoute=(0, 2, 0) cost=499.3241
+ 146: start=0 end=0 drone=2 internal=(3, 4, 5, 1) truck=(0, 3, 4, 5, 1, 0) droneRoute=(0, 2, 0) cost=566.2417
+ 147: start=0 end=0 drone=2 internal=(3, 5, 1, 4) truck=(0, 3, 5, 1, 4, 0) droneRoute=(0, 2, 0) cost=540.3111
+ 148: start=0 end=0 drone=2 internal=(3, 5, 4, 1) truck=(0, 3, 5, 4, 1, 0) droneRoute=(0, 2, 0) cost=578.5937
+ 149: start=0 end=0 drone=2 internal=(4, 1, 3, 5) truck=(0, 4, 1, 3, 5, 0) droneRoute=(0, 2, 0) cost=576.4160
+ 150: start=0 end=0 drone=2 internal=(4, 1, 5, 3) truck=(0, 4, 1, 5, 3, 0) droneRoute=(0, 2, 0) cost=540.3111
+ 151: start=0 end=0 drone=2 internal=(4, 3, 1, 5) truck=(0, 4, 3, 1, 5, 0) droneRoute=(0, 2, 0) cost=564.0640
+ 152: start=0 end=0 drone=2 internal=(4, 3, 5, 1) truck=(0, 4, 3, 5, 1, 0) droneRoute=(0, 2, 0) cost=595.0311
+ 153: start=0 end=0 drone=2 internal=(4, 5, 1, 3) truck=(0, 4, 5, 1, 3, 0) droneRoute=(0, 2, 0) cost=576.2615
+ 154: start=0 end=0 drone=2 internal=(4, 5, 3, 1) truck=(0, 4, 5, 3, 1, 0) droneRoute=(0, 2, 0) cost=643.3336
+ 155: start=0 end=0 drone=2 internal=(5, 1, 3, 4) truck=(0, 5, 1, 3, 4, 0) droneRoute=(0, 2, 0) cost=564.0640
+ 156: start=0 end=0 drone=2 internal=(5, 1, 4, 3) truck=(0, 5, 1, 4, 3, 0) droneRoute=(0, 2, 0) cost=499.3241
+ 157: start=0 end=0 drone=2 internal=(5, 3, 1, 4) truck=(0, 5, 3, 1, 4, 0) droneRoute=(0, 2, 0) cost=576.4160
+ 158: start=0 end=0 drone=2 internal=(5, 3, 4, 1) truck=(0, 5, 3, 4, 1, 0) droneRoute=(0, 2, 0) cost=566.3962
+ 159: start=0 end=0 drone=2 internal=(5, 4, 1, 3) truck=(0, 5, 4, 1, 3, 0) droneRoute=(0, 2, 0) cost=547.6265
+ 160: start=0 end=0 drone=2 internal=(5, 4, 3, 1) truck=(0, 5, 4, 3, 1, 0) droneRoute=(0, 2, 0) cost=602.3466
+ 161: start=0 end=0 drone=3 internal=() truck=(0, 0) droneRoute=(0, 3, 0) cost=45.2496
+ 162: start=0 end=0 drone=3 internal=(1,) truck=(0, 1, 0) droneRoute=(0, 3, 0) cost=161.5817
+ 163: start=0 end=0 drone=3 internal=(2,) truck=(0, 2, 0) droneRoute=(0, 3, 0) cost=447.1725
+ 164: start=0 end=0 drone=3 internal=(4,) truck=(0, 4, 0) droneRoute=(0, 3, 0) cost=105.9128
+ 165: start=0 end=0 drone=3 internal=(5,) truck=(0, 5, 0) droneRoute=(0, 3, 0) cost=345.0983
+ 166: start=0 end=0 drone=3 internal=(1, 2) truck=(0, 1, 2, 0) droneRoute=(0, 3, 0) cost=556.4832
+ 167: start=0 end=0 drone=3 internal=(1, 4) truck=(0, 1, 4, 0) droneRoute=(0, 3, 0) cost=171.7869
+ 168: start=0 end=0 drone=3 internal=(1, 5) truck=(0, 1, 5, 0) droneRoute=(0, 3, 0) cost=439.6073
+ 169: start=0 end=0 drone=3 internal=(2, 1) truck=(0, 2, 1, 0) droneRoute=(0, 3, 0) cost=556.4832
+ 170: start=0 end=0 drone=3 internal=(2, 4) truck=(0, 2, 4, 0) droneRoute=(0, 3, 0) cost=533.5859
+ 171: start=0 end=0 drone=3 internal=(2, 5) truck=(0, 2, 5, 0) droneRoute=(0, 3, 0) cost=467.3718
+ 172: start=0 end=0 drone=3 internal=(4, 1) truck=(0, 4, 1, 0) droneRoute=(0, 3, 0) cost=171.7869
+ 173: start=0 end=0 drone=3 internal=(4, 2) truck=(0, 4, 2, 0) droneRoute=(0, 3, 0) cost=533.5859
+ 174: start=0 end=0 drone=3 internal=(4, 5) truck=(0, 4, 5, 0) droneRoute=(0, 3, 0) cost=422.2211
+ 175: start=0 end=0 drone=3 internal=(5, 1) truck=(0, 5, 1, 0) droneRoute=(0, 3, 0) cost=439.6073
+ 176: start=0 end=0 drone=3 internal=(5, 2) truck=(0, 5, 2, 0) droneRoute=(0, 3, 0) cost=467.3718
+ 177: start=0 end=0 drone=3 internal=(5, 4) truck=(0, 5, 4, 0) droneRoute=(0, 3, 0) cost=422.2211
+ 178: start=0 end=0 drone=3 internal=(1, 2, 4) truck=(0, 1, 2, 4, 0) droneRoute=(0, 3, 0) cost=642.8965
+ 179: start=0 end=0 drone=3 internal=(1, 2, 5) truck=(0, 1, 2, 5, 0) droneRoute=(0, 3, 0) cost=576.6824
+ 180: start=0 end=0 drone=3 internal=(1, 4, 2) truck=(0, 1, 4, 2, 0) droneRoute=(0, 3, 0) cost=599.4599
+ 181: start=0 end=0 drone=3 internal=(1, 4, 5) truck=(0, 1, 4, 5, 0) droneRoute=(0, 3, 0) cost=488.0952
+ 182: start=0 end=0 drone=3 internal=(1, 5, 2) truck=(0, 1, 5, 2, 0) droneRoute=(0, 3, 0) cost=561.8808
+ 183: start=0 end=0 drone=3 internal=(1, 5, 4) truck=(0, 1, 5, 4, 0) droneRoute=(0, 3, 0) cost=516.7301
+ 184: start=0 end=0 drone=3 internal=(2, 1, 4) truck=(0, 2, 1, 4, 0) droneRoute=(0, 3, 0) cost=566.6884
+ 185: start=0 end=0 drone=3 internal=(2, 1, 5) truck=(0, 2, 1, 5, 0) droneRoute=(0, 3, 0) cost=834.5088
+ 186: start=0 end=0 drone=3 internal=(2, 4, 1) truck=(0, 2, 4, 1, 0) droneRoute=(0, 3, 0) cost=599.4599
+ 187: start=0 end=0 drone=3 internal=(2, 4, 5) truck=(0, 2, 4, 5, 0) droneRoute=(0, 3, 0) cost=849.8941
+ 188: start=0 end=0 drone=3 internal=(2, 5, 1) truck=(0, 2, 5, 1, 0) droneRoute=(0, 3, 0) cost=561.8808
+ 189: start=0 end=0 drone=3 internal=(2, 5, 4) truck=(0, 2, 5, 4, 0) droneRoute=(0, 3, 0) cost=544.4945
+ 190: start=0 end=0 drone=3 internal=(4, 1, 2) truck=(0, 4, 1, 2, 0) droneRoute=(0, 3, 0) cost=566.6884
+ 191: start=0 end=0 drone=3 internal=(4, 1, 5) truck=(0, 4, 1, 5, 0) droneRoute=(0, 3, 0) cost=449.8125
+ 192: start=0 end=0 drone=3 internal=(4, 2, 1) truck=(0, 4, 2, 1, 0) droneRoute=(0, 3, 0) cost=642.8965
+ 193: start=0 end=0 drone=3 internal=(4, 2, 5) truck=(0, 4, 2, 5, 0) droneRoute=(0, 3, 0) cost=553.7851
+ 194: start=0 end=0 drone=3 internal=(4, 5, 1) truck=(0, 4, 5, 1, 0) droneRoute=(0, 3, 0) cost=516.7301
+ 195: start=0 end=0 drone=3 internal=(4, 5, 2) truck=(0, 4, 5, 2, 0) droneRoute=(0, 3, 0) cost=544.4945
+ 196: start=0 end=0 drone=3 internal=(5, 1, 2) truck=(0, 5, 1, 2, 0) droneRoute=(0, 3, 0) cost=834.5088
+ 197: start=0 end=0 drone=3 internal=(5, 1, 4) truck=(0, 5, 1, 4, 0) droneRoute=(0, 3, 0) cost=449.8125
+ 198: start=0 end=0 drone=3 internal=(5, 2, 1) truck=(0, 5, 2, 1, 0) droneRoute=(0, 3, 0) cost=576.6824
+ 199: start=0 end=0 drone=3 internal=(5, 2, 4) truck=(0, 5, 2, 4, 0) droneRoute=(0, 3, 0) cost=553.7851
+ 200: start=0 end=0 drone=3 internal=(5, 4, 1) truck=(0, 5, 4, 1, 0) droneRoute=(0, 3, 0) cost=488.0952
+ 201: start=0 end=0 drone=3 internal=(5, 4, 2) truck=(0, 5, 4, 2, 0) droneRoute=(0, 3, 0) cost=849.8941
+ 202: start=0 end=0 drone=3 internal=(1, 2, 4, 5) truck=(0, 1, 2, 4, 5, 0) droneRoute=(0, 3, 0) cost=959.2048
+ 203: start=0 end=0 drone=3 internal=(1, 2, 5, 4) truck=(0, 1, 2, 5, 4, 0) droneRoute=(0, 3, 0) cost=653.8052
+ 204: start=0 end=0 drone=3 internal=(1, 4, 2, 5) truck=(0, 1, 4, 2, 5, 0) droneRoute=(0, 3, 0) cost=619.6592
+ 205: start=0 end=0 drone=3 internal=(1, 4, 5, 2) truck=(0, 1, 4, 5, 2, 0) droneRoute=(0, 3, 0) cost=610.3686
+ 206: start=0 end=0 drone=3 internal=(1, 5, 2, 4) truck=(0, 1, 5, 2, 4, 0) droneRoute=(0, 3, 0) cost=648.2941
+ 207: start=0 end=0 drone=3 internal=(1, 5, 4, 2) truck=(0, 1, 5, 4, 2, 0) droneRoute=(0, 3, 0) cost=944.4031
+ 208: start=0 end=0 drone=3 internal=(2, 1, 4, 5) truck=(0, 2, 1, 4, 5, 0) droneRoute=(0, 3, 0) cost=882.9966
+ 209: start=0 end=0 drone=3 internal=(2, 1, 5, 4) truck=(0, 2, 1, 5, 4, 0) droneRoute=(0, 3, 0) cost=911.6315
+ 210: start=0 end=0 drone=3 internal=(2, 4, 1, 5) truck=(0, 2, 4, 1, 5, 0) droneRoute=(0, 3, 0) cost=877.4856
+ 211: start=0 end=0 drone=3 internal=(2, 4, 5, 1) truck=(0, 2, 4, 5, 1, 0) droneRoute=(0, 3, 0) cost=944.4031
+ 212: start=0 end=0 drone=3 internal=(2, 5, 1, 4) truck=(0, 2, 5, 1, 4, 0) droneRoute=(0, 3, 0) cost=572.0859
+ 213: start=0 end=0 drone=3 internal=(2, 5, 4, 1) truck=(0, 2, 5, 4, 1, 0) droneRoute=(0, 3, 0) cost=610.3686
+ 214: start=0 end=0 drone=3 internal=(4, 1, 2, 5) truck=(0, 4, 1, 2, 5, 0) droneRoute=(0, 3, 0) cost=586.8876
+ 215: start=0 end=0 drone=3 internal=(4, 1, 5, 2) truck=(0, 4, 1, 5, 2, 0) droneRoute=(0, 3, 0) cost=572.0859
+ 216: start=0 end=0 drone=3 internal=(4, 2, 1, 5) truck=(0, 4, 2, 1, 5, 0) droneRoute=(0, 3, 0) cost=920.9222
+ 217: start=0 end=0 drone=3 internal=(4, 2, 5, 1) truck=(0, 4, 2, 5, 1, 0) droneRoute=(0, 3, 0) cost=648.2941
+ 218: start=0 end=0 drone=3 internal=(4, 5, 1, 2) truck=(0, 4, 5, 1, 2, 0) droneRoute=(0, 3, 0) cost=911.6315
+ 219: start=0 end=0 drone=3 internal=(4, 5, 2, 1) truck=(0, 4, 5, 2, 1, 0) droneRoute=(0, 3, 0) cost=653.8052
+ 220: start=0 end=0 drone=3 internal=(5, 1, 2, 4) truck=(0, 5, 1, 2, 4, 0) droneRoute=(0, 3, 0) cost=920.9222
+ 221: start=0 end=0 drone=3 internal=(5, 1, 4, 2) truck=(0, 5, 1, 4, 2, 0) droneRoute=(0, 3, 0) cost=877.4856
+ 222: start=0 end=0 drone=3 internal=(5, 2, 1, 4) truck=(0, 5, 2, 1, 4, 0) droneRoute=(0, 3, 0) cost=586.8876
+ 223: start=0 end=0 drone=3 internal=(5, 2, 4, 1) truck=(0, 5, 2, 4, 1, 0) droneRoute=(0, 3, 0) cost=619.6592
+ 224: start=0 end=0 drone=3 internal=(5, 4, 1, 2) truck=(0, 5, 4, 1, 2, 0) droneRoute=(0, 3, 0) cost=882.9966
+ 225: start=0 end=0 drone=3 internal=(5, 4, 2, 1) truck=(0, 5, 4, 2, 1, 0) droneRoute=(0, 3, 0) cost=959.2048
+ 226: start=0 end=0 drone=4 internal=() truck=(0, 0) droneRoute=(0, 4, 0) cost=52.9564
+ 227: start=0 end=0 drone=4 internal=(1,) truck=(0, 1, 0) droneRoute=(0, 4, 0) cost=161.5817
+ 228: start=0 end=0 drone=4 internal=(2,) truck=(0, 2, 0) droneRoute=(0, 4, 0) cost=447.1725
+ 229: start=0 end=0 drone=4 internal=(3,) truck=(0, 3, 0) droneRoute=(0, 4, 0) cost=90.4991
+ 230: start=0 end=0 drone=4 internal=(5,) truck=(0, 5, 0) droneRoute=(0, 4, 0) cost=345.0983
+ 231: start=0 end=0 drone=4 internal=(1, 2) truck=(0, 1, 2, 0) droneRoute=(0, 4, 0) cost=556.4832
+ 232: start=0 end=0 drone=4 internal=(1, 3) truck=(0, 1, 3, 0) droneRoute=(0, 4, 0) cost=221.1131
+ 233: start=0 end=0 drone=4 internal=(1, 5) truck=(0, 1, 5, 0) droneRoute=(0, 4, 0) cost=439.6073
+ 234: start=0 end=0 drone=4 internal=(2, 1) truck=(0, 2, 1, 0) droneRoute=(0, 4, 0) cost=556.4832
+ 235: start=0 end=0 drone=4 internal=(2, 3) truck=(0, 2, 3, 0) droneRoute=(0, 4, 0) cost=536.4074
+ 236: start=0 end=0 drone=4 internal=(2, 5) truck=(0, 2, 5, 0) droneRoute=(0, 4, 0) cost=467.3718
+ 237: start=0 end=0 drone=4 internal=(3, 1) truck=(0, 3, 1, 0) droneRoute=(0, 4, 0) cost=221.1131
+ 238: start=0 end=0 drone=4 internal=(3, 2) truck=(0, 3, 2, 0) droneRoute=(0, 4, 0) cost=536.4074
+ 239: start=0 end=0 drone=4 internal=(3, 5) truck=(0, 3, 5, 0) droneRoute=(0, 4, 0) cost=435.5969
+ 240: start=0 end=0 drone=4 internal=(5, 1) truck=(0, 5, 1, 0) droneRoute=(0, 4, 0) cost=439.6073
+ 241: start=0 end=0 drone=4 internal=(5, 2) truck=(0, 5, 2, 0) droneRoute=(0, 4, 0) cost=467.3718
+ 242: start=0 end=0 drone=4 internal=(5, 3) truck=(0, 5, 3, 0) droneRoute=(0, 4, 0) cost=435.5969
+ 243: start=0 end=0 drone=4 internal=(1, 2, 3) truck=(0, 1, 2, 3, 0) droneRoute=(0, 4, 0) cost=645.7181
+ 244: start=0 end=0 drone=4 internal=(1, 2, 5) truck=(0, 1, 2, 5, 0) droneRoute=(0, 4, 0) cost=576.6824
+ 245: start=0 end=0 drone=4 internal=(1, 3, 2) truck=(0, 1, 3, 2, 0) droneRoute=(0, 4, 0) cost=667.0214
+ 246: start=0 end=0 drone=4 internal=(1, 3, 5) truck=(0, 1, 3, 5, 0) droneRoute=(0, 4, 0) cost=566.2108
+ 247: start=0 end=0 drone=4 internal=(1, 5, 2) truck=(0, 1, 5, 2, 0) droneRoute=(0, 4, 0) cost=561.8808
+ 248: start=0 end=0 drone=4 internal=(1, 5, 3) truck=(0, 1, 5, 3, 0) droneRoute=(0, 4, 0) cost=530.1059
+ 249: start=0 end=0 drone=4 internal=(2, 1, 3) truck=(0, 2, 1, 3, 0) droneRoute=(0, 4, 0) cost=616.0146
+ 250: start=0 end=0 drone=4 internal=(2, 1, 5) truck=(0, 2, 1, 5, 0) droneRoute=(0, 4, 0) cost=834.5088
+ 251: start=0 end=0 drone=4 internal=(2, 3, 1) truck=(0, 2, 3, 1, 0) droneRoute=(0, 4, 0) cost=667.0214
+ 252: start=0 end=0 drone=4 internal=(2, 3, 5) truck=(0, 2, 3, 5, 0) droneRoute=(0, 4, 0) cost=881.5051
+ 253: start=0 end=0 drone=4 internal=(2, 5, 1) truck=(0, 2, 5, 1, 0) droneRoute=(0, 4, 0) cost=561.8808
+ 254: start=0 end=0 drone=4 internal=(2, 5, 3) truck=(0, 2, 5, 3, 0) droneRoute=(0, 4, 0) cost=557.8703
+ 255: start=0 end=0 drone=4 internal=(3, 1, 2) truck=(0, 3, 1, 2, 0) droneRoute=(0, 4, 0) cost=616.0146
+ 256: start=0 end=0 drone=4 internal=(3, 1, 5) truck=(0, 3, 1, 5, 0) droneRoute=(0, 4, 0) cost=499.1387
+ 257: start=0 end=0 drone=4 internal=(3, 2, 1) truck=(0, 3, 2, 1, 0) droneRoute=(0, 4, 0) cost=645.7181
+ 258: start=0 end=0 drone=4 internal=(3, 2, 5) truck=(0, 3, 2, 5, 0) droneRoute=(0, 4, 0) cost=556.6067
+ 259: start=0 end=0 drone=4 internal=(3, 5, 1) truck=(0, 3, 5, 1, 0) droneRoute=(0, 4, 0) cost=530.1059
+ 260: start=0 end=0 drone=4 internal=(3, 5, 2) truck=(0, 3, 5, 2, 0) droneRoute=(0, 4, 0) cost=557.8703
+ 261: start=0 end=0 drone=4 internal=(5, 1, 2) truck=(0, 5, 1, 2, 0) droneRoute=(0, 4, 0) cost=834.5088
+ 262: start=0 end=0 drone=4 internal=(5, 1, 3) truck=(0, 5, 1, 3, 0) droneRoute=(0, 4, 0) cost=499.1387
+ 263: start=0 end=0 drone=4 internal=(5, 2, 1) truck=(0, 5, 2, 1, 0) droneRoute=(0, 4, 0) cost=576.6824
+ 264: start=0 end=0 drone=4 internal=(5, 2, 3) truck=(0, 5, 2, 3, 0) droneRoute=(0, 4, 0) cost=556.6067
+ 265: start=0 end=0 drone=4 internal=(5, 3, 1) truck=(0, 5, 3, 1, 0) droneRoute=(0, 4, 0) cost=566.2108
+ 266: start=0 end=0 drone=4 internal=(5, 3, 2) truck=(0, 5, 3, 2, 0) droneRoute=(0, 4, 0) cost=881.5051
+ 267: start=0 end=0 drone=4 internal=(1, 2, 3, 5) truck=(0, 1, 2, 3, 5, 0) droneRoute=(0, 4, 0) cost=990.8158
+ 268: start=0 end=0 drone=4 internal=(1, 2, 5, 3) truck=(0, 1, 2, 5, 3, 0) droneRoute=(0, 4, 0) cost=667.1809
+ 269: start=0 end=0 drone=4 internal=(1, 3, 2, 5) truck=(0, 1, 3, 2, 5, 0) droneRoute=(0, 4, 0) cost=687.2206
+ 270: start=0 end=0 drone=4 internal=(1, 3, 5, 2) truck=(0, 1, 3, 5, 2, 0) droneRoute=(0, 4, 0) cost=688.4842
+ 271: start=0 end=0 drone=4 internal=(1, 5, 2, 3) truck=(0, 1, 5, 2, 3, 0) droneRoute=(0, 4, 0) cost=651.1157
+ 272: start=0 end=0 drone=4 internal=(1, 5, 3, 2) truck=(0, 1, 5, 3, 2, 0) droneRoute=(0, 4, 0) cost=976.0141
+ 273: start=0 end=0 drone=4 internal=(2, 1, 3, 5) truck=(0, 2, 1, 3, 5, 0) droneRoute=(0, 4, 0) cost=961.1123
+ 274: start=0 end=0 drone=4 internal=(2, 1, 5, 3) truck=(0, 2, 1, 5, 3, 0) droneRoute=(0, 4, 0) cost=925.0073
+ 275: start=0 end=0 drone=4 internal=(2, 3, 1, 5) truck=(0, 2, 3, 1, 5, 0) droneRoute=(0, 4, 0) cost=945.0470
+ 276: start=0 end=0 drone=4 internal=(2, 3, 5, 1) truck=(0, 2, 3, 5, 1, 0) droneRoute=(0, 4, 0) cost=976.0141
+ 277: start=0 end=0 drone=4 internal=(2, 5, 1, 3) truck=(0, 2, 5, 1, 3, 0) droneRoute=(0, 4, 0) cost=621.4121
+ 278: start=0 end=0 drone=4 internal=(2, 5, 3, 1) truck=(0, 2, 5, 3, 1, 0) droneRoute=(0, 4, 0) cost=688.4842
+ 279: start=0 end=0 drone=4 internal=(3, 1, 2, 5) truck=(0, 3, 1, 2, 5, 0) droneRoute=(0, 4, 0) cost=636.2138
+ 280: start=0 end=0 drone=4 internal=(3, 1, 5, 2) truck=(0, 3, 1, 5, 2, 0) droneRoute=(0, 4, 0) cost=621.4121
+ 281: start=0 end=0 drone=4 internal=(3, 2, 1, 5) truck=(0, 3, 2, 1, 5, 0) droneRoute=(0, 4, 0) cost=923.7437
+ 282: start=0 end=0 drone=4 internal=(3, 2, 5, 1) truck=(0, 3, 2, 5, 1, 0) droneRoute=(0, 4, 0) cost=651.1157
+ 283: start=0 end=0 drone=4 internal=(3, 5, 1, 2) truck=(0, 3, 5, 1, 2, 0) droneRoute=(0, 4, 0) cost=925.0073
+ 284: start=0 end=0 drone=4 internal=(3, 5, 2, 1) truck=(0, 3, 5, 2, 1, 0) droneRoute=(0, 4, 0) cost=667.1809
+ 285: start=0 end=0 drone=4 internal=(5, 1, 2, 3) truck=(0, 5, 1, 2, 3, 0) droneRoute=(0, 4, 0) cost=923.7437
+ 286: start=0 end=0 drone=4 internal=(5, 1, 3, 2) truck=(0, 5, 1, 3, 2, 0) droneRoute=(0, 4, 0) cost=945.0470
+ 287: start=0 end=0 drone=4 internal=(5, 2, 1, 3) truck=(0, 5, 2, 1, 3, 0) droneRoute=(0, 4, 0) cost=636.2138
+ 288: start=0 end=0 drone=4 internal=(5, 2, 3, 1) truck=(0, 5, 2, 3, 1, 0) droneRoute=(0, 4, 0) cost=687.2206
+ 289: start=0 end=0 drone=4 internal=(5, 3, 1, 2) truck=(0, 5, 3, 1, 2, 0) droneRoute=(0, 4, 0) cost=961.1123
+ 290: start=0 end=0 drone=4 internal=(5, 3, 2, 1) truck=(0, 5, 3, 2, 1, 0) droneRoute=(0, 4, 0) cost=990.8158
+ 291: start=0 end=0 drone=5 internal=() truck=(0, 0) droneRoute=(0, 5, 0) cost=172.5492
+ 292: start=0 end=0 drone=5 internal=(1,) truck=(0, 1, 0) droneRoute=(0, 5, 0) cost=172.5492
+ 293: start=0 end=0 drone=5 internal=(2,) truck=(0, 2, 0) droneRoute=(0, 5, 0) cost=447.1725
+ 294: start=0 end=0 drone=5 internal=(3,) truck=(0, 3, 0) droneRoute=(0, 5, 0) cost=172.5492
+ 295: start=0 end=0 drone=5 internal=(4,) truck=(0, 4, 0) droneRoute=(0, 5, 0) cost=172.5492
+ 296: start=0 end=0 drone=5 internal=(1, 2) truck=(0, 1, 2, 0) droneRoute=(0, 5, 0) cost=556.4832
+ 297: start=0 end=0 drone=5 internal=(1, 3) truck=(0, 1, 3, 0) droneRoute=(0, 5, 0) cost=221.1131
+ 298: start=0 end=0 drone=5 internal=(1, 4) truck=(0, 1, 4, 0) droneRoute=(0, 5, 0) cost=172.5492
+ 299: start=0 end=0 drone=5 internal=(2, 1) truck=(0, 2, 1, 0) droneRoute=(0, 5, 0) cost=556.4832
+ 300: start=0 end=0 drone=5 internal=(2, 3) truck=(0, 2, 3, 0) droneRoute=(0, 5, 0) cost=536.4074
+ 301: start=0 end=0 drone=5 internal=(2, 4) truck=(0, 2, 4, 0) droneRoute=(0, 5, 0) cost=533.5859
+ 302: start=0 end=0 drone=5 internal=(3, 1) truck=(0, 3, 1, 0) droneRoute=(0, 5, 0) cost=221.1131
+ 303: start=0 end=0 drone=5 internal=(3, 2) truck=(0, 3, 2, 0) droneRoute=(0, 5, 0) cost=536.4074
+ 304: start=0 end=0 drone=5 internal=(3, 4) truck=(0, 3, 4, 0) droneRoute=(0, 5, 0) cost=172.5492
+ 305: start=0 end=0 drone=5 internal=(4, 1) truck=(0, 4, 1, 0) droneRoute=(0, 5, 0) cost=172.5492
+ 306: start=0 end=0 drone=5 internal=(4, 2) truck=(0, 4, 2, 0) droneRoute=(0, 5, 0) cost=533.5859
+ 307: start=0 end=0 drone=5 internal=(4, 3) truck=(0, 4, 3, 0) droneRoute=(0, 5, 0) cost=172.5492
+ 308: start=0 end=0 drone=5 internal=(1, 2, 3) truck=(0, 1, 2, 3, 0) droneRoute=(0, 5, 0) cost=645.7181
+ 309: start=0 end=0 drone=5 internal=(1, 2, 4) truck=(0, 1, 2, 4, 0) droneRoute=(0, 5, 0) cost=642.8965
+ 310: start=0 end=0 drone=5 internal=(1, 3, 2) truck=(0, 1, 3, 2, 0) droneRoute=(0, 5, 0) cost=667.0214
+ 311: start=0 end=0 drone=5 internal=(1, 3, 4) truck=(0, 1, 3, 4, 0) droneRoute=(0, 5, 0) cost=286.0384
+ 312: start=0 end=0 drone=5 internal=(1, 4, 2) truck=(0, 1, 4, 2, 0) droneRoute=(0, 5, 0) cost=599.4599
+ 313: start=0 end=0 drone=5 internal=(1, 4, 3) truck=(0, 1, 4, 3, 0) droneRoute=(0, 5, 0) cost=221.2985
+ 314: start=0 end=0 drone=5 internal=(2, 1, 3) truck=(0, 2, 1, 3, 0) droneRoute=(0, 5, 0) cost=616.0146
+ 315: start=0 end=0 drone=5 internal=(2, 1, 4) truck=(0, 2, 1, 4, 0) droneRoute=(0, 5, 0) cost=566.6884
+ 316: start=0 end=0 drone=5 internal=(2, 3, 1) truck=(0, 2, 3, 1, 0) droneRoute=(0, 5, 0) cost=667.0214
+ 317: start=0 end=0 drone=5 internal=(2, 3, 4) truck=(0, 2, 3, 4, 0) droneRoute=(0, 5, 0) cost=601.3327
+ 318: start=0 end=0 drone=5 internal=(2, 4, 1) truck=(0, 2, 4, 1, 0) droneRoute=(0, 5, 0) cost=599.4599
+ 319: start=0 end=0 drone=5 internal=(2, 4, 3) truck=(0, 2, 4, 3, 0) droneRoute=(0, 5, 0) cost=583.0974
+ 320: start=0 end=0 drone=5 internal=(3, 1, 2) truck=(0, 3, 1, 2, 0) droneRoute=(0, 5, 0) cost=616.0146
+ 321: start=0 end=0 drone=5 internal=(3, 1, 4) truck=(0, 3, 1, 4, 0) droneRoute=(0, 5, 0) cost=231.3183
+ 322: start=0 end=0 drone=5 internal=(3, 2, 1) truck=(0, 3, 2, 1, 0) droneRoute=(0, 5, 0) cost=645.7181
+ 323: start=0 end=0 drone=5 internal=(3, 2, 4) truck=(0, 3, 2, 4, 0) droneRoute=(0, 5, 0) cost=622.8208
+ 324: start=0 end=0 drone=5 internal=(3, 4, 1) truck=(0, 3, 4, 1, 0) droneRoute=(0, 5, 0) cost=221.2985
+ 325: start=0 end=0 drone=5 internal=(3, 4, 2) truck=(0, 3, 4, 2, 0) droneRoute=(0, 5, 0) cost=583.0974
+ 326: start=0 end=0 drone=5 internal=(4, 1, 2) truck=(0, 4, 1, 2, 0) droneRoute=(0, 5, 0) cost=566.6884
+ 327: start=0 end=0 drone=5 internal=(4, 1, 3) truck=(0, 4, 1, 3, 0) droneRoute=(0, 5, 0) cost=231.3183
+ 328: start=0 end=0 drone=5 internal=(4, 2, 1) truck=(0, 4, 2, 1, 0) droneRoute=(0, 5, 0) cost=642.8965
+ 329: start=0 end=0 drone=5 internal=(4, 2, 3) truck=(0, 4, 2, 3, 0) droneRoute=(0, 5, 0) cost=622.8208
+ 330: start=0 end=0 drone=5 internal=(4, 3, 1) truck=(0, 4, 3, 1, 0) droneRoute=(0, 5, 0) cost=286.0384
+ 331: start=0 end=0 drone=5 internal=(4, 3, 2) truck=(0, 4, 3, 2, 0) droneRoute=(0, 5, 0) cost=601.3327
+ 332: start=0 end=0 drone=5 internal=(1, 2, 3, 4) truck=(0, 1, 2, 3, 4, 0) droneRoute=(0, 5, 0) cost=710.6433
+ 333: start=0 end=0 drone=5 internal=(1, 2, 4, 3) truck=(0, 1, 2, 4, 3, 0) droneRoute=(0, 5, 0) cost=692.4081
+ 334: start=0 end=0 drone=5 internal=(1, 3, 2, 4) truck=(0, 1, 3, 2, 4, 0) droneRoute=(0, 5, 0) cost=753.4347
+ 335: start=0 end=0 drone=5 internal=(1, 3, 4, 2) truck=(0, 1, 3, 4, 2, 0) droneRoute=(0, 5, 0) cost=713.7114
+ 336: start=0 end=0 drone=5 internal=(1, 4, 2, 3) truck=(0, 1, 4, 2, 3, 0) droneRoute=(0, 5, 0) cost=688.6948
+ 337: start=0 end=0 drone=5 internal=(1, 4, 3, 2) truck=(0, 1, 4, 3, 2, 0) droneRoute=(0, 5, 0) cost=667.2067
+ 338: start=0 end=0 drone=5 internal=(2, 1, 3, 4) truck=(0, 2, 1, 3, 4, 0) droneRoute=(0, 5, 0) cost=680.9398
+ 339: start=0 end=0 drone=5 internal=(2, 1, 4, 3) truck=(0, 2, 1, 4, 3, 0) droneRoute=(0, 5, 0) cost=616.1999
+ 340: start=0 end=0 drone=5 internal=(2, 3, 1, 4) truck=(0, 2, 3, 1, 4, 0) droneRoute=(0, 5, 0) cost=677.2266
+ 341: start=0 end=0 drone=5 internal=(2, 3, 4, 1) truck=(0, 2, 3, 4, 1, 0) droneRoute=(0, 5, 0) cost=667.2067
+ 342: start=0 end=0 drone=5 internal=(2, 4, 1, 3) truck=(0, 2, 4, 1, 3, 0) droneRoute=(0, 5, 0) cost=658.9913
+ 343: start=0 end=0 drone=5 internal=(2, 4, 3, 1) truck=(0, 2, 4, 3, 1, 0) droneRoute=(0, 5, 0) cost=713.7114
+ 344: start=0 end=0 drone=5 internal=(3, 1, 2, 4) truck=(0, 3, 1, 2, 4, 0) droneRoute=(0, 5, 0) cost=702.4279
+ 345: start=0 end=0 drone=5 internal=(3, 1, 4, 2) truck=(0, 3, 1, 4, 2, 0) droneRoute=(0, 5, 0) cost=658.9913
+ 346: start=0 end=0 drone=5 internal=(3, 2, 1, 4) truck=(0, 3, 2, 1, 4, 0) droneRoute=(0, 5, 0) cost=655.9233
+ 347: start=0 end=0 drone=5 internal=(3, 2, 4, 1) truck=(0, 3, 2, 4, 1, 0) droneRoute=(0, 5, 0) cost=688.6948
+ 348: start=0 end=0 drone=5 internal=(3, 4, 1, 2) truck=(0, 3, 4, 1, 2, 0) droneRoute=(0, 5, 0) cost=616.1999
+ 349: start=0 end=0 drone=5 internal=(3, 4, 2, 1) truck=(0, 3, 4, 2, 1, 0) droneRoute=(0, 5, 0) cost=692.4081
+ 350: start=0 end=0 drone=5 internal=(4, 1, 2, 3) truck=(0, 4, 1, 2, 3, 0) droneRoute=(0, 5, 0) cost=655.9233
+ 351: start=0 end=0 drone=5 internal=(4, 1, 3, 2) truck=(0, 4, 1, 3, 2, 0) droneRoute=(0, 5, 0) cost=677.2266
+ 352: start=0 end=0 drone=5 internal=(4, 2, 1, 3) truck=(0, 4, 2, 1, 3, 0) droneRoute=(0, 5, 0) cost=702.4279
+ 353: start=0 end=0 drone=5 internal=(4, 2, 3, 1) truck=(0, 4, 2, 3, 1, 0) droneRoute=(0, 5, 0) cost=753.4347
+ 354: start=0 end=0 drone=5 internal=(4, 3, 1, 2) truck=(0, 4, 3, 1, 2, 0) droneRoute=(0, 5, 0) cost=680.9398
+ 355: start=0 end=0 drone=5 internal=(4, 3, 2, 1) truck=(0, 4, 3, 2, 1, 0) droneRoute=(0, 5, 0) cost=710.6433
+ 356: start=0 end=1 drone=2 internal=() truck=(0, 1) droneRoute=(0, 2, 1) cost=237.8462
+ 357: start=0 end=1 drone=2 internal=(3,) truck=(0, 3, 1) droneRoute=(0, 2, 1) cost=237.8462
+ 358: start=0 end=1 drone=2 internal=(4,) truck=(0, 4, 1) droneRoute=(0, 2, 1) cost=237.8462
+ 359: start=0 end=1 drone=2 internal=(5,) truck=(0, 5, 1) droneRoute=(0, 2, 1) cost=358.8165
+ 360: start=0 end=1 drone=2 internal=(3, 4) truck=(0, 3, 4, 1) droneRoute=(0, 2, 1) cost=237.8462
+ 361: start=0 end=1 drone=2 internal=(3, 5) truck=(0, 3, 5, 1) droneRoute=(0, 2, 1) cost=449.3150
+ 362: start=0 end=1 drone=2 internal=(4, 3) truck=(0, 4, 3, 1) droneRoute=(0, 2, 1) cost=237.8462
+ 363: start=0 end=1 drone=2 internal=(4, 5) truck=(0, 4, 5, 1) droneRoute=(0, 2, 1) cost=435.9392
+ 364: start=0 end=1 drone=2 internal=(5, 3) truck=(0, 5, 3, 1) droneRoute=(0, 2, 1) cost=485.4200
+ 365: start=0 end=1 drone=2 internal=(5, 4) truck=(0, 5, 4, 1) droneRoute=(0, 2, 1) cost=407.3043
+ 366: start=0 end=1 drone=2 internal=(3, 4, 5) truck=(0, 3, 4, 5, 1) droneRoute=(0, 2, 1) cost=485.4508
+ 367: start=0 end=1 drone=2 internal=(3, 5, 4) truck=(0, 3, 5, 4, 1) droneRoute=(0, 2, 1) cost=497.8028
+ 368: start=0 end=1 drone=2 internal=(4, 3, 5) truck=(0, 4, 3, 5, 1) droneRoute=(0, 2, 1) cost=514.2403
+ 369: start=0 end=1 drone=2 internal=(4, 5, 3) truck=(0, 4, 5, 3, 1) droneRoute=(0, 2, 1) cost=562.5427
+ 370: start=0 end=1 drone=2 internal=(5, 3, 4) truck=(0, 5, 3, 4, 1) droneRoute=(0, 2, 1) cost=485.6053
+ 371: start=0 end=1 drone=2 internal=(5, 4, 3) truck=(0, 5, 4, 3, 1) droneRoute=(0, 2, 1) cost=521.5558
+ 372: start=0 end=1 drone=3 internal=() truck=(0, 1) droneRoute=(0, 3, 1) cost=80.7909
+ 373: start=0 end=1 drone=3 internal=(2,) truck=(0, 2, 1) droneRoute=(0, 3, 1) cost=475.6923
+ 374: start=0 end=1 drone=3 internal=(4,) truck=(0, 4, 1) droneRoute=(0, 3, 1) cost=90.9960
+ 375: start=0 end=1 drone=3 internal=(5,) truck=(0, 5, 1) droneRoute=(0, 3, 1) cost=358.8165
+ 376: start=0 end=1 drone=3 internal=(2, 4) truck=(0, 2, 4, 1) droneRoute=(0, 3, 1) cost=518.6691
+ 377: start=0 end=1 drone=3 internal=(2, 5) truck=(0, 2, 5, 1) droneRoute=(0, 3, 1) cost=481.0899
+ 378: start=0 end=1 drone=3 internal=(4, 2) truck=(0, 4, 2, 1) droneRoute=(0, 3, 1) cost=562.1057
+ 379: start=0 end=1 drone=3 internal=(4, 5) truck=(0, 4, 5, 1) droneRoute=(0, 3, 1) cost=435.9392
+ 380: start=0 end=1 drone=3 internal=(5, 2) truck=(0, 5, 2, 1) droneRoute=(0, 3, 1) cost=495.8916
+ 381: start=0 end=1 drone=3 internal=(5, 4) truck=(0, 5, 4, 1) droneRoute=(0, 3, 1) cost=407.3043
+ 382: start=0 end=1 drone=3 internal=(2, 4, 5) truck=(0, 2, 4, 5, 1) droneRoute=(0, 3, 1) cost=863.6122
+ 383: start=0 end=1 drone=3 internal=(2, 5, 4) truck=(0, 2, 5, 4, 1) droneRoute=(0, 3, 1) cost=529.5777
+ 384: start=0 end=1 drone=3 internal=(4, 2, 5) truck=(0, 4, 2, 5, 1) droneRoute=(0, 3, 1) cost=567.5033
+ 385: start=0 end=1 drone=3 internal=(4, 5, 2) truck=(0, 4, 5, 2, 1) droneRoute=(0, 3, 1) cost=573.0143
+ 386: start=0 end=1 drone=3 internal=(5, 2, 4) truck=(0, 5, 2, 4, 1) droneRoute=(0, 3, 1) cost=538.8683
+ 387: start=0 end=1 drone=3 internal=(5, 4, 2) truck=(0, 5, 4, 2, 1) droneRoute=(0, 3, 1) cost=878.4139
+ 388: start=0 end=1 drone=4 internal=() truck=(0, 1) droneRoute=(0, 4, 1) cost=80.7909
+ 389: start=0 end=1 drone=4 internal=(2,) truck=(0, 2, 1) droneRoute=(0, 4, 1) cost=475.6923
+ 390: start=0 end=1 drone=4 internal=(3,) truck=(0, 3, 1) droneRoute=(0, 4, 1) cost=140.3223
+ 391: start=0 end=1 drone=4 internal=(5,) truck=(0, 5, 1) droneRoute=(0, 4, 1) cost=358.8165
+ 392: start=0 end=1 drone=4 internal=(2, 3) truck=(0, 2, 3, 1) droneRoute=(0, 4, 1) cost=586.2305
+ 393: start=0 end=1 drone=4 internal=(2, 5) truck=(0, 2, 5, 1) droneRoute=(0, 4, 1) cost=481.0899
+ 394: start=0 end=1 drone=4 internal=(3, 2) truck=(0, 3, 2, 1) droneRoute=(0, 4, 1) cost=564.9272
+ 395: start=0 end=1 drone=4 internal=(3, 5) truck=(0, 3, 5, 1) droneRoute=(0, 4, 1) cost=449.3150
+ 396: start=0 end=1 drone=4 internal=(5, 2) truck=(0, 5, 2, 1) droneRoute=(0, 4, 1) cost=495.8916
+ 397: start=0 end=1 drone=4 internal=(5, 3) truck=(0, 5, 3, 1) droneRoute=(0, 4, 1) cost=485.4200
+ 398: start=0 end=1 drone=4 internal=(2, 3, 5) truck=(0, 2, 3, 5, 1) droneRoute=(0, 4, 1) cost=895.2233
+ 399: start=0 end=1 drone=4 internal=(2, 5, 3) truck=(0, 2, 5, 3, 1) droneRoute=(0, 4, 1) cost=607.6934
+ 400: start=0 end=1 drone=4 internal=(3, 2, 5) truck=(0, 3, 2, 5, 1) droneRoute=(0, 4, 1) cost=570.3248
+ 401: start=0 end=1 drone=4 internal=(3, 5, 2) truck=(0, 3, 5, 2, 1) droneRoute=(0, 4, 1) cost=586.3901
+ 402: start=0 end=1 drone=4 internal=(5, 2, 3) truck=(0, 5, 2, 3, 1) droneRoute=(0, 4, 1) cost=606.4298
+ 403: start=0 end=1 drone=4 internal=(5, 3, 2) truck=(0, 5, 3, 2, 1) droneRoute=(0, 4, 1) cost=910.0249
+ 404: start=0 end=1 drone=5 internal=() truck=(0, 1) droneRoute=(0, 5, 1) cost=179.4082
+ 405: start=0 end=1 drone=5 internal=(2,) truck=(0, 2, 1) droneRoute=(0, 5, 1) cost=475.6923
+ 406: start=0 end=1 drone=5 internal=(3,) truck=(0, 3, 1) droneRoute=(0, 5, 1) cost=179.4082
+ 407: start=0 end=1 drone=5 internal=(4,) truck=(0, 4, 1) droneRoute=(0, 5, 1) cost=179.4082
+ 408: start=0 end=1 drone=5 internal=(2, 3) truck=(0, 2, 3, 1) droneRoute=(0, 5, 1) cost=586.2305
+ 409: start=0 end=1 drone=5 internal=(2, 4) truck=(0, 2, 4, 1) droneRoute=(0, 5, 1) cost=518.6691
+ 410: start=0 end=1 drone=5 internal=(3, 2) truck=(0, 3, 2, 1) droneRoute=(0, 5, 1) cost=564.9272
+ 411: start=0 end=1 drone=5 internal=(3, 4) truck=(0, 3, 4, 1) droneRoute=(0, 5, 1) cost=179.4082
+ 412: start=0 end=1 drone=5 internal=(4, 2) truck=(0, 4, 2, 1) droneRoute=(0, 5, 1) cost=562.1057
+ 413: start=0 end=1 drone=5 internal=(4, 3) truck=(0, 4, 3, 1) droneRoute=(0, 5, 1) cost=205.2475
+ 414: start=0 end=1 drone=5 internal=(2, 3, 4) truck=(0, 2, 3, 4, 1) droneRoute=(0, 5, 1) cost=586.4159
+ 415: start=0 end=1 drone=5 internal=(2, 4, 3) truck=(0, 2, 4, 3, 1) droneRoute=(0, 5, 1) cost=632.9205
+ 416: start=0 end=1 drone=5 internal=(3, 2, 4) truck=(0, 3, 2, 4, 1) droneRoute=(0, 5, 1) cost=607.9040
+ 417: start=0 end=1 drone=5 internal=(3, 4, 2) truck=(0, 3, 4, 2, 1) droneRoute=(0, 5, 1) cost=611.6172
+ 418: start=0 end=1 drone=5 internal=(4, 2, 3) truck=(0, 4, 2, 3, 1) droneRoute=(0, 5, 1) cost=672.6439
+ 419: start=0 end=1 drone=5 internal=(4, 3, 2) truck=(0, 4, 3, 2, 1) droneRoute=(0, 5, 1) cost=629.8525
+ 420: start=0 end=2 drone=1 internal=() truck=(0, 2) droneRoute=(0, 1, 2) cost=223.5862
+ 421: start=0 end=2 drone=1 internal=(3,) truck=(0, 3, 2) droneRoute=(0, 1, 2) cost=312.8212
+ 422: start=0 end=2 drone=1 internal=(4,) truck=(0, 4, 2) droneRoute=(0, 1, 2) cost=309.9996
+ 423: start=0 end=2 drone=1 internal=(5,) truck=(0, 5, 2) droneRoute=(0, 1, 2) cost=243.7855
+ 424: start=0 end=2 drone=1 internal=(3, 4) truck=(0, 3, 4, 2) droneRoute=(0, 1, 2) cost=359.5112
+ 425: start=0 end=2 drone=1 internal=(3, 5) truck=(0, 3, 5, 2) droneRoute=(0, 1, 2) cost=334.2840
+ 426: start=0 end=2 drone=1 internal=(4, 3) truck=(0, 4, 3, 2) droneRoute=(0, 1, 2) cost=377.7464
+ 427: start=0 end=2 drone=1 internal=(4, 5) truck=(0, 4, 5, 2) droneRoute=(0, 1, 2) cost=320.9083
+ 428: start=0 end=2 drone=1 internal=(5, 3) truck=(0, 5, 3, 2) droneRoute=(0, 1, 2) cost=657.9189
+ 429: start=0 end=2 drone=1 internal=(5, 4) truck=(0, 5, 4, 2) droneRoute=(0, 1, 2) cost=626.3079
+ 430: start=0 end=2 drone=1 internal=(3, 4, 5) truck=(0, 3, 4, 5, 2) droneRoute=(0, 1, 2) cost=370.4198
+ 431: start=0 end=2 drone=1 internal=(3, 5, 4) truck=(0, 3, 5, 4, 2) droneRoute=(0, 1, 2) cost=716.8064
+ 432: start=0 end=2 drone=1 internal=(4, 3, 5) truck=(0, 4, 3, 5, 2) droneRoute=(0, 1, 2) cost=399.2093
+ 433: start=0 end=2 drone=1 internal=(4, 5, 3) truck=(0, 4, 5, 3, 2) droneRoute=(0, 1, 2) cost=735.0416
+ 434: start=0 end=2 drone=1 internal=(5, 3, 4) truck=(0, 5, 3, 4, 2) droneRoute=(0, 1, 2) cost=704.6089
+ 435: start=0 end=2 drone=1 internal=(5, 4, 3) truck=(0, 5, 4, 3, 2) droneRoute=(0, 1, 2) cost=694.0547
+ 436: start=0 end=2 drone=3 internal=() truck=(0, 2) droneRoute=(0, 3, 2) cost=223.5862
+ 437: start=0 end=2 drone=3 internal=(1,) truck=(0, 1, 2) droneRoute=(0, 3, 2) cost=332.8969
+ 438: start=0 end=2 drone=3 internal=(4,) truck=(0, 4, 2) droneRoute=(0, 3, 2) cost=309.9996
+ 439: start=0 end=2 drone=3 internal=(5,) truck=(0, 5, 2) droneRoute=(0, 3, 2) cost=243.7855
+ 440: start=0 end=2 drone=3 internal=(1, 4) truck=(0, 1, 4, 2) droneRoute=(0, 3, 2) cost=375.8737
+ 441: start=0 end=2 drone=3 internal=(1, 5) truck=(0, 1, 5, 2) droneRoute=(0, 3, 2) cost=338.2945
+ 442: start=0 end=2 drone=3 internal=(4, 1) truck=(0, 4, 1, 2) droneRoute=(0, 3, 2) cost=343.1021
+ 443: start=0 end=2 drone=3 internal=(4, 5) truck=(0, 4, 5, 2) droneRoute=(0, 3, 2) cost=320.9083
+ 444: start=0 end=2 drone=3 internal=(5, 1) truck=(0, 5, 1, 2) droneRoute=(0, 3, 2) cost=610.9226
+ 445: start=0 end=2 drone=3 internal=(5, 4) truck=(0, 5, 4, 2) droneRoute=(0, 3, 2) cost=626.3079
+ 446: start=0 end=2 drone=3 internal=(1, 4, 5) truck=(0, 1, 4, 5, 2) droneRoute=(0, 3, 2) cost=386.7823
+ 447: start=0 end=2 drone=3 internal=(1, 5, 4) truck=(0, 1, 5, 4, 2) droneRoute=(0, 3, 2) cost=720.8169
+ 448: start=0 end=2 drone=3 internal=(4, 1, 5) truck=(0, 4, 1, 5, 2) droneRoute=(0, 3, 2) cost=348.4997
+ 449: start=0 end=2 drone=3 internal=(4, 5, 1) truck=(0, 4, 5, 1, 2) droneRoute=(0, 3, 2) cost=688.0453
+ 450: start=0 end=2 drone=3 internal=(5, 1, 4) truck=(0, 5, 1, 4, 2) droneRoute=(0, 3, 2) cost=653.8993
+ 451: start=0 end=2 drone=3 internal=(5, 4, 1) truck=(0, 5, 4, 1, 2) droneRoute=(0, 3, 2) cost=659.4104
+ 452: start=0 end=2 drone=4 internal=() truck=(0, 2) droneRoute=(0, 4, 2) cost=223.5862
+ 453: start=0 end=2 drone=4 internal=(1,) truck=(0, 1, 2) droneRoute=(0, 4, 2) cost=332.8969
+ 454: start=0 end=2 drone=4 internal=(3,) truck=(0, 3, 2) droneRoute=(0, 4, 2) cost=312.8212
+ 455: start=0 end=2 drone=4 internal=(5,) truck=(0, 5, 2) droneRoute=(0, 4, 2) cost=243.7855
+ 456: start=0 end=2 drone=4 internal=(1, 3) truck=(0, 1, 3, 2) droneRoute=(0, 4, 2) cost=443.4351
+ 457: start=0 end=2 drone=4 internal=(1, 5) truck=(0, 1, 5, 2) droneRoute=(0, 4, 2) cost=338.2945
+ 458: start=0 end=2 drone=4 internal=(3, 1) truck=(0, 3, 1, 2) droneRoute=(0, 4, 2) cost=392.4283
+ 459: start=0 end=2 drone=4 internal=(3, 5) truck=(0, 3, 5, 2) droneRoute=(0, 4, 2) cost=334.2840
+ 460: start=0 end=2 drone=4 internal=(5, 1) truck=(0, 5, 1, 2) droneRoute=(0, 4, 2) cost=610.9226
+ 461: start=0 end=2 drone=4 internal=(5, 3) truck=(0, 5, 3, 2) droneRoute=(0, 4, 2) cost=657.9189
+ 462: start=0 end=2 drone=4 internal=(1, 3, 5) truck=(0, 1, 3, 5, 2) droneRoute=(0, 4, 2) cost=464.8980
+ 463: start=0 end=2 drone=4 internal=(1, 5, 3) truck=(0, 1, 5, 3, 2) droneRoute=(0, 4, 2) cost=752.4279
+ 464: start=0 end=2 drone=4 internal=(3, 1, 5) truck=(0, 3, 1, 5, 2) droneRoute=(0, 4, 2) cost=397.8259
+ 465: start=0 end=2 drone=4 internal=(3, 5, 1) truck=(0, 3, 5, 1, 2) droneRoute=(0, 4, 2) cost=701.4211
+ 466: start=0 end=2 drone=4 internal=(5, 1, 3) truck=(0, 5, 1, 3, 2) droneRoute=(0, 4, 2) cost=721.4608
+ 467: start=0 end=2 drone=4 internal=(5, 3, 1) truck=(0, 5, 3, 1, 2) droneRoute=(0, 4, 2) cost=737.5260
+ 468: start=0 end=2 drone=5 internal=() truck=(0, 2) droneRoute=(0, 5, 2) cost=223.5862
+ 469: start=0 end=2 drone=5 internal=(1,) truck=(0, 1, 2) droneRoute=(0, 5, 2) cost=332.8969
+ 470: start=0 end=2 drone=5 internal=(3,) truck=(0, 3, 2) droneRoute=(0, 5, 2) cost=312.8212
+ 471: start=0 end=2 drone=5 internal=(4,) truck=(0, 4, 2) droneRoute=(0, 5, 2) cost=309.9996
+ 472: start=0 end=2 drone=5 internal=(1, 3) truck=(0, 1, 3, 2) droneRoute=(0, 5, 2) cost=443.4351
+ 473: start=0 end=2 drone=5 internal=(1, 4) truck=(0, 1, 4, 2) droneRoute=(0, 5, 2) cost=375.8737
+ 474: start=0 end=2 drone=5 internal=(3, 1) truck=(0, 3, 1, 2) droneRoute=(0, 5, 2) cost=392.4283
+ 475: start=0 end=2 drone=5 internal=(3, 4) truck=(0, 3, 4, 2) droneRoute=(0, 5, 2) cost=359.5112
+ 476: start=0 end=2 drone=5 internal=(4, 1) truck=(0, 4, 1, 2) droneRoute=(0, 5, 2) cost=343.1021
+ 477: start=0 end=2 drone=5 internal=(4, 3) truck=(0, 4, 3, 2) droneRoute=(0, 5, 2) cost=377.7464
+ 478: start=0 end=2 drone=5 internal=(1, 3, 4) truck=(0, 1, 3, 4, 2) droneRoute=(0, 5, 2) cost=490.1251
+ 479: start=0 end=2 drone=5 internal=(1, 4, 3) truck=(0, 1, 4, 3, 2) droneRoute=(0, 5, 2) cost=443.6205
+ 480: start=0 end=2 drone=5 internal=(3, 1, 4) truck=(0, 3, 1, 4, 2) droneRoute=(0, 5, 2) cost=435.4051
+ 481: start=0 end=2 drone=5 internal=(3, 4, 1) truck=(0, 3, 4, 1, 2) droneRoute=(0, 5, 2) cost=392.6137
+ 482: start=0 end=2 drone=5 internal=(4, 1, 3) truck=(0, 4, 1, 3, 2) droneRoute=(0, 5, 2) cost=453.6403
+ 483: start=0 end=2 drone=5 internal=(4, 3, 1) truck=(0, 4, 3, 1, 2) droneRoute=(0, 5, 2) cost=457.3536
+ 484: start=0 end=3 drone=1 internal=() truck=(0, 3) droneRoute=(0, 1, 3) cost=87.9318
+ 485: start=0 end=3 drone=1 internal=(2,) truck=(0, 2, 3) droneRoute=(0, 1, 3) cost=491.1578
+ 486: start=0 end=3 drone=1 internal=(4,) truck=(0, 4, 3) droneRoute=(0, 1, 3) cost=110.1748
+ 487: start=0 end=3 drone=1 internal=(5,) truck=(0, 5, 3) droneRoute=(0, 1, 3) cost=390.3473
+ 488: start=0 end=3 drone=1 internal=(2, 4) truck=(0, 2, 4, 3) droneRoute=(0, 1, 3) cost=537.8479
+ 489: start=0 end=3 drone=1 internal=(2, 5) truck=(0, 2, 5, 3) droneRoute=(0, 1, 3) cost=512.6207
+ 490: start=0 end=3 drone=1 internal=(4, 2) truck=(0, 4, 2, 3) droneRoute=(0, 1, 3) cost=577.5712
+ 491: start=0 end=3 drone=1 internal=(4, 5) truck=(0, 4, 5, 3) droneRoute=(0, 1, 3) cost=467.4700
+ 492: start=0 end=3 drone=1 internal=(5, 2) truck=(0, 5, 2, 3) droneRoute=(0, 1, 3) cost=511.3571
+ 493: start=0 end=3 drone=1 internal=(5, 4) truck=(0, 5, 4, 3) droneRoute=(0, 1, 3) cost=426.4831
+ 494: start=0 end=3 drone=1 internal=(2, 4, 5) truck=(0, 2, 4, 5, 3) droneRoute=(0, 1, 3) cost=895.1430
+ 495: start=0 end=3 drone=1 internal=(2, 5, 4) truck=(0, 2, 5, 4, 3) droneRoute=(0, 1, 3) cost=548.7565
+ 496: start=0 end=3 drone=1 internal=(4, 2, 5) truck=(0, 4, 2, 5, 3) droneRoute=(0, 1, 3) cost=599.0341
+ 497: start=0 end=3 drone=1 internal=(4, 5, 2) truck=(0, 4, 5, 2, 3) droneRoute=(0, 1, 3) cost=588.4798
+ 498: start=0 end=3 drone=1 internal=(5, 2, 4) truck=(0, 5, 2, 4, 3) droneRoute=(0, 1, 3) cost=558.0471
+ 499: start=0 end=3 drone=1 internal=(5, 4, 2) truck=(0, 5, 4, 2, 3) droneRoute=(0, 1, 3) cost=893.8794
+ 500: start=0 end=3 drone=2 internal=() truck=(0, 3) droneRoute=(0, 2, 3) cost=245.5789
+ 501: start=0 end=3 drone=2 internal=(1,) truck=(0, 1, 3) droneRoute=(0, 2, 3) cost=245.5789
+ 502: start=0 end=3 drone=2 internal=(4,) truck=(0, 4, 3) droneRoute=(0, 2, 3) cost=245.5789
+ 503: start=0 end=3 drone=2 internal=(5,) truck=(0, 5, 3) droneRoute=(0, 2, 3) cost=390.3473
+ 504: start=0 end=3 drone=2 internal=(1, 4) truck=(0, 1, 4, 3) droneRoute=(0, 2, 3) cost=245.5789
+ 505: start=0 end=3 drone=2 internal=(1, 5) truck=(0, 1, 5, 3) droneRoute=(0, 2, 3) cost=484.8563
+ 506: start=0 end=3 drone=2 internal=(4, 1) truck=(0, 4, 1, 3) droneRoute=(0, 2, 3) cost=245.5789
+ 507: start=0 end=3 drone=2 internal=(4, 5) truck=(0, 4, 5, 3) droneRoute=(0, 2, 3) cost=467.4700
+ 508: start=0 end=3 drone=2 internal=(5, 1) truck=(0, 5, 1, 3) droneRoute=(0, 2, 3) cost=453.8892
+ 509: start=0 end=3 drone=2 internal=(5, 4) truck=(0, 5, 4, 3) droneRoute=(0, 2, 3) cost=426.4831
+ 510: start=0 end=3 drone=2 internal=(1, 4, 5) truck=(0, 1, 4, 5, 3) droneRoute=(0, 2, 3) cost=533.3441
+ 511: start=0 end=3 drone=2 internal=(1, 5, 4) truck=(0, 1, 5, 4, 3) droneRoute=(0, 2, 3) cost=520.9921
+ 512: start=0 end=3 drone=2 internal=(4, 1, 5) truck=(0, 4, 1, 5, 3) droneRoute=(0, 2, 3) cost=495.0615
+ 513: start=0 end=3 drone=2 internal=(4, 5, 1) truck=(0, 4, 5, 1, 3) droneRoute=(0, 2, 3) cost=531.0119
+ 514: start=0 end=3 drone=2 internal=(5, 1, 4) truck=(0, 5, 1, 4, 3) droneRoute=(0, 2, 3) cost=454.0745
+ 515: start=0 end=3 drone=2 internal=(5, 4, 1) truck=(0, 5, 4, 1, 3) droneRoute=(0, 2, 3) cost=502.3770
+ 516: start=0 end=3 drone=4 internal=() truck=(0, 3) droneRoute=(0, 4, 3) cost=55.0874
+ 517: start=0 end=3 drone=4 internal=(1,) truck=(0, 1, 3) droneRoute=(0, 4, 3) cost=175.8635
+ 518: start=0 end=3 drone=4 internal=(2,) truck=(0, 2, 3) droneRoute=(0, 4, 3) cost=491.1578
+ 519: start=0 end=3 drone=4 internal=(5,) truck=(0, 5, 3) droneRoute=(0, 4, 3) cost=390.3473
+ 520: start=0 end=3 drone=4 internal=(1, 2) truck=(0, 1, 2, 3) droneRoute=(0, 4, 3) cost=600.4685
+ 521: start=0 end=3 drone=4 internal=(1, 5) truck=(0, 1, 5, 3) droneRoute=(0, 4, 3) cost=484.8563
+ 522: start=0 end=3 drone=4 internal=(2, 1) truck=(0, 2, 1, 3) droneRoute=(0, 4, 3) cost=570.7650
+ 523: start=0 end=3 drone=4 internal=(2, 5) truck=(0, 2, 5, 3) droneRoute=(0, 4, 3) cost=512.6207
+ 524: start=0 end=3 drone=4 internal=(5, 1) truck=(0, 5, 1, 3) droneRoute=(0, 4, 3) cost=453.8892
+ 525: start=0 end=3 drone=4 internal=(5, 2) truck=(0, 5, 2, 3) droneRoute=(0, 4, 3) cost=511.3571
+ 526: start=0 end=3 drone=4 internal=(1, 2, 5) truck=(0, 1, 2, 5, 3) droneRoute=(0, 4, 3) cost=621.9314
+ 527: start=0 end=3 drone=4 internal=(1, 5, 2) truck=(0, 1, 5, 2, 3) droneRoute=(0, 4, 3) cost=605.8661
+ 528: start=0 end=3 drone=4 internal=(2, 1, 5) truck=(0, 2, 1, 5, 3) droneRoute=(0, 4, 3) cost=879.7577
+ 529: start=0 end=3 drone=4 internal=(2, 5, 1) truck=(0, 2, 5, 1, 3) droneRoute=(0, 4, 3) cost=576.1626
+ 530: start=0 end=3 drone=4 internal=(5, 1, 2) truck=(0, 5, 1, 2, 3) droneRoute=(0, 4, 3) cost=878.4941
+ 531: start=0 end=3 drone=4 internal=(5, 2, 1) truck=(0, 5, 2, 1, 3) droneRoute=(0, 4, 3) cost=590.9642
+ 532: start=0 end=3 drone=5 internal=() truck=(0, 3) droneRoute=(0, 5, 3) cost=195.1736
+ 533: start=0 end=3 drone=5 internal=(1,) truck=(0, 1, 3) droneRoute=(0, 5, 3) cost=195.1736
+ 534: start=0 end=3 drone=5 internal=(2,) truck=(0, 2, 3) droneRoute=(0, 5, 3) cost=491.1578
+ 535: start=0 end=3 drone=5 internal=(4,) truck=(0, 4, 3) droneRoute=(0, 5, 3) cost=195.1736
+ 536: start=0 end=3 drone=5 internal=(1, 2) truck=(0, 1, 2, 3) droneRoute=(0, 5, 3) cost=600.4685
+ 537: start=0 end=3 drone=5 internal=(1, 4) truck=(0, 1, 4, 3) droneRoute=(0, 5, 3) cost=195.1736
+ 538: start=0 end=3 drone=5 internal=(2, 1) truck=(0, 2, 1, 3) droneRoute=(0, 5, 3) cost=570.7650
+ 539: start=0 end=3 drone=5 internal=(2, 4) truck=(0, 2, 4, 3) droneRoute=(0, 5, 3) cost=537.8479
+ 540: start=0 end=3 drone=5 internal=(4, 1) truck=(0, 4, 1, 3) droneRoute=(0, 5, 3) cost=195.1736
+ 541: start=0 end=3 drone=5 internal=(4, 2) truck=(0, 4, 2, 3) droneRoute=(0, 5, 3) cost=577.5712
+ 542: start=0 end=3 drone=5 internal=(1, 2, 4) truck=(0, 1, 2, 4, 3) droneRoute=(0, 5, 3) cost=647.1585
+ 543: start=0 end=3 drone=5 internal=(1, 4, 2) truck=(0, 1, 4, 2, 3) droneRoute=(0, 5, 3) cost=643.4453
+ 544: start=0 end=3 drone=5 internal=(2, 1, 4) truck=(0, 2, 1, 4, 3) droneRoute=(0, 5, 3) cost=570.9504
+ 545: start=0 end=3 drone=5 internal=(2, 4, 1) truck=(0, 2, 4, 1, 3) droneRoute=(0, 5, 3) cost=613.7417
+ 546: start=0 end=3 drone=5 internal=(4, 1, 2) truck=(0, 4, 1, 2, 3) droneRoute=(0, 5, 3) cost=610.6737
+ 547: start=0 end=3 drone=5 internal=(4, 2, 1) truck=(0, 4, 2, 1, 3) droneRoute=(0, 5, 3) cost=657.1784
+ 548: start=0 end=4 drone=1 internal=() truck=(0, 4) droneRoute=(0, 1, 4) cost=59.4152
+ 549: start=0 end=4 drone=1 internal=(2,) truck=(0, 2, 4) droneRoute=(0, 1, 4) cost=480.6294
+ 550: start=0 end=4 drone=1 internal=(3,) truck=(0, 3, 4) droneRoute=(0, 1, 4) cost=102.4680
+ 551: start=0 end=4 drone=1 internal=(5,) truck=(0, 5, 4) droneRoute=(0, 1, 4) cost=369.2647
+ 552: start=0 end=4 drone=1 internal=(2, 3) truck=(0, 2, 3, 4) droneRoute=(0, 1, 4) cost=548.3763
+ 553: start=0 end=4 drone=1 internal=(2, 5) truck=(0, 2, 5, 4) droneRoute=(0, 1, 4) cost=491.5381
+ 554: start=0 end=4 drone=1 internal=(3, 2) truck=(0, 3, 2, 4) droneRoute=(0, 1, 4) cost=569.8643
+ 555: start=0 end=4 drone=1 internal=(3, 5) truck=(0, 3, 5, 4) droneRoute=(0, 1, 4) cost=459.7632
+ 556: start=0 end=4 drone=1 internal=(5, 2) truck=(0, 5, 2, 4) droneRoute=(0, 1, 4) cost=500.8287
+ 557: start=0 end=4 drone=1 internal=(5, 3) truck=(0, 5, 3, 4) droneRoute=(0, 1, 4) cost=447.5657
+ 558: start=0 end=4 drone=1 internal=(2, 3, 5) truck=(0, 2, 3, 5, 4) droneRoute=(0, 1, 4) cost=905.6714
+ 559: start=0 end=4 drone=1 internal=(2, 5, 3) truck=(0, 2, 5, 3, 4) droneRoute=(0, 1, 4) cost=569.8391
+ 560: start=0 end=4 drone=1 internal=(3, 2, 5) truck=(0, 3, 2, 5, 4) droneRoute=(0, 1, 4) cost=580.7730
+ 561: start=0 end=4 drone=1 internal=(3, 5, 2) truck=(0, 3, 5, 2, 4) droneRoute=(0, 1, 4) cost=591.3272
+ 562: start=0 end=4 drone=1 internal=(5, 2, 3) truck=(0, 5, 2, 3, 4) droneRoute=(0, 1, 4) cost=568.5755
+ 563: start=0 end=4 drone=1 internal=(5, 3, 2) truck=(0, 5, 3, 2, 4) droneRoute=(0, 1, 4) cost=914.9621
+ 564: start=0 end=4 drone=2 internal=() truck=(0, 4) droneRoute=(0, 2, 4) cost=240.3147
+ 565: start=0 end=4 drone=2 internal=(1,) truck=(0, 1, 4) droneRoute=(0, 2, 4) cost=240.3147
+ 566: start=0 end=4 drone=2 internal=(3,) truck=(0, 3, 4) droneRoute=(0, 2, 4) cost=240.3147
+ 567: start=0 end=4 drone=2 internal=(5,) truck=(0, 5, 4) droneRoute=(0, 2, 4) cost=369.2647
+ 568: start=0 end=4 drone=2 internal=(1, 3) truck=(0, 1, 3, 4) droneRoute=(0, 2, 4) cost=240.3147
+ 569: start=0 end=4 drone=2 internal=(1, 5) truck=(0, 1, 5, 4) droneRoute=(0, 2, 4) cost=463.7737
+ 570: start=0 end=4 drone=2 internal=(3, 1) truck=(0, 3, 1, 4) droneRoute=(0, 2, 4) cost=240.3147
+ 571: start=0 end=4 drone=2 internal=(3, 5) truck=(0, 3, 5, 4) droneRoute=(0, 2, 4) cost=459.7632
+ 572: start=0 end=4 drone=2 internal=(5, 1) truck=(0, 5, 1, 4) droneRoute=(0, 2, 4) cost=396.8561
+ 573: start=0 end=4 drone=2 internal=(5, 3) truck=(0, 5, 3, 4) droneRoute=(0, 2, 4) cost=447.5657
+ 574: start=0 end=4 drone=2 internal=(1, 3, 5) truck=(0, 1, 3, 5, 4) droneRoute=(0, 2, 4) cost=590.3771
+ 575: start=0 end=4 drone=2 internal=(1, 5, 3) truck=(0, 1, 5, 3, 4) droneRoute=(0, 2, 4) cost=542.0747
+ 576: start=0 end=4 drone=2 internal=(3, 1, 5) truck=(0, 3, 1, 5, 4) droneRoute=(0, 2, 4) cost=523.3051
+ 577: start=0 end=4 drone=2 internal=(3, 5, 1) truck=(0, 3, 5, 1, 4) droneRoute=(0, 2, 4) cost=487.3546
+ 578: start=0 end=4 drone=2 internal=(5, 1, 3) truck=(0, 5, 1, 3, 4) droneRoute=(0, 2, 4) cost=511.1076
+ 579: start=0 end=4 drone=2 internal=(5, 3, 1) truck=(0, 5, 3, 1, 4) droneRoute=(0, 2, 4) cost=523.4596
+ 580: start=0 end=4 drone=3 internal=() truck=(0, 4) droneRoute=(0, 3, 4) cost=52.9564
+ 581: start=0 end=4 drone=3 internal=(1,) truck=(0, 1, 4) droneRoute=(0, 3, 4) cost=118.8305
+ 582: start=0 end=4 drone=3 internal=(2,) truck=(0, 2, 4) droneRoute=(0, 3, 4) cost=480.6294
+ 583: start=0 end=4 drone=3 internal=(5,) truck=(0, 5, 4) droneRoute=(0, 3, 4) cost=369.2647
+ 584: start=0 end=4 drone=3 internal=(1, 2) truck=(0, 1, 2, 4) droneRoute=(0, 3, 4) cost=589.9401
+ 585: start=0 end=4 drone=3 internal=(1, 5) truck=(0, 1, 5, 4) droneRoute=(0, 3, 4) cost=463.7737
+ 586: start=0 end=4 drone=3 internal=(2, 1) truck=(0, 2, 1, 4) droneRoute=(0, 3, 4) cost=513.7319
+ 587: start=0 end=4 drone=3 internal=(2, 5) truck=(0, 2, 5, 4) droneRoute=(0, 3, 4) cost=491.5381
+ 588: start=0 end=4 drone=3 internal=(5, 1) truck=(0, 5, 1, 4) droneRoute=(0, 3, 4) cost=396.8561
+ 589: start=0 end=4 drone=3 internal=(5, 2) truck=(0, 5, 2, 4) droneRoute=(0, 3, 4) cost=500.8287
+ 590: start=0 end=4 drone=3 internal=(1, 2, 5) truck=(0, 1, 2, 5, 4) droneRoute=(0, 3, 4) cost=600.8487
+ 591: start=0 end=4 drone=3 internal=(1, 5, 2) truck=(0, 1, 5, 2, 4) droneRoute=(0, 3, 4) cost=595.3377
+ 592: start=0 end=4 drone=3 internal=(2, 1, 5) truck=(0, 2, 1, 5, 4) droneRoute=(0, 3, 4) cost=858.6751
+ 593: start=0 end=4 drone=3 internal=(2, 5, 1) truck=(0, 2, 5, 1, 4) droneRoute=(0, 3, 4) cost=519.1295
+ 594: start=0 end=4 drone=3 internal=(5, 1, 2) truck=(0, 5, 1, 2, 4) droneRoute=(0, 3, 4) cost=867.9657
+ 595: start=0 end=4 drone=3 internal=(5, 2, 1) truck=(0, 5, 2, 1, 4) droneRoute=(0, 3, 4) cost=533.9312
+ 596: start=0 end=4 drone=5 internal=() truck=(0, 4) droneRoute=(0, 5, 4) cost=184.6323
+ 597: start=0 end=4 drone=5 internal=(1,) truck=(0, 1, 4) droneRoute=(0, 5, 4) cost=184.6323
+ 598: start=0 end=4 drone=5 internal=(2,) truck=(0, 2, 4) droneRoute=(0, 5, 4) cost=480.6294
+ 599: start=0 end=4 drone=5 internal=(3,) truck=(0, 3, 4) droneRoute=(0, 5, 4) cost=184.6323
+ 600: start=0 end=4 drone=5 internal=(1, 2) truck=(0, 1, 2, 4) droneRoute=(0, 5, 4) cost=589.9401
+ 601: start=0 end=4 drone=5 internal=(1, 3) truck=(0, 1, 3, 4) droneRoute=(0, 5, 4) cost=233.0820
+ 602: start=0 end=4 drone=5 internal=(2, 1) truck=(0, 2, 1, 4) droneRoute=(0, 5, 4) cost=513.7319
+ 603: start=0 end=4 drone=5 internal=(2, 3) truck=(0, 2, 3, 4) droneRoute=(0, 5, 4) cost=548.3763
+ 604: start=0 end=4 drone=5 internal=(3, 1) truck=(0, 3, 1, 4) droneRoute=(0, 5, 4) cost=184.6323
+ 605: start=0 end=4 drone=5 internal=(3, 2) truck=(0, 3, 2, 4) droneRoute=(0, 5, 4) cost=569.8643
+ 606: start=0 end=4 drone=5 internal=(1, 2, 3) truck=(0, 1, 2, 3, 4) droneRoute=(0, 5, 4) cost=657.6869
+ 607: start=0 end=4 drone=5 internal=(1, 3, 2) truck=(0, 1, 3, 2, 4) droneRoute=(0, 5, 4) cost=700.4783
+ 608: start=0 end=4 drone=5 internal=(2, 1, 3) truck=(0, 2, 1, 3, 4) droneRoute=(0, 5, 4) cost=627.9834
+ 609: start=0 end=4 drone=5 internal=(2, 3, 1) truck=(0, 2, 3, 1, 4) droneRoute=(0, 5, 4) cost=624.2701
+ 610: start=0 end=4 drone=5 internal=(3, 1, 2) truck=(0, 3, 1, 2, 4) droneRoute=(0, 5, 4) cost=649.4715
+ 611: start=0 end=4 drone=5 internal=(3, 2, 1) truck=(0, 3, 2, 1, 4) droneRoute=(0, 5, 4) cost=602.9668
+ 612: start=0 end=5 drone=1 internal=() truck=(0, 5) droneRoute=(0, 1, 5) cost=172.5492
+ 613: start=0 end=5 drone=1 internal=(2,) truck=(0, 2, 5) droneRoute=(0, 1, 5) cost=294.8226
+ 614: start=0 end=5 drone=1 internal=(3,) truck=(0, 3, 5) droneRoute=(0, 1, 5) cost=263.0477
+ 615: start=0 end=5 drone=1 internal=(4,) truck=(0, 4, 5) droneRoute=(0, 1, 5) cost=249.6719
+ 616: start=0 end=5 drone=1 internal=(2, 3) truck=(0, 2, 3, 5) droneRoute=(0, 1, 5) cost=708.9559
+ 617: start=0 end=5 drone=1 internal=(2, 4) truck=(0, 2, 4, 5) droneRoute=(0, 1, 5) cost=677.3449
+ 618: start=0 end=5 drone=1 internal=(3, 2) truck=(0, 3, 2, 5) droneRoute=(0, 1, 5) cost=384.0575
+ 619: start=0 end=5 drone=1 internal=(3, 4) truck=(0, 3, 4, 5) droneRoute=(0, 1, 5) cost=299.1835
+ 620: start=0 end=5 drone=1 internal=(4, 2) truck=(0, 4, 2, 5) droneRoute=(0, 1, 5) cost=381.2359
+ 621: start=0 end=5 drone=1 internal=(4, 3) truck=(0, 4, 3, 5) droneRoute=(0, 1, 5) cost=327.9730
+ 622: start=0 end=5 drone=1 internal=(2, 3, 4) truck=(0, 2, 3, 4, 5) droneRoute=(0, 1, 5) cost=745.0917
+ 623: start=0 end=5 drone=1 internal=(2, 4, 3) truck=(0, 2, 4, 3, 5) droneRoute=(0, 1, 5) cost=755.6460
+ 624: start=0 end=5 drone=1 internal=(3, 2, 4) truck=(0, 3, 2, 4, 5) droneRoute=(0, 1, 5) cost=766.5798
+ 625: start=0 end=5 drone=1 internal=(3, 4, 2) truck=(0, 3, 4, 2, 5) droneRoute=(0, 1, 5) cost=430.7475
+ 626: start=0 end=5 drone=1 internal=(4, 2, 3) truck=(0, 4, 2, 3, 5) droneRoute=(0, 1, 5) cost=795.3693
+ 627: start=0 end=5 drone=1 internal=(4, 3, 2) truck=(0, 4, 3, 2, 5) droneRoute=(0, 1, 5) cost=448.9828
+ 628: start=0 end=5 drone=2 internal=() truck=(0, 5) droneRoute=(0, 2, 5) cost=172.5492
+ 629: start=0 end=5 drone=2 internal=(1,) truck=(0, 1, 5) droneRoute=(0, 2, 5) cost=267.0582
+ 630: start=0 end=5 drone=2 internal=(3,) truck=(0, 3, 5) droneRoute=(0, 2, 5) cost=263.0477
+ 631: start=0 end=5 drone=2 internal=(4,) truck=(0, 4, 5) droneRoute=(0, 2, 5) cost=249.6719
+ 632: start=0 end=5 drone=2 internal=(1, 3) truck=(0, 1, 3, 5) droneRoute=(0, 2, 5) cost=393.6617
+ 633: start=0 end=5 drone=2 internal=(1, 4) truck=(0, 1, 4, 5) droneRoute=(0, 2, 5) cost=315.5460
+ 634: start=0 end=5 drone=2 internal=(3, 1) truck=(0, 3, 1, 5) droneRoute=(0, 2, 5) cost=326.5896
+ 635: start=0 end=5 drone=2 internal=(3, 4) truck=(0, 3, 4, 5) droneRoute=(0, 2, 5) cost=299.1835
+ 636: start=0 end=5 drone=2 internal=(4, 1) truck=(0, 4, 1, 5) droneRoute=(0, 2, 5) cost=277.2634
+ 637: start=0 end=5 drone=2 internal=(4, 3) truck=(0, 4, 3, 5) droneRoute=(0, 2, 5) cost=327.9730
+ 638: start=0 end=5 drone=2 internal=(1, 3, 4) truck=(0, 1, 3, 4, 5) droneRoute=(0, 2, 5) cost=429.7975
+ 639: start=0 end=5 drone=2 internal=(1, 4, 3) truck=(0, 1, 4, 3, 5) droneRoute=(0, 2, 5) cost=393.8470
+ 640: start=0 end=5 drone=2 internal=(3, 1, 4) truck=(0, 3, 1, 4, 5) droneRoute=(0, 2, 5) cost=375.0774
+ 641: start=0 end=5 drone=2 internal=(3, 4, 1) truck=(0, 3, 4, 1, 5) droneRoute=(0, 2, 5) cost=326.7749
+ 642: start=0 end=5 drone=2 internal=(4, 1, 3) truck=(0, 4, 1, 3, 5) droneRoute=(0, 2, 5) cost=403.8668
+ 643: start=0 end=5 drone=2 internal=(4, 3, 1) truck=(0, 4, 3, 1, 5) droneRoute=(0, 2, 5) cost=391.5148
+ 644: start=0 end=5 drone=3 internal=() truck=(0, 5) droneRoute=(0, 3, 5) cost=172.5492
+ 645: start=0 end=5 drone=3 internal=(1,) truck=(0, 1, 5) droneRoute=(0, 3, 5) cost=267.0582
+ 646: start=0 end=5 drone=3 internal=(2,) truck=(0, 2, 5) droneRoute=(0, 3, 5) cost=294.8226
+ 647: start=0 end=5 drone=3 internal=(4,) truck=(0, 4, 5) droneRoute=(0, 3, 5) cost=249.6719
+ 648: start=0 end=5 drone=3 internal=(1, 2) truck=(0, 1, 2, 5) droneRoute=(0, 3, 5) cost=404.1333
+ 649: start=0 end=5 drone=3 internal=(1, 4) truck=(0, 1, 4, 5) droneRoute=(0, 3, 5) cost=315.5460
+ 650: start=0 end=5 drone=3 internal=(2, 1) truck=(0, 2, 1, 5) droneRoute=(0, 3, 5) cost=661.9596
+ 651: start=0 end=5 drone=3 internal=(2, 4) truck=(0, 2, 4, 5) droneRoute=(0, 3, 5) cost=677.3449
+ 652: start=0 end=5 drone=3 internal=(4, 1) truck=(0, 4, 1, 5) droneRoute=(0, 3, 5) cost=277.2634
+ 653: start=0 end=5 drone=3 internal=(4, 2) truck=(0, 4, 2, 5) droneRoute=(0, 3, 5) cost=381.2359
+ 654: start=0 end=5 drone=3 internal=(1, 2, 4) truck=(0, 1, 2, 4, 5) droneRoute=(0, 3, 5) cost=786.6556
+ 655: start=0 end=5 drone=3 internal=(1, 4, 2) truck=(0, 1, 4, 2, 5) droneRoute=(0, 3, 5) cost=447.1100
+ 656: start=0 end=5 drone=3 internal=(2, 1, 4) truck=(0, 2, 1, 4, 5) droneRoute=(0, 3, 5) cost=710.4474
+ 657: start=0 end=5 drone=3 internal=(2, 4, 1) truck=(0, 2, 4, 1, 5) droneRoute=(0, 3, 5) cost=704.9364
+ 658: start=0 end=5 drone=3 internal=(4, 1, 2) truck=(0, 4, 1, 2, 5) droneRoute=(0, 3, 5) cost=414.3384
+ 659: start=0 end=5 drone=3 internal=(4, 2, 1) truck=(0, 4, 2, 1, 5) droneRoute=(0, 3, 5) cost=748.3730
+ 660: start=0 end=5 drone=4 internal=() truck=(0, 5) droneRoute=(0, 4, 5) cost=172.5492
+ 661: start=0 end=5 drone=4 internal=(1,) truck=(0, 1, 5) droneRoute=(0, 4, 5) cost=267.0582
+ 662: start=0 end=5 drone=4 internal=(2,) truck=(0, 2, 5) droneRoute=(0, 4, 5) cost=294.8226
+ 663: start=0 end=5 drone=4 internal=(3,) truck=(0, 3, 5) droneRoute=(0, 4, 5) cost=263.0477
+ 664: start=0 end=5 drone=4 internal=(1, 2) truck=(0, 1, 2, 5) droneRoute=(0, 4, 5) cost=404.1333
+ 665: start=0 end=5 drone=4 internal=(1, 3) truck=(0, 1, 3, 5) droneRoute=(0, 4, 5) cost=393.6617
+ 666: start=0 end=5 drone=4 internal=(2, 1) truck=(0, 2, 1, 5) droneRoute=(0, 4, 5) cost=661.9596
+ 667: start=0 end=5 drone=4 internal=(2, 3) truck=(0, 2, 3, 5) droneRoute=(0, 4, 5) cost=708.9559
+ 668: start=0 end=5 drone=4 internal=(3, 1) truck=(0, 3, 1, 5) droneRoute=(0, 4, 5) cost=326.5896
+ 669: start=0 end=5 drone=4 internal=(3, 2) truck=(0, 3, 2, 5) droneRoute=(0, 4, 5) cost=384.0575
+ 670: start=0 end=5 drone=4 internal=(1, 2, 3) truck=(0, 1, 2, 3, 5) droneRoute=(0, 4, 5) cost=818.2666
+ 671: start=0 end=5 drone=4 internal=(1, 3, 2) truck=(0, 1, 3, 2, 5) droneRoute=(0, 4, 5) cost=514.6715
+ 672: start=0 end=5 drone=4 internal=(2, 1, 3) truck=(0, 2, 1, 3, 5) droneRoute=(0, 4, 5) cost=788.5631
+ 673: start=0 end=5 drone=4 internal=(2, 3, 1) truck=(0, 2, 3, 1, 5) droneRoute=(0, 4, 5) cost=772.4978
+ 674: start=0 end=5 drone=4 internal=(3, 1, 2) truck=(0, 3, 1, 2, 5) droneRoute=(0, 4, 5) cost=463.6646
+ 675: start=0 end=5 drone=4 internal=(3, 2, 1) truck=(0, 3, 2, 1, 5) droneRoute=(0, 4, 5) cost=751.1945
+ 676: start=1 end=0 drone=2 internal=() truck=(1, 0) droneRoute=(1, 2, 0) cost=237.8462
+ 677: start=1 end=0 drone=2 internal=(3,) truck=(1, 3, 0) droneRoute=(1, 2, 0) cost=237.8462
+ 678: start=1 end=0 drone=2 internal=(4,) truck=(1, 4, 0) droneRoute=(1, 2, 0) cost=237.8462
+ 679: start=1 end=0 drone=2 internal=(5,) truck=(1, 5, 0) droneRoute=(1, 2, 0) cost=358.8165
+ 680: start=1 end=0 drone=2 internal=(3, 4) truck=(1, 3, 4, 0) droneRoute=(1, 2, 0) cost=237.8462
+ 681: start=1 end=0 drone=2 internal=(3, 5) truck=(1, 3, 5, 0) droneRoute=(1, 2, 0) cost=485.4200
+ 682: start=1 end=0 drone=2 internal=(4, 3) truck=(1, 4, 3, 0) droneRoute=(1, 2, 0) cost=237.8462
+ 683: start=1 end=0 drone=2 internal=(4, 5) truck=(1, 4, 5, 0) droneRoute=(1, 2, 0) cost=407.3043
+ 684: start=1 end=0 drone=2 internal=(5, 3) truck=(1, 5, 3, 0) droneRoute=(1, 2, 0) cost=449.3150
+ 685: start=1 end=0 drone=2 internal=(5, 4) truck=(1, 5, 4, 0) droneRoute=(1, 2, 0) cost=435.9392
+ 686: start=1 end=0 drone=2 internal=(3, 4, 5) truck=(1, 3, 4, 5, 0) droneRoute=(1, 2, 0) cost=521.5558
+ 687: start=1 end=0 drone=2 internal=(3, 5, 4) truck=(1, 3, 5, 4, 0) droneRoute=(1, 2, 0) cost=562.5427
+ 688: start=1 end=0 drone=2 internal=(4, 3, 5) truck=(1, 4, 3, 5, 0) droneRoute=(1, 2, 0) cost=485.6053
+ 689: start=1 end=0 drone=2 internal=(4, 5, 3) truck=(1, 4, 5, 3, 0) droneRoute=(1, 2, 0) cost=497.8028
+ 690: start=1 end=0 drone=2 internal=(5, 3, 4) truck=(1, 5, 3, 4, 0) droneRoute=(1, 2, 0) cost=514.2403
+ 691: start=1 end=0 drone=2 internal=(5, 4, 3) truck=(1, 5, 4, 3, 0) droneRoute=(1, 2, 0) cost=485.4508
+ 692: start=1 end=0 drone=3 internal=() truck=(1, 0) droneRoute=(1, 3, 0) cost=80.7909
+ 693: start=1 end=0 drone=3 internal=(2,) truck=(1, 2, 0) droneRoute=(1, 3, 0) cost=475.6923
+ 694: start=1 end=0 drone=3 internal=(4,) truck=(1, 4, 0) droneRoute=(1, 3, 0) cost=90.9960
+ 695: start=1 end=0 drone=3 internal=(5,) truck=(1, 5, 0) droneRoute=(1, 3, 0) cost=358.8165
+ 696: start=1 end=0 drone=3 internal=(2, 4) truck=(1, 2, 4, 0) droneRoute=(1, 3, 0) cost=562.1057
+ 697: start=1 end=0 drone=3 internal=(2, 5) truck=(1, 2, 5, 0) droneRoute=(1, 3, 0) cost=495.8916
+ 698: start=1 end=0 drone=3 internal=(4, 2) truck=(1, 4, 2, 0) droneRoute=(1, 3, 0) cost=518.6691
+ 699: start=1 end=0 drone=3 internal=(4, 5) truck=(1, 4, 5, 0) droneRoute=(1, 3, 0) cost=407.3043
+ 700: start=1 end=0 drone=3 internal=(5, 2) truck=(1, 5, 2, 0) droneRoute=(1, 3, 0) cost=481.0899
+ 701: start=1 end=0 drone=3 internal=(5, 4) truck=(1, 5, 4, 0) droneRoute=(1, 3, 0) cost=435.9392
+ 702: start=1 end=0 drone=3 internal=(2, 4, 5) truck=(1, 2, 4, 5, 0) droneRoute=(1, 3, 0) cost=878.4139
+ 703: start=1 end=0 drone=3 internal=(2, 5, 4) truck=(1, 2, 5, 4, 0) droneRoute=(1, 3, 0) cost=573.0143
+ 704: start=1 end=0 drone=3 internal=(4, 2, 5) truck=(1, 4, 2, 5, 0) droneRoute=(1, 3, 0) cost=538.8683
+ 705: start=1 end=0 drone=3 internal=(4, 5, 2) truck=(1, 4, 5, 2, 0) droneRoute=(1, 3, 0) cost=529.5777
+ 706: start=1 end=0 drone=3 internal=(5, 2, 4) truck=(1, 5, 2, 4, 0) droneRoute=(1, 3, 0) cost=567.5033
+ 707: start=1 end=0 drone=3 internal=(5, 4, 2) truck=(1, 5, 4, 2, 0) droneRoute=(1, 3, 0) cost=863.6122
+ 708: start=1 end=0 drone=4 internal=() truck=(1, 0) droneRoute=(1, 4, 0) cost=80.7909
+ 709: start=1 end=0 drone=4 internal=(2,) truck=(1, 2, 0) droneRoute=(1, 4, 0) cost=475.6923
+ 710: start=1 end=0 drone=4 internal=(3,) truck=(1, 3, 0) droneRoute=(1, 4, 0) cost=140.3223
+ 711: start=1 end=0 drone=4 internal=(5,) truck=(1, 5, 0) droneRoute=(1, 4, 0) cost=358.8165
+ 712: start=1 end=0 drone=4 internal=(2, 3) truck=(1, 2, 3, 0) droneRoute=(1, 4, 0) cost=564.9272
+ 713: start=1 end=0 drone=4 internal=(2, 5) truck=(1, 2, 5, 0) droneRoute=(1, 4, 0) cost=495.8916
+ 714: start=1 end=0 drone=4 internal=(3, 2) truck=(1, 3, 2, 0) droneRoute=(1, 4, 0) cost=586.2305
+ 715: start=1 end=0 drone=4 internal=(3, 5) truck=(1, 3, 5, 0) droneRoute=(1, 4, 0) cost=485.4200
+ 716: start=1 end=0 drone=4 internal=(5, 2) truck=(1, 5, 2, 0) droneRoute=(1, 4, 0) cost=481.0899
+ 717: start=1 end=0 drone=4 internal=(5, 3) truck=(1, 5, 3, 0) droneRoute=(1, 4, 0) cost=449.3150
+ 718: start=1 end=0 drone=4 internal=(2, 3, 5) truck=(1, 2, 3, 5, 0) droneRoute=(1, 4, 0) cost=910.0249
+ 719: start=1 end=0 drone=4 internal=(2, 5, 3) truck=(1, 2, 5, 3, 0) droneRoute=(1, 4, 0) cost=586.3901
+ 720: start=1 end=0 drone=4 internal=(3, 2, 5) truck=(1, 3, 2, 5, 0) droneRoute=(1, 4, 0) cost=606.4298
+ 721: start=1 end=0 drone=4 internal=(3, 5, 2) truck=(1, 3, 5, 2, 0) droneRoute=(1, 4, 0) cost=607.6934
+ 722: start=1 end=0 drone=4 internal=(5, 2, 3) truck=(1, 5, 2, 3, 0) droneRoute=(1, 4, 0) cost=570.3248
+ 723: start=1 end=0 drone=4 internal=(5, 3, 2) truck=(1, 5, 3, 2, 0) droneRoute=(1, 4, 0) cost=895.2233
+ 724: start=1 end=0 drone=5 internal=() truck=(1, 0) droneRoute=(1, 5, 0) cost=179.4082
+ 725: start=1 end=0 drone=5 internal=(2,) truck=(1, 2, 0) droneRoute=(1, 5, 0) cost=475.6923
+ 726: start=1 end=0 drone=5 internal=(3,) truck=(1, 3, 0) droneRoute=(1, 5, 0) cost=179.4082
+ 727: start=1 end=0 drone=5 internal=(4,) truck=(1, 4, 0) droneRoute=(1, 5, 0) cost=179.4082
+ 728: start=1 end=0 drone=5 internal=(2, 3) truck=(1, 2, 3, 0) droneRoute=(1, 5, 0) cost=564.9272
+ 729: start=1 end=0 drone=5 internal=(2, 4) truck=(1, 2, 4, 0) droneRoute=(1, 5, 0) cost=562.1057
+ 730: start=1 end=0 drone=5 internal=(3, 2) truck=(1, 3, 2, 0) droneRoute=(1, 5, 0) cost=586.2305
+ 731: start=1 end=0 drone=5 internal=(3, 4) truck=(1, 3, 4, 0) droneRoute=(1, 5, 0) cost=205.2475
+ 732: start=1 end=0 drone=5 internal=(4, 2) truck=(1, 4, 2, 0) droneRoute=(1, 5, 0) cost=518.6691
+ 733: start=1 end=0 drone=5 internal=(4, 3) truck=(1, 4, 3, 0) droneRoute=(1, 5, 0) cost=179.4082
+ 734: start=1 end=0 drone=5 internal=(2, 3, 4) truck=(1, 2, 3, 4, 0) droneRoute=(1, 5, 0) cost=629.8525
+ 735: start=1 end=0 drone=5 internal=(2, 4, 3) truck=(1, 2, 4, 3, 0) droneRoute=(1, 5, 0) cost=611.6172
+ 736: start=1 end=0 drone=5 internal=(3, 2, 4) truck=(1, 3, 2, 4, 0) droneRoute=(1, 5, 0) cost=672.6439
+ 737: start=1 end=0 drone=5 internal=(3, 4, 2) truck=(1, 3, 4, 2, 0) droneRoute=(1, 5, 0) cost=632.9205
+ 738: start=1 end=0 drone=5 internal=(4, 2, 3) truck=(1, 4, 2, 3, 0) droneRoute=(1, 5, 0) cost=607.9040
+ 739: start=1 end=0 drone=5 internal=(4, 3, 2) truck=(1, 4, 3, 2, 0) droneRoute=(1, 5, 0) cost=586.4159
+ 740: start=1 end=1 drone=2 internal=() truck=(1, 1) droneRoute=(1, 2, 1) cost=252.1061
+ 741: start=1 end=1 drone=2 internal=(3,) truck=(1, 3, 1) droneRoute=(1, 2, 1) cost=252.1061
+ 742: start=1 end=1 drone=2 internal=(4,) truck=(1, 4, 1) droneRoute=(1, 2, 1) cost=252.1061
+ 743: start=1 end=1 drone=2 internal=(5,) truck=(1, 5, 1) droneRoute=(1, 2, 1) cost=372.5346
+ 744: start=1 end=1 drone=2 internal=(3, 4) truck=(1, 3, 4, 1) droneRoute=(1, 2, 1) cost=252.1061
+ 745: start=1 end=1 drone=2 internal=(3, 5) truck=(1, 3, 5, 1) droneRoute=(1, 2, 1) cost=499.1381
+ 746: start=1 end=1 drone=2 internal=(4, 3) truck=(1, 4, 3, 1) droneRoute=(1, 2, 1) cost=252.1061
+ 747: start=1 end=1 drone=2 internal=(4, 5) truck=(1, 4, 5, 1) droneRoute=(1, 2, 1) cost=421.0224
+ 748: start=1 end=1 drone=2 internal=(5, 3) truck=(1, 5, 3, 1) droneRoute=(1, 2, 1) cost=499.1381
+ 749: start=1 end=1 drone=2 internal=(5, 4) truck=(1, 5, 4, 1) droneRoute=(1, 2, 1) cost=421.0224
+ 750: start=1 end=1 drone=2 internal=(3, 4, 5) truck=(1, 3, 4, 5, 1) droneRoute=(1, 2, 1) cost=535.2739
+ 751: start=1 end=1 drone=2 internal=(3, 5, 4) truck=(1, 3, 5, 4, 1) droneRoute=(1, 2, 1) cost=547.6259
+ 752: start=1 end=1 drone=2 internal=(4, 3, 5) truck=(1, 4, 3, 5, 1) droneRoute=(1, 2, 1) cost=499.3235
+ 753: start=1 end=1 drone=2 internal=(4, 5, 3) truck=(1, 4, 5, 3, 1) droneRoute=(1, 2, 1) cost=547.6259
+ 754: start=1 end=1 drone=2 internal=(5, 3, 4) truck=(1, 5, 3, 4, 1) droneRoute=(1, 2, 1) cost=499.3235
+ 755: start=1 end=1 drone=2 internal=(5, 4, 3) truck=(1, 5, 4, 3, 1) droneRoute=(1, 2, 1) cost=535.2739
+ 756: start=1 end=1 drone=3 internal=() truck=(1, 1) droneRoute=(1, 3, 1) cost=95.0727
+ 757: start=1 end=1 drone=3 internal=(2,) truck=(1, 2, 1) droneRoute=(1, 3, 1) cost=504.2121
+ 758: start=1 end=1 drone=3 internal=(4,) truck=(1, 4, 1) droneRoute=(1, 3, 1) cost=95.0727
+ 759: start=1 end=1 drone=3 internal=(5,) truck=(1, 5, 1) droneRoute=(1, 3, 1) cost=372.5346
+ 760: start=1 end=1 drone=3 internal=(2, 4) truck=(1, 2, 4, 1) droneRoute=(1, 3, 1) cost=547.1889
+ 761: start=1 end=1 drone=3 internal=(2, 5) truck=(1, 2, 5, 1) droneRoute=(1, 3, 1) cost=509.6097
+ 762: start=1 end=1 drone=3 internal=(4, 2) truck=(1, 4, 2, 1) droneRoute=(1, 3, 1) cost=547.1889
+ 763: start=1 end=1 drone=3 internal=(4, 5) truck=(1, 4, 5, 1) droneRoute=(1, 3, 1) cost=421.0224
+ 764: start=1 end=1 drone=3 internal=(5, 2) truck=(1, 5, 2, 1) droneRoute=(1, 3, 1) cost=509.6097
+ 765: start=1 end=1 drone=3 internal=(5, 4) truck=(1, 5, 4, 1) droneRoute=(1, 3, 1) cost=421.0224
+ 766: start=1 end=1 drone=3 internal=(2, 4, 5) truck=(1, 2, 4, 5, 1) droneRoute=(1, 3, 1) cost=892.1321
+ 767: start=1 end=1 drone=3 internal=(2, 5, 4) truck=(1, 2, 5, 4, 1) droneRoute=(1, 3, 1) cost=558.0975
+ 768: start=1 end=1 drone=3 internal=(4, 2, 5) truck=(1, 4, 2, 5, 1) droneRoute=(1, 3, 1) cost=552.5865
+ 769: start=1 end=1 drone=3 internal=(4, 5, 2) truck=(1, 4, 5, 2, 1) droneRoute=(1, 3, 1) cost=558.0975
+ 770: start=1 end=1 drone=3 internal=(5, 2, 4) truck=(1, 5, 2, 4, 1) droneRoute=(1, 3, 1) cost=552.5865
+ 771: start=1 end=1 drone=3 internal=(5, 4, 2) truck=(1, 5, 4, 2, 1) droneRoute=(1, 3, 1) cost=892.1321
+ 772: start=1 end=1 drone=4 internal=() truck=(1, 1) droneRoute=(1, 4, 1) cost=38.0396
+ 773: start=1 end=1 drone=4 internal=(2,) truck=(1, 2, 1) droneRoute=(1, 4, 1) cost=504.2121
+ 774: start=1 end=1 drone=4 internal=(3,) truck=(1, 3, 1) droneRoute=(1, 4, 1) cost=190.1454
+ 775: start=1 end=1 drone=4 internal=(5,) truck=(1, 5, 1) droneRoute=(1, 4, 1) cost=372.5346
+ 776: start=1 end=1 drone=4 internal=(2, 3) truck=(1, 2, 3, 1) droneRoute=(1, 4, 1) cost=614.7503
+ 777: start=1 end=1 drone=4 internal=(2, 5) truck=(1, 2, 5, 1) droneRoute=(1, 4, 1) cost=509.6097
+ 778: start=1 end=1 drone=4 internal=(3, 2) truck=(1, 3, 2, 1) droneRoute=(1, 4, 1) cost=614.7503
+ 779: start=1 end=1 drone=4 internal=(3, 5) truck=(1, 3, 5, 1) droneRoute=(1, 4, 1) cost=499.1381
+ 780: start=1 end=1 drone=4 internal=(5, 2) truck=(1, 5, 2, 1) droneRoute=(1, 4, 1) cost=509.6097
+ 781: start=1 end=1 drone=4 internal=(5, 3) truck=(1, 5, 3, 1) droneRoute=(1, 4, 1) cost=499.1381
+ 782: start=1 end=1 drone=4 internal=(2, 3, 5) truck=(1, 2, 3, 5, 1) droneRoute=(1, 4, 1) cost=923.7431
+ 783: start=1 end=1 drone=4 internal=(2, 5, 3) truck=(1, 2, 5, 3, 1) droneRoute=(1, 4, 1) cost=636.2132
+ 784: start=1 end=1 drone=4 internal=(3, 2, 5) truck=(1, 3, 2, 5, 1) droneRoute=(1, 4, 1) cost=620.1479
+ 785: start=1 end=1 drone=4 internal=(3, 5, 2) truck=(1, 3, 5, 2, 1) droneRoute=(1, 4, 1) cost=636.2132
+ 786: start=1 end=1 drone=4 internal=(5, 2, 3) truck=(1, 5, 2, 3, 1) droneRoute=(1, 4, 1) cost=620.1479
+ 787: start=1 end=1 drone=4 internal=(5, 3, 2) truck=(1, 5, 3, 2, 1) droneRoute=(1, 4, 1) cost=923.7431
+ 788: start=1 end=1 drone=5 internal=() truck=(1, 1) droneRoute=(1, 5, 1) cost=186.2673
+ 789: start=1 end=1 drone=5 internal=(2,) truck=(1, 2, 1) droneRoute=(1, 5, 1) cost=504.2121
+ 790: start=1 end=1 drone=5 internal=(3,) truck=(1, 3, 1) droneRoute=(1, 5, 1) cost=190.1454
+ 791: start=1 end=1 drone=5 internal=(4,) truck=(1, 4, 1) droneRoute=(1, 5, 1) cost=186.2673
+ 792: start=1 end=1 drone=5 internal=(2, 3) truck=(1, 2, 3, 1) droneRoute=(1, 5, 1) cost=614.7503
+ 793: start=1 end=1 drone=5 internal=(2, 4) truck=(1, 2, 4, 1) droneRoute=(1, 5, 1) cost=547.1889
+ 794: start=1 end=1 drone=5 internal=(3, 2) truck=(1, 3, 2, 1) droneRoute=(1, 5, 1) cost=614.7503
+ 795: start=1 end=1 drone=5 internal=(3, 4) truck=(1, 3, 4, 1) droneRoute=(1, 5, 1) cost=190.3307
+ 796: start=1 end=1 drone=5 internal=(4, 2) truck=(1, 4, 2, 1) droneRoute=(1, 5, 1) cost=547.1889
+ 797: start=1 end=1 drone=5 internal=(4, 3) truck=(1, 4, 3, 1) droneRoute=(1, 5, 1) cost=190.3307
+ 798: start=1 end=1 drone=5 internal=(2, 3, 4) truck=(1, 2, 3, 4, 1) droneRoute=(1, 5, 1) cost=614.9357
+ 799: start=1 end=1 drone=5 internal=(2, 4, 3) truck=(1, 2, 4, 3, 1) droneRoute=(1, 5, 1) cost=661.4404
+ 800: start=1 end=1 drone=5 internal=(3, 2, 4) truck=(1, 3, 2, 4, 1) droneRoute=(1, 5, 1) cost=657.7271
+ 801: start=1 end=1 drone=5 internal=(3, 4, 2) truck=(1, 3, 4, 2, 1) droneRoute=(1, 5, 1) cost=661.4404
+ 802: start=1 end=1 drone=5 internal=(4, 2, 3) truck=(1, 4, 2, 3, 1) droneRoute=(1, 5, 1) cost=657.7271
+ 803: start=1 end=1 drone=5 internal=(4, 3, 2) truck=(1, 4, 3, 2, 1) droneRoute=(1, 5, 1) cost=614.9357
+ 804: start=1 end=2 drone=3 internal=() truck=(1, 2) droneRoute=(1, 3, 2) cost=252.1061
+ 805: start=1 end=2 drone=3 internal=(4,) truck=(1, 4, 2) droneRoute=(1, 3, 2) cost=295.0828
+ 806: start=1 end=2 drone=3 internal=(5,) truck=(1, 5, 2) droneRoute=(1, 3, 2) cost=257.5037
+ 807: start=1 end=2 drone=3 internal=(4, 5) truck=(1, 4, 5, 2) droneRoute=(1, 3, 2) cost=305.9915
+ 808: start=1 end=2 drone=3 internal=(5, 4) truck=(1, 5, 4, 2) droneRoute=(1, 3, 2) cost=640.0260
+ 809: start=1 end=2 drone=4 internal=() truck=(1, 2) droneRoute=(1, 4, 2) cost=252.1061
+ 810: start=1 end=2 drone=4 internal=(3,) truck=(1, 3, 2) droneRoute=(1, 4, 2) cost=362.6443
+ 811: start=1 end=2 drone=4 internal=(5,) truck=(1, 5, 2) droneRoute=(1, 4, 2) cost=257.5037
+ 812: start=1 end=2 drone=4 internal=(3, 5) truck=(1, 3, 5, 2) droneRoute=(1, 4, 2) cost=384.1071
+ 813: start=1 end=2 drone=4 internal=(5, 3) truck=(1, 5, 3, 2) droneRoute=(1, 4, 2) cost=671.6370
+ 814: start=1 end=2 drone=5 internal=() truck=(1, 2) droneRoute=(1, 5, 2) cost=252.1061
+ 815: start=1 end=2 drone=5 internal=(3,) truck=(1, 3, 2) droneRoute=(1, 5, 2) cost=362.6443
+ 816: start=1 end=2 drone=5 internal=(4,) truck=(1, 4, 2) droneRoute=(1, 5, 2) cost=295.0828
+ 817: start=1 end=2 drone=5 internal=(3, 4) truck=(1, 3, 4, 2) droneRoute=(1, 5, 2) cost=409.3343
+ 818: start=1 end=2 drone=5 internal=(4, 3) truck=(1, 4, 3, 2) droneRoute=(1, 5, 2) cost=362.8296
+ 819: start=1 end=3 drone=2 internal=() truck=(1, 3) droneRoute=(1, 2, 3) cost=259.8388
+ 820: start=1 end=3 drone=2 internal=(4,) truck=(1, 4, 3) droneRoute=(1, 2, 3) cost=259.8388
+ 821: start=1 end=3 drone=2 internal=(5,) truck=(1, 5, 3) droneRoute=(1, 2, 3) cost=404.0654
+ 822: start=1 end=3 drone=2 internal=(4, 5) truck=(1, 4, 5, 3) droneRoute=(1, 2, 3) cost=452.5532
+ 823: start=1 end=3 drone=2 internal=(5, 4) truck=(1, 5, 4, 3) droneRoute=(1, 2, 3) cost=440.2012
+ 824: start=1 end=3 drone=4 internal=() truck=(1, 3) droneRoute=(1, 4, 3) cost=95.0727
+ 825: start=1 end=3 drone=4 internal=(2,) truck=(1, 2, 3) droneRoute=(1, 4, 3) cost=519.6776
+ 826: start=1 end=3 drone=4 internal=(5,) truck=(1, 5, 3) droneRoute=(1, 4, 3) cost=404.0654
+ 827: start=1 end=3 drone=4 internal=(2, 5) truck=(1, 2, 5, 3) droneRoute=(1, 4, 3) cost=541.1405
+ 828: start=1 end=3 drone=4 internal=(5, 2) truck=(1, 5, 2, 3) droneRoute=(1, 4, 3) cost=525.0752
+ 829: start=1 end=3 drone=5 internal=() truck=(1, 3) droneRoute=(1, 5, 3) cost=202.0327
+ 830: start=1 end=3 drone=5 internal=(2,) truck=(1, 2, 3) droneRoute=(1, 5, 3) cost=519.6776
+ 831: start=1 end=3 drone=5 internal=(4,) truck=(1, 4, 3) droneRoute=(1, 5, 3) cost=202.0327
+ 832: start=1 end=3 drone=5 internal=(2, 4) truck=(1, 2, 4, 3) droneRoute=(1, 5, 3) cost=566.3677
+ 833: start=1 end=3 drone=5 internal=(4, 2) truck=(1, 4, 2, 3) droneRoute=(1, 5, 3) cost=562.6544
+ 834: start=1 end=4 drone=2 internal=() truck=(1, 4) droneRoute=(1, 2, 4) cost=254.5746
+ 835: start=1 end=4 drone=2 internal=(3,) truck=(1, 3, 4) droneRoute=(1, 2, 4) cost=254.5746
+ 836: start=1 end=4 drone=2 internal=(5,) truck=(1, 5, 4) droneRoute=(1, 2, 4) cost=382.9828
+ 837: start=1 end=4 drone=2 internal=(3, 5) truck=(1, 3, 5, 4) droneRoute=(1, 2, 4) cost=509.5863
+ 838: start=1 end=4 drone=2 internal=(5, 3) truck=(1, 5, 3, 4) droneRoute=(1, 2, 4) cost=461.2839
+ 839: start=1 end=4 drone=3 internal=() truck=(1, 4) droneRoute=(1, 3, 4) cost=76.1455
+ 840: start=1 end=4 drone=3 internal=(2,) truck=(1, 2, 4) droneRoute=(1, 3, 4) cost=509.1493
+ 841: start=1 end=4 drone=3 internal=(5,) truck=(1, 5, 4) droneRoute=(1, 3, 4) cost=382.9828
+ 842: start=1 end=4 drone=3 internal=(2, 5) truck=(1, 2, 5, 4) droneRoute=(1, 3, 4) cost=520.0579
+ 843: start=1 end=4 drone=3 internal=(5, 2) truck=(1, 5, 2, 4) droneRoute=(1, 3, 4) cost=514.5468
+ 844: start=1 end=4 drone=5 internal=() truck=(1, 4) droneRoute=(1, 5, 4) cost=191.4914
+ 845: start=1 end=4 drone=5 internal=(2,) truck=(1, 2, 4) droneRoute=(1, 5, 4) cost=509.1493
+ 846: start=1 end=4 drone=5 internal=(3,) truck=(1, 3, 4) droneRoute=(1, 5, 4) cost=191.4914
+ 847: start=1 end=4 drone=5 internal=(2, 3) truck=(1, 2, 3, 4) droneRoute=(1, 5, 4) cost=576.8961
+ 848: start=1 end=4 drone=5 internal=(3, 2) truck=(1, 3, 2, 4) droneRoute=(1, 5, 4) cost=619.6875
+ 849: start=1 end=5 drone=2 internal=() truck=(1, 5) droneRoute=(1, 2, 5) cost=186.2673
+ 850: start=1 end=5 drone=2 internal=(3,) truck=(1, 3, 5) droneRoute=(1, 2, 5) cost=312.8708
+ 851: start=1 end=5 drone=2 internal=(4,) truck=(1, 4, 5) droneRoute=(1, 2, 5) cost=234.7551
+ 852: start=1 end=5 drone=2 internal=(3, 4) truck=(1, 3, 4, 5) droneRoute=(1, 2, 5) cost=349.0066
+ 853: start=1 end=5 drone=2 internal=(4, 3) truck=(1, 4, 3, 5) droneRoute=(1, 2, 5) cost=313.0562
+ 854: start=1 end=5 drone=3 internal=() truck=(1, 5) droneRoute=(1, 3, 5) cost=186.2673
+ 855: start=1 end=5 drone=3 internal=(2,) truck=(1, 2, 5) droneRoute=(1, 3, 5) cost=323.3424
+ 856: start=1 end=5 drone=3 internal=(4,) truck=(1, 4, 5) droneRoute=(1, 3, 5) cost=234.7551
+ 857: start=1 end=5 drone=3 internal=(2, 4) truck=(1, 2, 4, 5) droneRoute=(1, 3, 5) cost=705.8647
+ 858: start=1 end=5 drone=3 internal=(4, 2) truck=(1, 4, 2, 5) droneRoute=(1, 3, 5) cost=366.3192
+ 859: start=1 end=5 drone=4 internal=() truck=(1, 5) droneRoute=(1, 4, 5) cost=186.2673
+ 860: start=1 end=5 drone=4 internal=(2,) truck=(1, 2, 5) droneRoute=(1, 4, 5) cost=323.3424
+ 861: start=1 end=5 drone=4 internal=(3,) truck=(1, 3, 5) droneRoute=(1, 4, 5) cost=312.8708
+ 862: start=1 end=5 drone=4 internal=(2, 3) truck=(1, 2, 3, 5) droneRoute=(1, 4, 5) cost=737.4758
+ 863: start=1 end=5 drone=4 internal=(3, 2) truck=(1, 3, 2, 5) droneRoute=(1, 4, 5) cost=433.8806
+ 864: start=2 end=0 drone=1 internal=() truck=(2, 0) droneRoute=(2, 1, 0) cost=223.5862
+ 865: start=2 end=0 drone=1 internal=(3,) truck=(2, 3, 0) droneRoute=(2, 1, 0) cost=312.8212
+ 866: start=2 end=0 drone=1 internal=(4,) truck=(2, 4, 0) droneRoute=(2, 1, 0) cost=309.9996
+ 867: start=2 end=0 drone=1 internal=(5,) truck=(2, 5, 0) droneRoute=(2, 1, 0) cost=243.7855
+ 868: start=2 end=0 drone=1 internal=(3, 4) truck=(2, 3, 4, 0) droneRoute=(2, 1, 0) cost=377.7464
+ 869: start=2 end=0 drone=1 internal=(3, 5) truck=(2, 3, 5, 0) droneRoute=(2, 1, 0) cost=657.9189
+ 870: start=2 end=0 drone=1 internal=(4, 3) truck=(2, 4, 3, 0) droneRoute=(2, 1, 0) cost=359.5112
+ 871: start=2 end=0 drone=1 internal=(4, 5) truck=(2, 4, 5, 0) droneRoute=(2, 1, 0) cost=626.3079
+ 872: start=2 end=0 drone=1 internal=(5, 3) truck=(2, 5, 3, 0) droneRoute=(2, 1, 0) cost=334.2840
+ 873: start=2 end=0 drone=1 internal=(5, 4) truck=(2, 5, 4, 0) droneRoute=(2, 1, 0) cost=320.9083
+ 874: start=2 end=0 drone=1 internal=(3, 4, 5) truck=(2, 3, 4, 5, 0) droneRoute=(2, 1, 0) cost=694.0547
+ 875: start=2 end=0 drone=1 internal=(3, 5, 4) truck=(2, 3, 5, 4, 0) droneRoute=(2, 1, 0) cost=735.0416
+ 876: start=2 end=0 drone=1 internal=(4, 3, 5) truck=(2, 4, 3, 5, 0) droneRoute=(2, 1, 0) cost=704.6089
+ 877: start=2 end=0 drone=1 internal=(4, 5, 3) truck=(2, 4, 5, 3, 0) droneRoute=(2, 1, 0) cost=716.8064
+ 878: start=2 end=0 drone=1 internal=(5, 3, 4) truck=(2, 5, 3, 4, 0) droneRoute=(2, 1, 0) cost=399.2093
+ 879: start=2 end=0 drone=1 internal=(5, 4, 3) truck=(2, 5, 4, 3, 0) droneRoute=(2, 1, 0) cost=370.4198
+ 880: start=2 end=0 drone=3 internal=() truck=(2, 0) droneRoute=(2, 3, 0) cost=223.5862
+ 881: start=2 end=0 drone=3 internal=(1,) truck=(2, 1, 0) droneRoute=(2, 3, 0) cost=332.8969
+ 882: start=2 end=0 drone=3 internal=(4,) truck=(2, 4, 0) droneRoute=(2, 3, 0) cost=309.9996
+ 883: start=2 end=0 drone=3 internal=(5,) truck=(2, 5, 0) droneRoute=(2, 3, 0) cost=243.7855
+ 884: start=2 end=0 drone=3 internal=(1, 4) truck=(2, 1, 4, 0) droneRoute=(2, 3, 0) cost=343.1021
+ 885: start=2 end=0 drone=3 internal=(1, 5) truck=(2, 1, 5, 0) droneRoute=(2, 3, 0) cost=610.9226
+ 886: start=2 end=0 drone=3 internal=(4, 1) truck=(2, 4, 1, 0) droneRoute=(2, 3, 0) cost=375.8737
+ 887: start=2 end=0 drone=3 internal=(4, 5) truck=(2, 4, 5, 0) droneRoute=(2, 3, 0) cost=626.3079
+ 888: start=2 end=0 drone=3 internal=(5, 1) truck=(2, 5, 1, 0) droneRoute=(2, 3, 0) cost=338.2945
+ 889: start=2 end=0 drone=3 internal=(5, 4) truck=(2, 5, 4, 0) droneRoute=(2, 3, 0) cost=320.9083
+ 890: start=2 end=0 drone=3 internal=(1, 4, 5) truck=(2, 1, 4, 5, 0) droneRoute=(2, 3, 0) cost=659.4104
+ 891: start=2 end=0 drone=3 internal=(1, 5, 4) truck=(2, 1, 5, 4, 0) droneRoute=(2, 3, 0) cost=688.0453
+ 892: start=2 end=0 drone=3 internal=(4, 1, 5) truck=(2, 4, 1, 5, 0) droneRoute=(2, 3, 0) cost=653.8993
+ 893: start=2 end=0 drone=3 internal=(4, 5, 1) truck=(2, 4, 5, 1, 0) droneRoute=(2, 3, 0) cost=720.8169
+ 894: start=2 end=0 drone=3 internal=(5, 1, 4) truck=(2, 5, 1, 4, 0) droneRoute=(2, 3, 0) cost=348.4997
+ 895: start=2 end=0 drone=3 internal=(5, 4, 1) truck=(2, 5, 4, 1, 0) droneRoute=(2, 3, 0) cost=386.7823
+ 896: start=2 end=0 drone=4 internal=() truck=(2, 0) droneRoute=(2, 4, 0) cost=223.5862
+ 897: start=2 end=0 drone=4 internal=(1,) truck=(2, 1, 0) droneRoute=(2, 4, 0) cost=332.8969
+ 898: start=2 end=0 drone=4 internal=(3,) truck=(2, 3, 0) droneRoute=(2, 4, 0) cost=312.8212
+ 899: start=2 end=0 drone=4 internal=(5,) truck=(2, 5, 0) droneRoute=(2, 4, 0) cost=243.7855
+ 900: start=2 end=0 drone=4 internal=(1, 3) truck=(2, 1, 3, 0) droneRoute=(2, 4, 0) cost=392.4283
+ 901: start=2 end=0 drone=4 internal=(1, 5) truck=(2, 1, 5, 0) droneRoute=(2, 4, 0) cost=610.9226
+ 902: start=2 end=0 drone=4 internal=(3, 1) truck=(2, 3, 1, 0) droneRoute=(2, 4, 0) cost=443.4351
+ 903: start=2 end=0 drone=4 internal=(3, 5) truck=(2, 3, 5, 0) droneRoute=(2, 4, 0) cost=657.9189
+ 904: start=2 end=0 drone=4 internal=(5, 1) truck=(2, 5, 1, 0) droneRoute=(2, 4, 0) cost=338.2945
+ 905: start=2 end=0 drone=4 internal=(5, 3) truck=(2, 5, 3, 0) droneRoute=(2, 4, 0) cost=334.2840
+ 906: start=2 end=0 drone=4 internal=(1, 3, 5) truck=(2, 1, 3, 5, 0) droneRoute=(2, 4, 0) cost=737.5260
+ 907: start=2 end=0 drone=4 internal=(1, 5, 3) truck=(2, 1, 5, 3, 0) droneRoute=(2, 4, 0) cost=701.4211
+ 908: start=2 end=0 drone=4 internal=(3, 1, 5) truck=(2, 3, 1, 5, 0) droneRoute=(2, 4, 0) cost=721.4608
+ 909: start=2 end=0 drone=4 internal=(3, 5, 1) truck=(2, 3, 5, 1, 0) droneRoute=(2, 4, 0) cost=752.4279
+ 910: start=2 end=0 drone=4 internal=(5, 1, 3) truck=(2, 5, 1, 3, 0) droneRoute=(2, 4, 0) cost=397.8259
+ 911: start=2 end=0 drone=4 internal=(5, 3, 1) truck=(2, 5, 3, 1, 0) droneRoute=(2, 4, 0) cost=464.8980
+ 912: start=2 end=0 drone=5 internal=() truck=(2, 0) droneRoute=(2, 5, 0) cost=223.5862
+ 913: start=2 end=0 drone=5 internal=(1,) truck=(2, 1, 0) droneRoute=(2, 5, 0) cost=332.8969
+ 914: start=2 end=0 drone=5 internal=(3,) truck=(2, 3, 0) droneRoute=(2, 5, 0) cost=312.8212
+ 915: start=2 end=0 drone=5 internal=(4,) truck=(2, 4, 0) droneRoute=(2, 5, 0) cost=309.9996
+ 916: start=2 end=0 drone=5 internal=(1, 3) truck=(2, 1, 3, 0) droneRoute=(2, 5, 0) cost=392.4283
+ 917: start=2 end=0 drone=5 internal=(1, 4) truck=(2, 1, 4, 0) droneRoute=(2, 5, 0) cost=343.1021
+ 918: start=2 end=0 drone=5 internal=(3, 1) truck=(2, 3, 1, 0) droneRoute=(2, 5, 0) cost=443.4351
+ 919: start=2 end=0 drone=5 internal=(3, 4) truck=(2, 3, 4, 0) droneRoute=(2, 5, 0) cost=377.7464
+ 920: start=2 end=0 drone=5 internal=(4, 1) truck=(2, 4, 1, 0) droneRoute=(2, 5, 0) cost=375.8737
+ 921: start=2 end=0 drone=5 internal=(4, 3) truck=(2, 4, 3, 0) droneRoute=(2, 5, 0) cost=359.5112
+ 922: start=2 end=0 drone=5 internal=(1, 3, 4) truck=(2, 1, 3, 4, 0) droneRoute=(2, 5, 0) cost=457.3536
+ 923: start=2 end=0 drone=5 internal=(1, 4, 3) truck=(2, 1, 4, 3, 0) droneRoute=(2, 5, 0) cost=392.6137
+ 924: start=2 end=0 drone=5 internal=(3, 1, 4) truck=(2, 3, 1, 4, 0) droneRoute=(2, 5, 0) cost=453.6403
+ 925: start=2 end=0 drone=5 internal=(3, 4, 1) truck=(2, 3, 4, 1, 0) droneRoute=(2, 5, 0) cost=443.6205
+ 926: start=2 end=0 drone=5 internal=(4, 1, 3) truck=(2, 4, 1, 3, 0) droneRoute=(2, 5, 0) cost=435.4051
+ 927: start=2 end=0 drone=5 internal=(4, 3, 1) truck=(2, 4, 3, 1, 0) droneRoute=(2, 5, 0) cost=490.1251
+ 928: start=2 end=1 drone=3 internal=() truck=(2, 1) droneRoute=(2, 3, 1) cost=252.1061
+ 929: start=2 end=1 drone=3 internal=(4,) truck=(2, 4, 1) droneRoute=(2, 3, 1) cost=295.0828
+ 930: start=2 end=1 drone=3 internal=(5,) truck=(2, 5, 1) droneRoute=(2, 3, 1) cost=257.5037
+ 931: start=2 end=1 drone=3 internal=(4, 5) truck=(2, 4, 5, 1) droneRoute=(2, 3, 1) cost=640.0260
+ 932: start=2 end=1 drone=3 internal=(5, 4) truck=(2, 5, 4, 1) droneRoute=(2, 3, 1) cost=305.9915
+ 933: start=2 end=1 drone=4 internal=() truck=(2, 1) droneRoute=(2, 4, 1) cost=252.1061
+ 934: start=2 end=1 drone=4 internal=(3,) truck=(2, 3, 1) droneRoute=(2, 4, 1) cost=362.6443
+ 935: start=2 end=1 drone=4 internal=(5,) truck=(2, 5, 1) droneRoute=(2, 4, 1) cost=257.5037
+ 936: start=2 end=1 drone=4 internal=(3, 5) truck=(2, 3, 5, 1) droneRoute=(2, 4, 1) cost=671.6370
+ 937: start=2 end=1 drone=4 internal=(5, 3) truck=(2, 5, 3, 1) droneRoute=(2, 4, 1) cost=384.1071
+ 938: start=2 end=1 drone=5 internal=() truck=(2, 1) droneRoute=(2, 5, 1) cost=252.1061
+ 939: start=2 end=1 drone=5 internal=(3,) truck=(2, 3, 1) droneRoute=(2, 5, 1) cost=362.6443
+ 940: start=2 end=1 drone=5 internal=(4,) truck=(2, 4, 1) droneRoute=(2, 5, 1) cost=295.0828
+ 941: start=2 end=1 drone=5 internal=(3, 4) truck=(2, 3, 4, 1) droneRoute=(2, 5, 1) cost=362.8296
+ 942: start=2 end=1 drone=5 internal=(4, 3) truck=(2, 4, 3, 1) droneRoute=(2, 5, 1) cost=409.3343
+ 943: start=2 end=2 drone=1 internal=() truck=(2, 2) droneRoute=(2, 1, 2) cost=252.1061
+ 944: start=2 end=2 drone=1 internal=(3,) truck=(2, 3, 2) droneRoute=(2, 1, 2) cost=535.1432
+ 945: start=2 end=2 drone=1 internal=(4,) truck=(2, 4, 2) droneRoute=(2, 1, 2) cost=514.0864
+ 946: start=2 end=2 drone=1 internal=(5,) truck=(2, 5, 2) droneRoute=(2, 1, 2) cost=252.1061
+ 947: start=2 end=2 drone=1 internal=(3, 4) truck=(2, 3, 4, 2) droneRoute=(2, 1, 2) cost=581.8332
+ 948: start=2 end=2 drone=1 internal=(3, 5) truck=(2, 3, 5, 2) droneRoute=(2, 1, 2) cost=556.6060
+ 949: start=2 end=2 drone=1 internal=(4, 3) truck=(2, 4, 3, 2) droneRoute=(2, 1, 2) cost=581.8332
+ 950: start=2 end=2 drone=1 internal=(4, 5) truck=(2, 4, 5, 2) droneRoute=(2, 1, 2) cost=524.9950
+ 951: start=2 end=2 drone=1 internal=(5, 3) truck=(2, 5, 3, 2) droneRoute=(2, 1, 2) cost=556.6060
+ 952: start=2 end=2 drone=1 internal=(5, 4) truck=(2, 5, 4, 2) droneRoute=(2, 1, 2) cost=524.9950
+ 953: start=2 end=2 drone=1 internal=(3, 4, 5) truck=(2, 3, 4, 5, 2) droneRoute=(2, 1, 2) cost=592.7418
+ 954: start=2 end=2 drone=1 internal=(3, 5, 4) truck=(2, 3, 5, 4, 2) droneRoute=(2, 1, 2) cost=939.1284
+ 955: start=2 end=2 drone=1 internal=(4, 3, 5) truck=(2, 4, 3, 5, 2) droneRoute=(2, 1, 2) cost=603.2961
+ 956: start=2 end=2 drone=1 internal=(4, 5, 3) truck=(2, 4, 5, 3, 2) droneRoute=(2, 1, 2) cost=939.1284
+ 957: start=2 end=2 drone=1 internal=(5, 3, 4) truck=(2, 5, 3, 4, 2) droneRoute=(2, 1, 2) cost=603.2961
+ 958: start=2 end=2 drone=1 internal=(5, 4, 3) truck=(2, 5, 4, 3, 2) droneRoute=(2, 1, 2) cost=592.7418
+ 959: start=2 end=2 drone=3 internal=() truck=(2, 2) droneRoute=(2, 3, 2) cost=267.5716
+ 960: start=2 end=2 drone=3 internal=(1,) truck=(2, 1, 2) droneRoute=(2, 3, 2) cost=504.2121
+ 961: start=2 end=2 drone=3 internal=(4,) truck=(2, 4, 2) droneRoute=(2, 3, 2) cost=514.0864
+ 962: start=2 end=2 drone=3 internal=(5,) truck=(2, 5, 2) droneRoute=(2, 3, 2) cost=267.5716
+ 963: start=2 end=2 drone=3 internal=(1, 4) truck=(2, 1, 4, 2) droneRoute=(2, 3, 2) cost=547.1889
+ 964: start=2 end=2 drone=3 internal=(1, 5) truck=(2, 1, 5, 2) droneRoute=(2, 3, 2) cost=509.6097
+ 965: start=2 end=2 drone=3 internal=(4, 1) truck=(2, 4, 1, 2) droneRoute=(2, 3, 2) cost=547.1889
+ 966: start=2 end=2 drone=3 internal=(4, 5) truck=(2, 4, 5, 2) droneRoute=(2, 3, 2) cost=524.9950
+ 967: start=2 end=2 drone=3 internal=(5, 1) truck=(2, 5, 1, 2) droneRoute=(2, 3, 2) cost=509.6097
+ 968: start=2 end=2 drone=3 internal=(5, 4) truck=(2, 5, 4, 2) droneRoute=(2, 3, 2) cost=524.9950
+ 969: start=2 end=2 drone=3 internal=(1, 4, 5) truck=(2, 1, 4, 5, 2) droneRoute=(2, 3, 2) cost=558.0975
+ 970: start=2 end=2 drone=3 internal=(1, 5, 4) truck=(2, 1, 5, 4, 2) droneRoute=(2, 3, 2) cost=892.1321
+ 971: start=2 end=2 drone=3 internal=(4, 1, 5) truck=(2, 4, 1, 5, 2) droneRoute=(2, 3, 2) cost=552.5865
+ 972: start=2 end=2 drone=3 internal=(4, 5, 1) truck=(2, 4, 5, 1, 2) droneRoute=(2, 3, 2) cost=892.1321
+ 973: start=2 end=2 drone=3 internal=(5, 1, 4) truck=(2, 5, 1, 4, 2) droneRoute=(2, 3, 2) cost=552.5865
+ 974: start=2 end=2 drone=3 internal=(5, 4, 1) truck=(2, 5, 4, 1, 2) droneRoute=(2, 3, 2) cost=558.0975
+ 975: start=2 end=2 drone=4 internal=() truck=(2, 2) droneRoute=(2, 4, 2) cost=257.0432
+ 976: start=2 end=2 drone=4 internal=(1,) truck=(2, 1, 2) droneRoute=(2, 4, 2) cost=504.2121
+ 977: start=2 end=2 drone=4 internal=(3,) truck=(2, 3, 2) droneRoute=(2, 4, 2) cost=535.1432
+ 978: start=2 end=2 drone=4 internal=(5,) truck=(2, 5, 2) droneRoute=(2, 4, 2) cost=257.0432
+ 979: start=2 end=2 drone=4 internal=(1, 3) truck=(2, 1, 3, 2) droneRoute=(2, 4, 2) cost=614.7503
+ 980: start=2 end=2 drone=4 internal=(1, 5) truck=(2, 1, 5, 2) droneRoute=(2, 4, 2) cost=509.6097
+ 981: start=2 end=2 drone=4 internal=(3, 1) truck=(2, 3, 1, 2) droneRoute=(2, 4, 2) cost=614.7503
+ 982: start=2 end=2 drone=4 internal=(3, 5) truck=(2, 3, 5, 2) droneRoute=(2, 4, 2) cost=556.6060
+ 983: start=2 end=2 drone=4 internal=(5, 1) truck=(2, 5, 1, 2) droneRoute=(2, 4, 2) cost=509.6097
+ 984: start=2 end=2 drone=4 internal=(5, 3) truck=(2, 5, 3, 2) droneRoute=(2, 4, 2) cost=556.6060
+ 985: start=2 end=2 drone=4 internal=(1, 3, 5) truck=(2, 1, 3, 5, 2) droneRoute=(2, 4, 2) cost=636.2132
+ 986: start=2 end=2 drone=4 internal=(1, 5, 3) truck=(2, 1, 5, 3, 2) droneRoute=(2, 4, 2) cost=923.7431
+ 987: start=2 end=2 drone=4 internal=(3, 1, 5) truck=(2, 3, 1, 5, 2) droneRoute=(2, 4, 2) cost=620.1479
+ 988: start=2 end=2 drone=4 internal=(3, 5, 1) truck=(2, 3, 5, 1, 2) droneRoute=(2, 4, 2) cost=923.7431
+ 989: start=2 end=2 drone=4 internal=(5, 1, 3) truck=(2, 5, 1, 3, 2) droneRoute=(2, 4, 2) cost=620.1479
+ 990: start=2 end=2 drone=4 internal=(5, 3, 1) truck=(2, 5, 3, 1, 2) droneRoute=(2, 4, 2) cost=636.2132
+ 991: start=2 end=2 drone=5 internal=() truck=(2, 2) droneRoute=(2, 5, 2) cost=71.2363
+ 992: start=2 end=2 drone=5 internal=(1,) truck=(2, 1, 2) droneRoute=(2, 5, 2) cost=504.2121
+ 993: start=2 end=2 drone=5 internal=(3,) truck=(2, 3, 2) droneRoute=(2, 5, 2) cost=535.1432
+ 994: start=2 end=2 drone=5 internal=(4,) truck=(2, 4, 2) droneRoute=(2, 5, 2) cost=514.0864
+ 995: start=2 end=2 drone=5 internal=(1, 3) truck=(2, 1, 3, 2) droneRoute=(2, 5, 2) cost=614.7503
+ 996: start=2 end=2 drone=5 internal=(1, 4) truck=(2, 1, 4, 2) droneRoute=(2, 5, 2) cost=547.1889
+ 997: start=2 end=2 drone=5 internal=(3, 1) truck=(2, 3, 1, 2) droneRoute=(2, 5, 2) cost=614.7503
+ 998: start=2 end=2 drone=5 internal=(3, 4) truck=(2, 3, 4, 2) droneRoute=(2, 5, 2) cost=581.8332
+ 999: start=2 end=2 drone=5 internal=(4, 1) truck=(2, 4, 1, 2) droneRoute=(2, 5, 2) cost=547.1889
+1000: start=2 end=2 drone=5 internal=(4, 3) truck=(2, 4, 3, 2) droneRoute=(2, 5, 2) cost=581.8332
+1001: start=2 end=2 drone=5 internal=(1, 3, 4) truck=(2, 1, 3, 4, 2) droneRoute=(2, 5, 2) cost=661.4404
+1002: start=2 end=2 drone=5 internal=(1, 4, 3) truck=(2, 1, 4, 3, 2) droneRoute=(2, 5, 2) cost=614.9357
+1003: start=2 end=2 drone=5 internal=(3, 1, 4) truck=(2, 3, 1, 4, 2) droneRoute=(2, 5, 2) cost=657.7271
+1004: start=2 end=2 drone=5 internal=(3, 4, 1) truck=(2, 3, 4, 1, 2) droneRoute=(2, 5, 2) cost=614.9357
+1005: start=2 end=2 drone=5 internal=(4, 1, 3) truck=(2, 4, 1, 3, 2) droneRoute=(2, 5, 2) cost=657.7271
+1006: start=2 end=2 drone=5 internal=(4, 3, 1) truck=(2, 4, 3, 1, 2) droneRoute=(2, 5, 2) cost=661.4404
+1007: start=2 end=3 drone=1 internal=() truck=(2, 3) droneRoute=(2, 1, 3) cost=267.5716
+1008: start=2 end=3 drone=1 internal=(4,) truck=(2, 4, 3) droneRoute=(2, 1, 3) cost=314.2616
+1009: start=2 end=3 drone=1 internal=(5,) truck=(2, 5, 3) droneRoute=(2, 1, 3) cost=289.0345
+1010: start=2 end=3 drone=1 internal=(4, 5) truck=(2, 4, 5, 3) droneRoute=(2, 1, 3) cost=671.5568
+1011: start=2 end=3 drone=1 internal=(5, 4) truck=(2, 5, 4, 3) droneRoute=(2, 1, 3) cost=325.1702
+1012: start=2 end=3 drone=4 internal=() truck=(2, 3) droneRoute=(2, 4, 3) cost=267.5716
+1013: start=2 end=3 drone=4 internal=(1,) truck=(2, 1, 3) droneRoute=(2, 4, 3) cost=347.1787
+1014: start=2 end=3 drone=4 internal=(5,) truck=(2, 5, 3) droneRoute=(2, 4, 3) cost=289.0345
+1015: start=2 end=3 drone=4 internal=(1, 5) truck=(2, 1, 5, 3) droneRoute=(2, 4, 3) cost=656.1715
+1016: start=2 end=3 drone=4 internal=(5, 1) truck=(2, 5, 1, 3) droneRoute=(2, 4, 3) cost=352.5763
+1017: start=2 end=3 drone=5 internal=() truck=(2, 3) droneRoute=(2, 5, 3) cost=267.5716
+1018: start=2 end=3 drone=5 internal=(1,) truck=(2, 1, 3) droneRoute=(2, 5, 3) cost=347.1787
+1019: start=2 end=3 drone=5 internal=(4,) truck=(2, 4, 3) droneRoute=(2, 5, 3) cost=314.2616
+1020: start=2 end=3 drone=5 internal=(1, 4) truck=(2, 1, 4, 3) droneRoute=(2, 5, 3) cost=347.3641
+1021: start=2 end=3 drone=5 internal=(4, 1) truck=(2, 4, 1, 3) droneRoute=(2, 5, 3) cost=390.1555
+1022: start=2 end=4 drone=1 internal=() truck=(2, 4) droneRoute=(2, 1, 4) cost=257.0432
+1023: start=2 end=4 drone=1 internal=(3,) truck=(2, 3, 4) droneRoute=(2, 1, 4) cost=324.7900
+1024: start=2 end=4 drone=1 internal=(5,) truck=(2, 5, 4) droneRoute=(2, 1, 4) cost=267.9518
+1025: start=2 end=4 drone=1 internal=(3, 5) truck=(2, 3, 5, 4) droneRoute=(2, 1, 4) cost=682.0852
+1026: start=2 end=4 drone=1 internal=(5, 3) truck=(2, 5, 3, 4) droneRoute=(2, 1, 4) cost=346.2529
+1027: start=2 end=4 drone=3 internal=() truck=(2, 4) droneRoute=(2, 3, 4) cost=257.0432
+1028: start=2 end=4 drone=3 internal=(1,) truck=(2, 1, 4) droneRoute=(2, 3, 4) cost=290.1457
+1029: start=2 end=4 drone=3 internal=(5,) truck=(2, 5, 4) droneRoute=(2, 3, 4) cost=267.9518
+1030: start=2 end=4 drone=3 internal=(1, 5) truck=(2, 1, 5, 4) droneRoute=(2, 3, 4) cost=635.0889
+1031: start=2 end=4 drone=3 internal=(5, 1) truck=(2, 5, 1, 4) droneRoute=(2, 3, 4) cost=295.5433
+1032: start=2 end=4 drone=5 internal=() truck=(2, 4) droneRoute=(2, 5, 4) cost=257.0432
+1033: start=2 end=4 drone=5 internal=(1,) truck=(2, 1, 4) droneRoute=(2, 5, 4) cost=290.1457
+1034: start=2 end=4 drone=5 internal=(3,) truck=(2, 3, 4) droneRoute=(2, 5, 4) cost=324.7900
+1035: start=2 end=4 drone=5 internal=(1, 3) truck=(2, 1, 3, 4) droneRoute=(2, 5, 4) cost=404.3972
+1036: start=2 end=4 drone=5 internal=(3, 1) truck=(2, 3, 1, 4) droneRoute=(2, 5, 4) cost=400.6839
+1037: start=2 end=5 drone=1 internal=() truck=(2, 5) droneRoute=(2, 1, 5) cost=219.1867
+1038: start=2 end=5 drone=1 internal=(3,) truck=(2, 3, 5) droneRoute=(2, 1, 5) cost=485.3697
+1039: start=2 end=5 drone=1 internal=(4,) truck=(2, 4, 5) droneRoute=(2, 1, 5) cost=453.7587
+1040: start=2 end=5 drone=1 internal=(3, 4) truck=(2, 3, 4, 5) droneRoute=(2, 1, 5) cost=521.5055
+1041: start=2 end=5 drone=1 internal=(4, 3) truck=(2, 4, 3, 5) droneRoute=(2, 1, 5) cost=532.0597
+1042: start=2 end=5 drone=3 internal=() truck=(2, 5) droneRoute=(2, 3, 5) cost=242.6849
+1043: start=2 end=5 drone=3 internal=(1,) truck=(2, 1, 5) droneRoute=(2, 3, 5) cost=438.3734
+1044: start=2 end=5 drone=3 internal=(4,) truck=(2, 4, 5) droneRoute=(2, 3, 5) cost=453.7587
+1045: start=2 end=5 drone=3 internal=(1, 4) truck=(2, 1, 4, 5) droneRoute=(2, 3, 5) cost=486.8612
+1046: start=2 end=5 drone=3 internal=(4, 1) truck=(2, 4, 1, 5) droneRoute=(2, 3, 5) cost=481.3501
+1047: start=2 end=5 drone=4 internal=() truck=(2, 5) droneRoute=(2, 4, 5) cost=226.8793
+1048: start=2 end=5 drone=4 internal=(1,) truck=(2, 1, 5) droneRoute=(2, 4, 5) cost=438.3734
+1049: start=2 end=5 drone=4 internal=(3,) truck=(2, 3, 5) droneRoute=(2, 4, 5) cost=485.3697
+1050: start=2 end=5 drone=4 internal=(1, 3) truck=(2, 1, 3, 5) droneRoute=(2, 4, 5) cost=564.9769
+1051: start=2 end=5 drone=4 internal=(3, 1) truck=(2, 3, 1, 5) droneRoute=(2, 4, 5) cost=548.9116
+1052: start=3 end=0 drone=1 internal=() truck=(3, 0) droneRoute=(3, 1, 0) cost=87.9318
+1053: start=3 end=0 drone=1 internal=(2,) truck=(3, 2, 0) droneRoute=(3, 1, 0) cost=491.1578
+1054: start=3 end=0 drone=1 internal=(4,) truck=(3, 4, 0) droneRoute=(3, 1, 0) cost=110.1748
+1055: start=3 end=0 drone=1 internal=(5,) truck=(3, 5, 0) droneRoute=(3, 1, 0) cost=390.3473
+1056: start=3 end=0 drone=1 internal=(2, 4) truck=(3, 2, 4, 0) droneRoute=(3, 1, 0) cost=577.5712
+1057: start=3 end=0 drone=1 internal=(2, 5) truck=(3, 2, 5, 0) droneRoute=(3, 1, 0) cost=511.3571
+1058: start=3 end=0 drone=1 internal=(4, 2) truck=(3, 4, 2, 0) droneRoute=(3, 1, 0) cost=537.8479
+1059: start=3 end=0 drone=1 internal=(4, 5) truck=(3, 4, 5, 0) droneRoute=(3, 1, 0) cost=426.4831
+1060: start=3 end=0 drone=1 internal=(5, 2) truck=(3, 5, 2, 0) droneRoute=(3, 1, 0) cost=512.6207
+1061: start=3 end=0 drone=1 internal=(5, 4) truck=(3, 5, 4, 0) droneRoute=(3, 1, 0) cost=467.4700
+1062: start=3 end=0 drone=1 internal=(2, 4, 5) truck=(3, 2, 4, 5, 0) droneRoute=(3, 1, 0) cost=893.8794
+1063: start=3 end=0 drone=1 internal=(2, 5, 4) truck=(3, 2, 5, 4, 0) droneRoute=(3, 1, 0) cost=588.4798
+1064: start=3 end=0 drone=1 internal=(4, 2, 5) truck=(3, 4, 2, 5, 0) droneRoute=(3, 1, 0) cost=558.0471
+1065: start=3 end=0 drone=1 internal=(4, 5, 2) truck=(3, 4, 5, 2, 0) droneRoute=(3, 1, 0) cost=548.7565
+1066: start=3 end=0 drone=1 internal=(5, 2, 4) truck=(3, 5, 2, 4, 0) droneRoute=(3, 1, 0) cost=599.0341
+1067: start=3 end=0 drone=1 internal=(5, 4, 2) truck=(3, 5, 4, 2, 0) droneRoute=(3, 1, 0) cost=895.1430
+1068: start=3 end=0 drone=2 internal=() truck=(3, 0) droneRoute=(3, 2, 0) cost=245.5789
+1069: start=3 end=0 drone=2 internal=(1,) truck=(3, 1, 0) droneRoute=(3, 2, 0) cost=245.5789
+1070: start=3 end=0 drone=2 internal=(4,) truck=(3, 4, 0) droneRoute=(3, 2, 0) cost=245.5789
+1071: start=3 end=0 drone=2 internal=(5,) truck=(3, 5, 0) droneRoute=(3, 2, 0) cost=390.3473
+1072: start=3 end=0 drone=2 internal=(1, 4) truck=(3, 1, 4, 0) droneRoute=(3, 2, 0) cost=245.5789
+1073: start=3 end=0 drone=2 internal=(1, 5) truck=(3, 1, 5, 0) droneRoute=(3, 2, 0) cost=453.8892
+1074: start=3 end=0 drone=2 internal=(4, 1) truck=(3, 4, 1, 0) droneRoute=(3, 2, 0) cost=245.5789
+1075: start=3 end=0 drone=2 internal=(4, 5) truck=(3, 4, 5, 0) droneRoute=(3, 2, 0) cost=426.4831
+1076: start=3 end=0 drone=2 internal=(5, 1) truck=(3, 5, 1, 0) droneRoute=(3, 2, 0) cost=484.8563
+1077: start=3 end=0 drone=2 internal=(5, 4) truck=(3, 5, 4, 0) droneRoute=(3, 2, 0) cost=467.4700
+1078: start=3 end=0 drone=2 internal=(1, 4, 5) truck=(3, 1, 4, 5, 0) droneRoute=(3, 2, 0) cost=502.3770
+1079: start=3 end=0 drone=2 internal=(1, 5, 4) truck=(3, 1, 5, 4, 0) droneRoute=(3, 2, 0) cost=531.0119
+1080: start=3 end=0 drone=2 internal=(4, 1, 5) truck=(3, 4, 1, 5, 0) droneRoute=(3, 2, 0) cost=454.0745
+1081: start=3 end=0 drone=2 internal=(4, 5, 1) truck=(3, 4, 5, 1, 0) droneRoute=(3, 2, 0) cost=520.9921
+1082: start=3 end=0 drone=2 internal=(5, 1, 4) truck=(3, 5, 1, 4, 0) droneRoute=(3, 2, 0) cost=495.0615
+1083: start=3 end=0 drone=2 internal=(5, 4, 1) truck=(3, 5, 4, 1, 0) droneRoute=(3, 2, 0) cost=533.3441
+1084: start=3 end=0 drone=4 internal=() truck=(3, 0) droneRoute=(3, 4, 0) cost=55.0874
+1085: start=3 end=0 drone=4 internal=(1,) truck=(3, 1, 0) droneRoute=(3, 4, 0) cost=175.8635
+1086: start=3 end=0 drone=4 internal=(2,) truck=(3, 2, 0) droneRoute=(3, 4, 0) cost=491.1578
+1087: start=3 end=0 drone=4 internal=(5,) truck=(3, 5, 0) droneRoute=(3, 4, 0) cost=390.3473
+1088: start=3 end=0 drone=4 internal=(1, 2) truck=(3, 1, 2, 0) droneRoute=(3, 4, 0) cost=570.7650
+1089: start=3 end=0 drone=4 internal=(1, 5) truck=(3, 1, 5, 0) droneRoute=(3, 4, 0) cost=453.8892
+1090: start=3 end=0 drone=4 internal=(2, 1) truck=(3, 2, 1, 0) droneRoute=(3, 4, 0) cost=600.4685
+1091: start=3 end=0 drone=4 internal=(2, 5) truck=(3, 2, 5, 0) droneRoute=(3, 4, 0) cost=511.3571
+1092: start=3 end=0 drone=4 internal=(5, 1) truck=(3, 5, 1, 0) droneRoute=(3, 4, 0) cost=484.8563
+1093: start=3 end=0 drone=4 internal=(5, 2) truck=(3, 5, 2, 0) droneRoute=(3, 4, 0) cost=512.6207
+1094: start=3 end=0 drone=4 internal=(1, 2, 5) truck=(3, 1, 2, 5, 0) droneRoute=(3, 4, 0) cost=590.9642
+1095: start=3 end=0 drone=4 internal=(1, 5, 2) truck=(3, 1, 5, 2, 0) droneRoute=(3, 4, 0) cost=576.1626
+1096: start=3 end=0 drone=4 internal=(2, 1, 5) truck=(3, 2, 1, 5, 0) droneRoute=(3, 4, 0) cost=878.4941
+1097: start=3 end=0 drone=4 internal=(2, 5, 1) truck=(3, 2, 5, 1, 0) droneRoute=(3, 4, 0) cost=605.8661
+1098: start=3 end=0 drone=4 internal=(5, 1, 2) truck=(3, 5, 1, 2, 0) droneRoute=(3, 4, 0) cost=879.7577
+1099: start=3 end=0 drone=4 internal=(5, 2, 1) truck=(3, 5, 2, 1, 0) droneRoute=(3, 4, 0) cost=621.9314
+1100: start=3 end=0 drone=5 internal=() truck=(3, 0) droneRoute=(3, 5, 0) cost=195.1736
+1101: start=3 end=0 drone=5 internal=(1,) truck=(3, 1, 0) droneRoute=(3, 5, 0) cost=195.1736
+1102: start=3 end=0 drone=5 internal=(2,) truck=(3, 2, 0) droneRoute=(3, 5, 0) cost=491.1578
+1103: start=3 end=0 drone=5 internal=(4,) truck=(3, 4, 0) droneRoute=(3, 5, 0) cost=195.1736
+1104: start=3 end=0 drone=5 internal=(1, 2) truck=(3, 1, 2, 0) droneRoute=(3, 5, 0) cost=570.7650
+1105: start=3 end=0 drone=5 internal=(1, 4) truck=(3, 1, 4, 0) droneRoute=(3, 5, 0) cost=195.1736
+1106: start=3 end=0 drone=5 internal=(2, 1) truck=(3, 2, 1, 0) droneRoute=(3, 5, 0) cost=600.4685
+1107: start=3 end=0 drone=5 internal=(2, 4) truck=(3, 2, 4, 0) droneRoute=(3, 5, 0) cost=577.5712
+1108: start=3 end=0 drone=5 internal=(4, 1) truck=(3, 4, 1, 0) droneRoute=(3, 5, 0) cost=195.1736
+1109: start=3 end=0 drone=5 internal=(4, 2) truck=(3, 4, 2, 0) droneRoute=(3, 5, 0) cost=537.8479
+1110: start=3 end=0 drone=5 internal=(1, 2, 4) truck=(3, 1, 2, 4, 0) droneRoute=(3, 5, 0) cost=657.1784
+1111: start=3 end=0 drone=5 internal=(1, 4, 2) truck=(3, 1, 4, 2, 0) droneRoute=(3, 5, 0) cost=613.7417
+1112: start=3 end=0 drone=5 internal=(2, 1, 4) truck=(3, 2, 1, 4, 0) droneRoute=(3, 5, 0) cost=610.6737
+1113: start=3 end=0 drone=5 internal=(2, 4, 1) truck=(3, 2, 4, 1, 0) droneRoute=(3, 5, 0) cost=643.4453
+1114: start=3 end=0 drone=5 internal=(4, 1, 2) truck=(3, 4, 1, 2, 0) droneRoute=(3, 5, 0) cost=570.9504
+1115: start=3 end=0 drone=5 internal=(4, 2, 1) truck=(3, 4, 2, 1, 0) droneRoute=(3, 5, 0) cost=647.1585
+1116: start=3 end=1 drone=2 internal=() truck=(3, 1) droneRoute=(3, 2, 1) cost=259.8388
+1117: start=3 end=1 drone=2 internal=(4,) truck=(3, 4, 1) droneRoute=(3, 2, 1) cost=259.8388
+1118: start=3 end=1 drone=2 internal=(5,) truck=(3, 5, 1) droneRoute=(3, 2, 1) cost=404.0654
+1119: start=3 end=1 drone=2 internal=(4, 5) truck=(3, 4, 5, 1) droneRoute=(3, 2, 1) cost=440.2012
+1120: start=3 end=1 drone=2 internal=(5, 4) truck=(3, 5, 4, 1) droneRoute=(3, 2, 1) cost=452.5532
+1121: start=3 end=1 drone=4 internal=() truck=(3, 1) droneRoute=(3, 4, 1) cost=95.0727
+1122: start=3 end=1 drone=4 internal=(2,) truck=(3, 2, 1) droneRoute=(3, 4, 1) cost=519.6776
+1123: start=3 end=1 drone=4 internal=(5,) truck=(3, 5, 1) droneRoute=(3, 4, 1) cost=404.0654
+1124: start=3 end=1 drone=4 internal=(2, 5) truck=(3, 2, 5, 1) droneRoute=(3, 4, 1) cost=525.0752
+1125: start=3 end=1 drone=4 internal=(5, 2) truck=(3, 5, 2, 1) droneRoute=(3, 4, 1) cost=541.1405
+1126: start=3 end=1 drone=5 internal=() truck=(3, 1) droneRoute=(3, 5, 1) cost=202.0327
+1127: start=3 end=1 drone=5 internal=(2,) truck=(3, 2, 1) droneRoute=(3, 5, 1) cost=519.6776
+1128: start=3 end=1 drone=5 internal=(4,) truck=(3, 4, 1) droneRoute=(3, 5, 1) cost=202.0327
+1129: start=3 end=1 drone=5 internal=(2, 4) truck=(3, 2, 4, 1) droneRoute=(3, 5, 1) cost=562.6544
+1130: start=3 end=1 drone=5 internal=(4, 2) truck=(3, 4, 2, 1) droneRoute=(3, 5, 1) cost=566.3677
+1131: start=3 end=2 drone=1 internal=() truck=(3, 2) droneRoute=(3, 1, 2) cost=267.5716
+1132: start=3 end=2 drone=1 internal=(4,) truck=(3, 4, 2) droneRoute=(3, 1, 2) cost=314.2616
+1133: start=3 end=2 drone=1 internal=(5,) truck=(3, 5, 2) droneRoute=(3, 1, 2) cost=289.0345
+1134: start=3 end=2 drone=1 internal=(4, 5) truck=(3, 4, 5, 2) droneRoute=(3, 1, 2) cost=325.1702
+1135: start=3 end=2 drone=1 internal=(5, 4) truck=(3, 5, 4, 2) droneRoute=(3, 1, 2) cost=671.5568
+1136: start=3 end=2 drone=4 internal=() truck=(3, 2) droneRoute=(3, 4, 2) cost=267.5716
+1137: start=3 end=2 drone=4 internal=(1,) truck=(3, 1, 2) droneRoute=(3, 4, 2) cost=347.1787
+1138: start=3 end=2 drone=4 internal=(5,) truck=(3, 5, 2) droneRoute=(3, 4, 2) cost=289.0345
+1139: start=3 end=2 drone=4 internal=(1, 5) truck=(3, 1, 5, 2) droneRoute=(3, 4, 2) cost=352.5763
+1140: start=3 end=2 drone=4 internal=(5, 1) truck=(3, 5, 1, 2) droneRoute=(3, 4, 2) cost=656.1715
+1141: start=3 end=2 drone=5 internal=() truck=(3, 2) droneRoute=(3, 5, 2) cost=267.5716
+1142: start=3 end=2 drone=5 internal=(1,) truck=(3, 1, 2) droneRoute=(3, 5, 2) cost=347.1787
+1143: start=3 end=2 drone=5 internal=(4,) truck=(3, 4, 2) droneRoute=(3, 5, 2) cost=314.2616
+1144: start=3 end=2 drone=5 internal=(1, 4) truck=(3, 1, 4, 2) droneRoute=(3, 5, 2) cost=390.1555
+1145: start=3 end=2 drone=5 internal=(4, 1) truck=(3, 4, 1, 2) droneRoute=(3, 5, 2) cost=347.3641
+1146: start=3 end=3 drone=1 internal=() truck=(3, 3) droneRoute=(3, 1, 3) cost=95.0727
+1147: start=3 end=3 drone=1 internal=(2,) truck=(3, 2, 3) droneRoute=(3, 1, 3) cost=535.1432
+1148: start=3 end=3 drone=1 internal=(4,) truck=(3, 4, 3) droneRoute=(3, 1, 3) cost=114.4368
+1149: start=3 end=3 drone=1 internal=(5,) truck=(3, 5, 3) droneRoute=(3, 1, 3) cost=435.5962
+1150: start=3 end=3 drone=1 internal=(2, 4) truck=(3, 2, 4, 3) droneRoute=(3, 1, 3) cost=581.8332
+1151: start=3 end=3 drone=1 internal=(2, 5) truck=(3, 2, 5, 3) droneRoute=(3, 1, 3) cost=556.6060
+1152: start=3 end=3 drone=1 internal=(4, 2) truck=(3, 4, 2, 3) droneRoute=(3, 1, 3) cost=581.8332
+1153: start=3 end=3 drone=1 internal=(4, 5) truck=(3, 4, 5, 3) droneRoute=(3, 1, 3) cost=471.7320
+1154: start=3 end=3 drone=1 internal=(5, 2) truck=(3, 5, 2, 3) droneRoute=(3, 1, 3) cost=556.6060
+1155: start=3 end=3 drone=1 internal=(5, 4) truck=(3, 5, 4, 3) droneRoute=(3, 1, 3) cost=471.7320
+1156: start=3 end=3 drone=1 internal=(2, 4, 5) truck=(3, 2, 4, 5, 3) droneRoute=(3, 1, 3) cost=939.1284
+1157: start=3 end=3 drone=1 internal=(2, 5, 4) truck=(3, 2, 5, 4, 3) droneRoute=(3, 1, 3) cost=592.7418
+1158: start=3 end=3 drone=1 internal=(4, 2, 5) truck=(3, 4, 2, 5, 3) droneRoute=(3, 1, 3) cost=603.2961
+1159: start=3 end=3 drone=1 internal=(4, 5, 2) truck=(3, 4, 5, 2, 3) droneRoute=(3, 1, 3) cost=592.7418
+1160: start=3 end=3 drone=1 internal=(5, 2, 4) truck=(3, 5, 2, 4, 3) droneRoute=(3, 1, 3) cost=603.2961
+1161: start=3 end=3 drone=1 internal=(5, 4, 2) truck=(3, 5, 4, 2, 3) droneRoute=(3, 1, 3) cost=939.1284
+1162: start=3 end=3 drone=2 internal=() truck=(3, 3) droneRoute=(3, 2, 3) cost=267.5716
+1163: start=3 end=3 drone=2 internal=(1,) truck=(3, 1, 3) droneRoute=(3, 2, 3) cost=267.5716
+1164: start=3 end=3 drone=2 internal=(4,) truck=(3, 4, 3) droneRoute=(3, 2, 3) cost=267.5716
+1165: start=3 end=3 drone=2 internal=(5,) truck=(3, 5, 3) droneRoute=(3, 2, 3) cost=435.5962
+1166: start=3 end=3 drone=2 internal=(1, 4) truck=(3, 1, 4, 3) droneRoute=(3, 2, 3) cost=267.5716
+1167: start=3 end=3 drone=2 internal=(1, 5) truck=(3, 1, 5, 3) droneRoute=(3, 2, 3) cost=499.1381
+1168: start=3 end=3 drone=2 internal=(4, 1) truck=(3, 4, 1, 3) droneRoute=(3, 2, 3) cost=267.5716
+1169: start=3 end=3 drone=2 internal=(4, 5) truck=(3, 4, 5, 3) droneRoute=(3, 2, 3) cost=471.7320
+1170: start=3 end=3 drone=2 internal=(5, 1) truck=(3, 5, 1, 3) droneRoute=(3, 2, 3) cost=499.1381
+1171: start=3 end=3 drone=2 internal=(5, 4) truck=(3, 5, 4, 3) droneRoute=(3, 2, 3) cost=471.7320
+1172: start=3 end=3 drone=2 internal=(1, 4, 5) truck=(3, 1, 4, 5, 3) droneRoute=(3, 2, 3) cost=547.6259
+1173: start=3 end=3 drone=2 internal=(1, 5, 4) truck=(3, 1, 5, 4, 3) droneRoute=(3, 2, 3) cost=535.2739
+1174: start=3 end=3 drone=2 internal=(4, 1, 5) truck=(3, 4, 1, 5, 3) droneRoute=(3, 2, 3) cost=499.3235
+1175: start=3 end=3 drone=2 internal=(4, 5, 1) truck=(3, 4, 5, 1, 3) droneRoute=(3, 2, 3) cost=535.2739
+1176: start=3 end=3 drone=2 internal=(5, 1, 4) truck=(3, 5, 1, 4, 3) droneRoute=(3, 2, 3) cost=499.3235
+1177: start=3 end=3 drone=2 internal=(5, 4, 1) truck=(3, 5, 4, 1, 3) droneRoute=(3, 2, 3) cost=547.6259
+1178: start=3 end=3 drone=4 internal=() truck=(3, 3) droneRoute=(3, 4, 3) cost=57.2184
+1179: start=3 end=3 drone=4 internal=(1,) truck=(3, 1, 3) droneRoute=(3, 4, 3) cost=190.1454
+1180: start=3 end=3 drone=4 internal=(2,) truck=(3, 2, 3) droneRoute=(3, 4, 3) cost=535.1432
+1181: start=3 end=3 drone=4 internal=(5,) truck=(3, 5, 3) droneRoute=(3, 4, 3) cost=435.5962
+1182: start=3 end=3 drone=4 internal=(1, 2) truck=(3, 1, 2, 3) droneRoute=(3, 4, 3) cost=614.7503
+1183: start=3 end=3 drone=4 internal=(1, 5) truck=(3, 1, 5, 3) droneRoute=(3, 4, 3) cost=499.1381
+1184: start=3 end=3 drone=4 internal=(2, 1) truck=(3, 2, 1, 3) droneRoute=(3, 4, 3) cost=614.7503
+1185: start=3 end=3 drone=4 internal=(2, 5) truck=(3, 2, 5, 3) droneRoute=(3, 4, 3) cost=556.6060
+1186: start=3 end=3 drone=4 internal=(5, 1) truck=(3, 5, 1, 3) droneRoute=(3, 4, 3) cost=499.1381
+1187: start=3 end=3 drone=4 internal=(5, 2) truck=(3, 5, 2, 3) droneRoute=(3, 4, 3) cost=556.6060
+1188: start=3 end=3 drone=4 internal=(1, 2, 5) truck=(3, 1, 2, 5, 3) droneRoute=(3, 4, 3) cost=636.2132
+1189: start=3 end=3 drone=4 internal=(1, 5, 2) truck=(3, 1, 5, 2, 3) droneRoute=(3, 4, 3) cost=620.1479
+1190: start=3 end=3 drone=4 internal=(2, 1, 5) truck=(3, 2, 1, 5, 3) droneRoute=(3, 4, 3) cost=923.7431
+1191: start=3 end=3 drone=4 internal=(2, 5, 1) truck=(3, 2, 5, 1, 3) droneRoute=(3, 4, 3) cost=620.1479
+1192: start=3 end=3 drone=4 internal=(5, 1, 2) truck=(3, 5, 1, 2, 3) droneRoute=(3, 4, 3) cost=923.7431
+1193: start=3 end=3 drone=4 internal=(5, 2, 1) truck=(3, 5, 2, 1, 3) droneRoute=(3, 4, 3) cost=636.2132
+1194: start=3 end=3 drone=5 internal=() truck=(3, 3) droneRoute=(3, 5, 3) cost=217.7981
+1195: start=3 end=3 drone=5 internal=(1,) truck=(3, 1, 3) droneRoute=(3, 5, 3) cost=217.7981
+1196: start=3 end=3 drone=5 internal=(2,) truck=(3, 2, 3) droneRoute=(3, 5, 3) cost=535.1432
+1197: start=3 end=3 drone=5 internal=(4,) truck=(3, 4, 3) droneRoute=(3, 5, 3) cost=217.7981
+1198: start=3 end=3 drone=5 internal=(1, 2) truck=(3, 1, 2, 3) droneRoute=(3, 5, 3) cost=614.7503
+1199: start=3 end=3 drone=5 internal=(1, 4) truck=(3, 1, 4, 3) droneRoute=(3, 5, 3) cost=217.7981
+1200: start=3 end=3 drone=5 internal=(2, 1) truck=(3, 2, 1, 3) droneRoute=(3, 5, 3) cost=614.7503
+1201: start=3 end=3 drone=5 internal=(2, 4) truck=(3, 2, 4, 3) droneRoute=(3, 5, 3) cost=581.8332
+1202: start=3 end=3 drone=5 internal=(4, 1) truck=(3, 4, 1, 3) droneRoute=(3, 5, 3) cost=217.7981
+1203: start=3 end=3 drone=5 internal=(4, 2) truck=(3, 4, 2, 3) droneRoute=(3, 5, 3) cost=581.8332
+1204: start=3 end=3 drone=5 internal=(1, 2, 4) truck=(3, 1, 2, 4, 3) droneRoute=(3, 5, 3) cost=661.4404
+1205: start=3 end=3 drone=5 internal=(1, 4, 2) truck=(3, 1, 4, 2, 3) droneRoute=(3, 5, 3) cost=657.7271
+1206: start=3 end=3 drone=5 internal=(2, 1, 4) truck=(3, 2, 1, 4, 3) droneRoute=(3, 5, 3) cost=614.9357
+1207: start=3 end=3 drone=5 internal=(2, 4, 1) truck=(3, 2, 4, 1, 3) droneRoute=(3, 5, 3) cost=657.7271
+1208: start=3 end=3 drone=5 internal=(4, 1, 2) truck=(3, 4, 1, 2, 3) droneRoute=(3, 5, 3) cost=614.9357
+1209: start=3 end=3 drone=5 internal=(4, 2, 1) truck=(3, 4, 2, 1, 3) droneRoute=(3, 5, 3) cost=661.4404
+1210: start=3 end=4 drone=1 internal=() truck=(3, 4) droneRoute=(3, 1, 4) cost=66.5562
+1211: start=3 end=4 drone=1 internal=(2,) truck=(3, 2, 4) droneRoute=(3, 1, 4) cost=524.6148
+1212: start=3 end=4 drone=1 internal=(5,) truck=(3, 5, 4) droneRoute=(3, 1, 4) cost=414.5136
+1213: start=3 end=4 drone=1 internal=(2, 5) truck=(3, 2, 5, 4) droneRoute=(3, 1, 4) cost=535.5234
+1214: start=3 end=4 drone=1 internal=(5, 2) truck=(3, 5, 2, 4) droneRoute=(3, 1, 4) cost=546.0776
+1215: start=3 end=4 drone=2 internal=() truck=(3, 4) droneRoute=(3, 2, 4) cost=262.3074
+1216: start=3 end=4 drone=2 internal=(1,) truck=(3, 1, 4) droneRoute=(3, 2, 4) cost=262.3074
+1217: start=3 end=4 drone=2 internal=(5,) truck=(3, 5, 4) droneRoute=(3, 2, 4) cost=414.5136
+1218: start=3 end=4 drone=2 internal=(1, 5) truck=(3, 1, 5, 4) droneRoute=(3, 2, 4) cost=478.0555
+1219: start=3 end=4 drone=2 internal=(5, 1) truck=(3, 5, 1, 4) droneRoute=(3, 2, 4) cost=442.1051
+1220: start=3 end=4 drone=5 internal=() truck=(3, 4) droneRoute=(3, 5, 4) cost=207.2568
+1221: start=3 end=4 drone=5 internal=(1,) truck=(3, 1, 4) droneRoute=(3, 5, 4) cost=207.2568
+1222: start=3 end=4 drone=5 internal=(2,) truck=(3, 2, 4) droneRoute=(3, 5, 4) cost=524.6148
+1223: start=3 end=4 drone=5 internal=(1, 2) truck=(3, 1, 2, 4) droneRoute=(3, 5, 4) cost=604.2219
+1224: start=3 end=4 drone=5 internal=(2, 1) truck=(3, 2, 1, 4) droneRoute=(3, 5, 4) cost=557.7173
+1225: start=3 end=5 drone=1 internal=() truck=(3, 5) droneRoute=(3, 1, 5) cost=217.7981
+1226: start=3 end=5 drone=1 internal=(2,) truck=(3, 2, 5) droneRoute=(3, 1, 5) cost=338.8079
+1227: start=3 end=5 drone=1 internal=(4,) truck=(3, 4, 5) droneRoute=(3, 1, 5) cost=253.9339
+1228: start=3 end=5 drone=1 internal=(2, 4) truck=(3, 2, 4, 5) droneRoute=(3, 1, 5) cost=721.3303
+1229: start=3 end=5 drone=1 internal=(4, 2) truck=(3, 4, 2, 5) droneRoute=(3, 1, 5) cost=385.4979
+1230: start=3 end=5 drone=2 internal=() truck=(3, 5) droneRoute=(3, 2, 5) cost=217.7981
+1231: start=3 end=5 drone=2 internal=(1,) truck=(3, 1, 5) droneRoute=(3, 2, 5) cost=281.3400
+1232: start=3 end=5 drone=2 internal=(4,) truck=(3, 4, 5) droneRoute=(3, 2, 5) cost=253.9339
+1233: start=3 end=5 drone=2 internal=(1, 4) truck=(3, 1, 4, 5) droneRoute=(3, 2, 5) cost=329.8278
+1234: start=3 end=5 drone=2 internal=(4, 1) truck=(3, 4, 1, 5) droneRoute=(3, 2, 5) cost=281.5254
+1235: start=3 end=5 drone=4 internal=() truck=(3, 5) droneRoute=(3, 4, 5) cost=217.7981
+1236: start=3 end=5 drone=4 internal=(1,) truck=(3, 1, 5) droneRoute=(3, 4, 5) cost=281.3400
+1237: start=3 end=5 drone=4 internal=(2,) truck=(3, 2, 5) droneRoute=(3, 4, 5) cost=338.8079
+1238: start=3 end=5 drone=4 internal=(1, 2) truck=(3, 1, 2, 5) droneRoute=(3, 4, 5) cost=418.4151
+1239: start=3 end=5 drone=4 internal=(2, 1) truck=(3, 2, 1, 5) droneRoute=(3, 4, 5) cost=705.9450
+1240: start=4 end=0 drone=1 internal=() truck=(4, 0) droneRoute=(4, 1, 0) cost=59.4152
+1241: start=4 end=0 drone=1 internal=(2,) truck=(4, 2, 0) droneRoute=(4, 1, 0) cost=480.6294
+1242: start=4 end=0 drone=1 internal=(3,) truck=(4, 3, 0) droneRoute=(4, 1, 0) cost=102.4680
+1243: start=4 end=0 drone=1 internal=(5,) truck=(4, 5, 0) droneRoute=(4, 1, 0) cost=369.2647
+1244: start=4 end=0 drone=1 internal=(2, 3) truck=(4, 2, 3, 0) droneRoute=(4, 1, 0) cost=569.8643
+1245: start=4 end=0 drone=1 internal=(2, 5) truck=(4, 2, 5, 0) droneRoute=(4, 1, 0) cost=500.8287
+1246: start=4 end=0 drone=1 internal=(3, 2) truck=(4, 3, 2, 0) droneRoute=(4, 1, 0) cost=548.3763
+1247: start=4 end=0 drone=1 internal=(3, 5) truck=(4, 3, 5, 0) droneRoute=(4, 1, 0) cost=447.5657
+1248: start=4 end=0 drone=1 internal=(5, 2) truck=(4, 5, 2, 0) droneRoute=(4, 1, 0) cost=491.5381
+1249: start=4 end=0 drone=1 internal=(5, 3) truck=(4, 5, 3, 0) droneRoute=(4, 1, 0) cost=459.7632
+1250: start=4 end=0 drone=1 internal=(2, 3, 5) truck=(4, 2, 3, 5, 0) droneRoute=(4, 1, 0) cost=914.9621
+1251: start=4 end=0 drone=1 internal=(2, 5, 3) truck=(4, 2, 5, 3, 0) droneRoute=(4, 1, 0) cost=591.3272
+1252: start=4 end=0 drone=1 internal=(3, 2, 5) truck=(4, 3, 2, 5, 0) droneRoute=(4, 1, 0) cost=568.5755
+1253: start=4 end=0 drone=1 internal=(3, 5, 2) truck=(4, 3, 5, 2, 0) droneRoute=(4, 1, 0) cost=569.8391
+1254: start=4 end=0 drone=1 internal=(5, 2, 3) truck=(4, 5, 2, 3, 0) droneRoute=(4, 1, 0) cost=580.7730
+1255: start=4 end=0 drone=1 internal=(5, 3, 2) truck=(4, 5, 3, 2, 0) droneRoute=(4, 1, 0) cost=905.6714
+1256: start=4 end=0 drone=2 internal=() truck=(4, 0) droneRoute=(4, 2, 0) cost=240.3147
+1257: start=4 end=0 drone=2 internal=(1,) truck=(4, 1, 0) droneRoute=(4, 2, 0) cost=240.3147
+1258: start=4 end=0 drone=2 internal=(3,) truck=(4, 3, 0) droneRoute=(4, 2, 0) cost=240.3147
+1259: start=4 end=0 drone=2 internal=(5,) truck=(4, 5, 0) droneRoute=(4, 2, 0) cost=369.2647
+1260: start=4 end=0 drone=2 internal=(1, 3) truck=(4, 1, 3, 0) droneRoute=(4, 2, 0) cost=240.3147
+1261: start=4 end=0 drone=2 internal=(1, 5) truck=(4, 1, 5, 0) droneRoute=(4, 2, 0) cost=396.8561
+1262: start=4 end=0 drone=2 internal=(3, 1) truck=(4, 3, 1, 0) droneRoute=(4, 2, 0) cost=240.3147
+1263: start=4 end=0 drone=2 internal=(3, 5) truck=(4, 3, 5, 0) droneRoute=(4, 2, 0) cost=447.5657
+1264: start=4 end=0 drone=2 internal=(5, 1) truck=(4, 5, 1, 0) droneRoute=(4, 2, 0) cost=463.7737
+1265: start=4 end=0 drone=2 internal=(5, 3) truck=(4, 5, 3, 0) droneRoute=(4, 2, 0) cost=459.7632
+1266: start=4 end=0 drone=2 internal=(1, 3, 5) truck=(4, 1, 3, 5, 0) droneRoute=(4, 2, 0) cost=523.4596
+1267: start=4 end=0 drone=2 internal=(1, 5, 3) truck=(4, 1, 5, 3, 0) droneRoute=(4, 2, 0) cost=487.3546
+1268: start=4 end=0 drone=2 internal=(3, 1, 5) truck=(4, 3, 1, 5, 0) droneRoute=(4, 2, 0) cost=511.1076
+1269: start=4 end=0 drone=2 internal=(3, 5, 1) truck=(4, 3, 5, 1, 0) droneRoute=(4, 2, 0) cost=542.0747
+1270: start=4 end=0 drone=2 internal=(5, 1, 3) truck=(4, 5, 1, 3, 0) droneRoute=(4, 2, 0) cost=523.3051
+1271: start=4 end=0 drone=2 internal=(5, 3, 1) truck=(4, 5, 3, 1, 0) droneRoute=(4, 2, 0) cost=590.3771
+1272: start=4 end=0 drone=3 internal=() truck=(4, 0) droneRoute=(4, 3, 0) cost=52.9564
+1273: start=4 end=0 drone=3 internal=(1,) truck=(4, 1, 0) droneRoute=(4, 3, 0) cost=118.8305
+1274: start=4 end=0 drone=3 internal=(2,) truck=(4, 2, 0) droneRoute=(4, 3, 0) cost=480.6294
+1275: start=4 end=0 drone=3 internal=(5,) truck=(4, 5, 0) droneRoute=(4, 3, 0) cost=369.2647
+1276: start=4 end=0 drone=3 internal=(1, 2) truck=(4, 1, 2, 0) droneRoute=(4, 3, 0) cost=513.7319
+1277: start=4 end=0 drone=3 internal=(1, 5) truck=(4, 1, 5, 0) droneRoute=(4, 3, 0) cost=396.8561
+1278: start=4 end=0 drone=3 internal=(2, 1) truck=(4, 2, 1, 0) droneRoute=(4, 3, 0) cost=589.9401
+1279: start=4 end=0 drone=3 internal=(2, 5) truck=(4, 2, 5, 0) droneRoute=(4, 3, 0) cost=500.8287
+1280: start=4 end=0 drone=3 internal=(5, 1) truck=(4, 5, 1, 0) droneRoute=(4, 3, 0) cost=463.7737
+1281: start=4 end=0 drone=3 internal=(5, 2) truck=(4, 5, 2, 0) droneRoute=(4, 3, 0) cost=491.5381
+1282: start=4 end=0 drone=3 internal=(1, 2, 5) truck=(4, 1, 2, 5, 0) droneRoute=(4, 3, 0) cost=533.9312
+1283: start=4 end=0 drone=3 internal=(1, 5, 2) truck=(4, 1, 5, 2, 0) droneRoute=(4, 3, 0) cost=519.1295
+1284: start=4 end=0 drone=3 internal=(2, 1, 5) truck=(4, 2, 1, 5, 0) droneRoute=(4, 3, 0) cost=867.9657
+1285: start=4 end=0 drone=3 internal=(2, 5, 1) truck=(4, 2, 5, 1, 0) droneRoute=(4, 3, 0) cost=595.3377
+1286: start=4 end=0 drone=3 internal=(5, 1, 2) truck=(4, 5, 1, 2, 0) droneRoute=(4, 3, 0) cost=858.6751
+1287: start=4 end=0 drone=3 internal=(5, 2, 1) truck=(4, 5, 2, 1, 0) droneRoute=(4, 3, 0) cost=600.8487
+1288: start=4 end=0 drone=5 internal=() truck=(4, 0) droneRoute=(4, 5, 0) cost=184.6323
+1289: start=4 end=0 drone=5 internal=(1,) truck=(4, 1, 0) droneRoute=(4, 5, 0) cost=184.6323
+1290: start=4 end=0 drone=5 internal=(2,) truck=(4, 2, 0) droneRoute=(4, 5, 0) cost=480.6294
+1291: start=4 end=0 drone=5 internal=(3,) truck=(4, 3, 0) droneRoute=(4, 5, 0) cost=184.6323
+1292: start=4 end=0 drone=5 internal=(1, 2) truck=(4, 1, 2, 0) droneRoute=(4, 5, 0) cost=513.7319
+1293: start=4 end=0 drone=5 internal=(1, 3) truck=(4, 1, 3, 0) droneRoute=(4, 5, 0) cost=184.6323
+1294: start=4 end=0 drone=5 internal=(2, 1) truck=(4, 2, 1, 0) droneRoute=(4, 5, 0) cost=589.9401
+1295: start=4 end=0 drone=5 internal=(2, 3) truck=(4, 2, 3, 0) droneRoute=(4, 5, 0) cost=569.8643
+1296: start=4 end=0 drone=5 internal=(3, 1) truck=(4, 3, 1, 0) droneRoute=(4, 5, 0) cost=233.0820
+1297: start=4 end=0 drone=5 internal=(3, 2) truck=(4, 3, 2, 0) droneRoute=(4, 5, 0) cost=548.3763
+1298: start=4 end=0 drone=5 internal=(1, 2, 3) truck=(4, 1, 2, 3, 0) droneRoute=(4, 5, 0) cost=602.9668
+1299: start=4 end=0 drone=5 internal=(1, 3, 2) truck=(4, 1, 3, 2, 0) droneRoute=(4, 5, 0) cost=624.2701
+1300: start=4 end=0 drone=5 internal=(2, 1, 3) truck=(4, 2, 1, 3, 0) droneRoute=(4, 5, 0) cost=649.4715
+1301: start=4 end=0 drone=5 internal=(2, 3, 1) truck=(4, 2, 3, 1, 0) droneRoute=(4, 5, 0) cost=700.4783
+1302: start=4 end=0 drone=5 internal=(3, 1, 2) truck=(4, 3, 1, 2, 0) droneRoute=(4, 5, 0) cost=627.9834
+1303: start=4 end=0 drone=5 internal=(3, 2, 1) truck=(4, 3, 2, 1, 0) droneRoute=(4, 5, 0) cost=657.6869
+1304: start=4 end=1 drone=2 internal=() truck=(4, 1) droneRoute=(4, 2, 1) cost=254.5746
+1305: start=4 end=1 drone=2 internal=(3,) truck=(4, 3, 1) droneRoute=(4, 2, 1) cost=254.5746
+1306: start=4 end=1 drone=2 internal=(5,) truck=(4, 5, 1) droneRoute=(4, 2, 1) cost=382.9828
+1307: start=4 end=1 drone=2 internal=(3, 5) truck=(4, 3, 5, 1) droneRoute=(4, 2, 1) cost=461.2839
+1308: start=4 end=1 drone=2 internal=(5, 3) truck=(4, 5, 3, 1) droneRoute=(4, 2, 1) cost=509.5863
+1309: start=4 end=1 drone=3 internal=() truck=(4, 1) droneRoute=(4, 3, 1) cost=76.1455
+1310: start=4 end=1 drone=3 internal=(2,) truck=(4, 2, 1) droneRoute=(4, 3, 1) cost=509.1493
+1311: start=4 end=1 drone=3 internal=(5,) truck=(4, 5, 1) droneRoute=(4, 3, 1) cost=382.9828
+1312: start=4 end=1 drone=3 internal=(2, 5) truck=(4, 2, 5, 1) droneRoute=(4, 3, 1) cost=514.5468
+1313: start=4 end=1 drone=3 internal=(5, 2) truck=(4, 5, 2, 1) droneRoute=(4, 3, 1) cost=520.0579
+1314: start=4 end=1 drone=5 internal=() truck=(4, 1) droneRoute=(4, 5, 1) cost=191.4914
+1315: start=4 end=1 drone=5 internal=(2,) truck=(4, 2, 1) droneRoute=(4, 5, 1) cost=509.1493
+1316: start=4 end=1 drone=5 internal=(3,) truck=(4, 3, 1) droneRoute=(4, 5, 1) cost=191.4914
+1317: start=4 end=1 drone=5 internal=(2, 3) truck=(4, 2, 3, 1) droneRoute=(4, 5, 1) cost=619.6875
+1318: start=4 end=1 drone=5 internal=(3, 2) truck=(4, 3, 2, 1) droneRoute=(4, 5, 1) cost=576.8961
+1319: start=4 end=2 drone=1 internal=() truck=(4, 2) droneRoute=(4, 1, 2) cost=257.0432
+1320: start=4 end=2 drone=1 internal=(3,) truck=(4, 3, 2) droneRoute=(4, 1, 2) cost=324.7900
+1321: start=4 end=2 drone=1 internal=(5,) truck=(4, 5, 2) droneRoute=(4, 1, 2) cost=267.9518
+1322: start=4 end=2 drone=1 internal=(3, 5) truck=(4, 3, 5, 2) droneRoute=(4, 1, 2) cost=346.2529
+1323: start=4 end=2 drone=1 internal=(5, 3) truck=(4, 5, 3, 2) droneRoute=(4, 1, 2) cost=682.0852
+1324: start=4 end=2 drone=3 internal=() truck=(4, 2) droneRoute=(4, 3, 2) cost=257.0432
+1325: start=4 end=2 drone=3 internal=(1,) truck=(4, 1, 2) droneRoute=(4, 3, 2) cost=290.1457
+1326: start=4 end=2 drone=3 internal=(5,) truck=(4, 5, 2) droneRoute=(4, 3, 2) cost=267.9518
+1327: start=4 end=2 drone=3 internal=(1, 5) truck=(4, 1, 5, 2) droneRoute=(4, 3, 2) cost=295.5433
+1328: start=4 end=2 drone=3 internal=(5, 1) truck=(4, 5, 1, 2) droneRoute=(4, 3, 2) cost=635.0889
+1329: start=4 end=2 drone=5 internal=() truck=(4, 2) droneRoute=(4, 5, 2) cost=257.0432
+1330: start=4 end=2 drone=5 internal=(1,) truck=(4, 1, 2) droneRoute=(4, 5, 2) cost=290.1457
+1331: start=4 end=2 drone=5 internal=(3,) truck=(4, 3, 2) droneRoute=(4, 5, 2) cost=324.7900
+1332: start=4 end=2 drone=5 internal=(1, 3) truck=(4, 1, 3, 2) droneRoute=(4, 5, 2) cost=400.6839
+1333: start=4 end=2 drone=5 internal=(3, 1) truck=(4, 3, 1, 2) droneRoute=(4, 5, 2) cost=404.3972
+1334: start=4 end=3 drone=1 internal=() truck=(4, 3) droneRoute=(4, 1, 3) cost=66.5562
+1335: start=4 end=3 drone=1 internal=(2,) truck=(4, 2, 3) droneRoute=(4, 1, 3) cost=524.6148
+1336: start=4 end=3 drone=1 internal=(5,) truck=(4, 5, 3) droneRoute=(4, 1, 3) cost=414.5136
+1337: start=4 end=3 drone=1 internal=(2, 5) truck=(4, 2, 5, 3) droneRoute=(4, 1, 3) cost=546.0776
+1338: start=4 end=3 drone=1 internal=(5, 2) truck=(4, 5, 2, 3) droneRoute=(4, 1, 3) cost=535.5234
+1339: start=4 end=3 drone=2 internal=() truck=(4, 3) droneRoute=(4, 2, 3) cost=262.3074
+1340: start=4 end=3 drone=2 internal=(1,) truck=(4, 1, 3) droneRoute=(4, 2, 3) cost=262.3074
+1341: start=4 end=3 drone=2 internal=(5,) truck=(4, 5, 3) droneRoute=(4, 2, 3) cost=414.5136
+1342: start=4 end=3 drone=2 internal=(1, 5) truck=(4, 1, 5, 3) droneRoute=(4, 2, 3) cost=442.1051
+1343: start=4 end=3 drone=2 internal=(5, 1) truck=(4, 5, 1, 3) droneRoute=(4, 2, 3) cost=478.0555
+1344: start=4 end=3 drone=5 internal=() truck=(4, 3) droneRoute=(4, 5, 3) cost=207.2568
+1345: start=4 end=3 drone=5 internal=(1,) truck=(4, 1, 3) droneRoute=(4, 5, 3) cost=207.2568
+1346: start=4 end=3 drone=5 internal=(2,) truck=(4, 2, 3) droneRoute=(4, 5, 3) cost=524.6148
+1347: start=4 end=3 drone=5 internal=(1, 2) truck=(4, 1, 2, 3) droneRoute=(4, 5, 3) cost=557.7173
+1348: start=4 end=3 drone=5 internal=(2, 1) truck=(4, 2, 1, 3) droneRoute=(4, 5, 3) cost=604.2219
+1349: start=4 end=4 drone=1 internal=() truck=(4, 4) droneRoute=(4, 1, 4) cost=38.0396
+1350: start=4 end=4 drone=1 internal=(2,) truck=(4, 2, 4) droneRoute=(4, 1, 4) cost=514.0864
+1351: start=4 end=4 drone=1 internal=(3,) truck=(4, 3, 4) droneRoute=(4, 1, 4) cost=114.4368
+1352: start=4 end=4 drone=1 internal=(5,) truck=(4, 5, 4) droneRoute=(4, 1, 4) cost=393.4310
+1353: start=4 end=4 drone=1 internal=(2, 3) truck=(4, 2, 3, 4) droneRoute=(4, 1, 4) cost=581.8332
+1354: start=4 end=4 drone=1 internal=(2, 5) truck=(4, 2, 5, 4) droneRoute=(4, 1, 4) cost=524.9950
+1355: start=4 end=4 drone=1 internal=(3, 2) truck=(4, 3, 2, 4) droneRoute=(4, 1, 4) cost=581.8332
+1356: start=4 end=4 drone=1 internal=(3, 5) truck=(4, 3, 5, 4) droneRoute=(4, 1, 4) cost=471.7320
+1357: start=4 end=4 drone=1 internal=(5, 2) truck=(4, 5, 2, 4) droneRoute=(4, 1, 4) cost=524.9950
+1358: start=4 end=4 drone=1 internal=(5, 3) truck=(4, 5, 3, 4) droneRoute=(4, 1, 4) cost=471.7320
+1359: start=4 end=4 drone=1 internal=(2, 3, 5) truck=(4, 2, 3, 5, 4) droneRoute=(4, 1, 4) cost=939.1284
+1360: start=4 end=4 drone=1 internal=(2, 5, 3) truck=(4, 2, 5, 3, 4) droneRoute=(4, 1, 4) cost=603.2961
+1361: start=4 end=4 drone=1 internal=(3, 2, 5) truck=(4, 3, 2, 5, 4) droneRoute=(4, 1, 4) cost=592.7418
+1362: start=4 end=4 drone=1 internal=(3, 5, 2) truck=(4, 3, 5, 2, 4) droneRoute=(4, 1, 4) cost=603.2961
+1363: start=4 end=4 drone=1 internal=(5, 2, 3) truck=(4, 5, 2, 3, 4) droneRoute=(4, 1, 4) cost=592.7418
+1364: start=4 end=4 drone=1 internal=(5, 3, 2) truck=(4, 5, 3, 2, 4) droneRoute=(4, 1, 4) cost=939.1284
+1365: start=4 end=4 drone=2 internal=() truck=(4, 4) droneRoute=(4, 2, 4) cost=257.0432
+1366: start=4 end=4 drone=2 internal=(1,) truck=(4, 1, 4) droneRoute=(4, 2, 4) cost=257.0432
+1367: start=4 end=4 drone=2 internal=(3,) truck=(4, 3, 4) droneRoute=(4, 2, 4) cost=257.0432
+1368: start=4 end=4 drone=2 internal=(5,) truck=(4, 5, 4) droneRoute=(4, 2, 4) cost=393.4310
+1369: start=4 end=4 drone=2 internal=(1, 3) truck=(4, 1, 3, 4) droneRoute=(4, 2, 4) cost=257.0432
+1370: start=4 end=4 drone=2 internal=(1, 5) truck=(4, 1, 5, 4) droneRoute=(4, 2, 4) cost=421.0224
+1371: start=4 end=4 drone=2 internal=(3, 1) truck=(4, 3, 1, 4) droneRoute=(4, 2, 4) cost=257.0432
+1372: start=4 end=4 drone=2 internal=(3, 5) truck=(4, 3, 5, 4) droneRoute=(4, 2, 4) cost=471.7320
+1373: start=4 end=4 drone=2 internal=(5, 1) truck=(4, 5, 1, 4) droneRoute=(4, 2, 4) cost=421.0224
+1374: start=4 end=4 drone=2 internal=(5, 3) truck=(4, 5, 3, 4) droneRoute=(4, 2, 4) cost=471.7320
+1375: start=4 end=4 drone=2 internal=(1, 3, 5) truck=(4, 1, 3, 5, 4) droneRoute=(4, 2, 4) cost=547.6259
+1376: start=4 end=4 drone=2 internal=(1, 5, 3) truck=(4, 1, 5, 3, 4) droneRoute=(4, 2, 4) cost=499.3235
+1377: start=4 end=4 drone=2 internal=(3, 1, 5) truck=(4, 3, 1, 5, 4) droneRoute=(4, 2, 4) cost=535.2739
+1378: start=4 end=4 drone=2 internal=(3, 5, 1) truck=(4, 3, 5, 1, 4) droneRoute=(4, 2, 4) cost=499.3235
+1379: start=4 end=4 drone=2 internal=(5, 1, 3) truck=(4, 5, 1, 3, 4) droneRoute=(4, 2, 4) cost=535.2739
+1380: start=4 end=4 drone=2 internal=(5, 3, 1) truck=(4, 5, 3, 1, 4) droneRoute=(4, 2, 4) cost=547.6259
+1381: start=4 end=4 drone=3 internal=() truck=(4, 4) droneRoute=(4, 3, 4) cost=57.2184
+1382: start=4 end=4 drone=3 internal=(1,) truck=(4, 1, 4) droneRoute=(4, 3, 4) cost=76.0793
+1383: start=4 end=4 drone=3 internal=(2,) truck=(4, 2, 4) droneRoute=(4, 3, 4) cost=514.0864
+1384: start=4 end=4 drone=3 internal=(5,) truck=(4, 5, 4) droneRoute=(4, 3, 4) cost=393.4310
+1385: start=4 end=4 drone=3 internal=(1, 2) truck=(4, 1, 2, 4) droneRoute=(4, 3, 4) cost=547.1889
+1386: start=4 end=4 drone=3 internal=(1, 5) truck=(4, 1, 5, 4) droneRoute=(4, 3, 4) cost=421.0224
+1387: start=4 end=4 drone=3 internal=(2, 1) truck=(4, 2, 1, 4) droneRoute=(4, 3, 4) cost=547.1889
+1388: start=4 end=4 drone=3 internal=(2, 5) truck=(4, 2, 5, 4) droneRoute=(4, 3, 4) cost=524.9950
+1389: start=4 end=4 drone=3 internal=(5, 1) truck=(4, 5, 1, 4) droneRoute=(4, 3, 4) cost=421.0224
+1390: start=4 end=4 drone=3 internal=(5, 2) truck=(4, 5, 2, 4) droneRoute=(4, 3, 4) cost=524.9950
+1391: start=4 end=4 drone=3 internal=(1, 2, 5) truck=(4, 1, 2, 5, 4) droneRoute=(4, 3, 4) cost=558.0975
+1392: start=4 end=4 drone=3 internal=(1, 5, 2) truck=(4, 1, 5, 2, 4) droneRoute=(4, 3, 4) cost=552.5865
+1393: start=4 end=4 drone=3 internal=(2, 1, 5) truck=(4, 2, 1, 5, 4) droneRoute=(4, 3, 4) cost=892.1321
+1394: start=4 end=4 drone=3 internal=(2, 5, 1) truck=(4, 2, 5, 1, 4) droneRoute=(4, 3, 4) cost=552.5865
+1395: start=4 end=4 drone=3 internal=(5, 1, 2) truck=(4, 5, 1, 2, 4) droneRoute=(4, 3, 4) cost=892.1321
+1396: start=4 end=4 drone=3 internal=(5, 2, 1) truck=(4, 5, 2, 1, 4) droneRoute=(4, 3, 4) cost=558.0975
+1397: start=4 end=4 drone=5 internal=() truck=(4, 4) droneRoute=(4, 5, 4) cost=196.7155
+1398: start=4 end=4 drone=5 internal=(1,) truck=(4, 1, 4) droneRoute=(4, 5, 4) cost=196.7155
+1399: start=4 end=4 drone=5 internal=(2,) truck=(4, 2, 4) droneRoute=(4, 5, 4) cost=514.0864
+1400: start=4 end=4 drone=5 internal=(3,) truck=(4, 3, 4) droneRoute=(4, 5, 4) cost=196.7155
+1401: start=4 end=4 drone=5 internal=(1, 2) truck=(4, 1, 2, 4) droneRoute=(4, 5, 4) cost=547.1889
+1402: start=4 end=4 drone=5 internal=(1, 3) truck=(4, 1, 3, 4) droneRoute=(4, 5, 4) cost=196.7155
+1403: start=4 end=4 drone=5 internal=(2, 1) truck=(4, 2, 1, 4) droneRoute=(4, 5, 4) cost=547.1889
+1404: start=4 end=4 drone=5 internal=(2, 3) truck=(4, 2, 3, 4) droneRoute=(4, 5, 4) cost=581.8332
+1405: start=4 end=4 drone=5 internal=(3, 1) truck=(4, 3, 1, 4) droneRoute=(4, 5, 4) cost=196.7155
+1406: start=4 end=4 drone=5 internal=(3, 2) truck=(4, 3, 2, 4) droneRoute=(4, 5, 4) cost=581.8332
+1407: start=4 end=4 drone=5 internal=(1, 2, 3) truck=(4, 1, 2, 3, 4) droneRoute=(4, 5, 4) cost=614.9357
+1408: start=4 end=4 drone=5 internal=(1, 3, 2) truck=(4, 1, 3, 2, 4) droneRoute=(4, 5, 4) cost=657.7271
+1409: start=4 end=4 drone=5 internal=(2, 1, 3) truck=(4, 2, 1, 3, 4) droneRoute=(4, 5, 4) cost=661.4404
+1410: start=4 end=4 drone=5 internal=(2, 3, 1) truck=(4, 2, 3, 1, 4) droneRoute=(4, 5, 4) cost=657.7271
+1411: start=4 end=4 drone=5 internal=(3, 1, 2) truck=(4, 3, 1, 2, 4) droneRoute=(4, 5, 4) cost=661.4404
+1412: start=4 end=4 drone=5 internal=(3, 2, 1) truck=(4, 3, 2, 1, 4) droneRoute=(4, 5, 4) cost=614.9357
+1413: start=4 end=5 drone=1 internal=() truck=(4, 5) droneRoute=(4, 1, 5) cost=196.7155
+1414: start=4 end=5 drone=1 internal=(2,) truck=(4, 2, 5) droneRoute=(4, 1, 5) cost=328.2795
+1415: start=4 end=5 drone=1 internal=(3,) truck=(4, 3, 5) droneRoute=(4, 1, 5) cost=275.0165
+1416: start=4 end=5 drone=1 internal=(2, 3) truck=(4, 2, 3, 5) droneRoute=(4, 1, 5) cost=742.4129
+1417: start=4 end=5 drone=1 internal=(3, 2) truck=(4, 3, 2, 5) droneRoute=(4, 1, 5) cost=396.0263
+1418: start=4 end=5 drone=2 internal=() truck=(4, 5) droneRoute=(4, 2, 5) cost=196.7155
+1419: start=4 end=5 drone=2 internal=(1,) truck=(4, 1, 5) droneRoute=(4, 2, 5) cost=224.3069
+1420: start=4 end=5 drone=2 internal=(3,) truck=(4, 3, 5) droneRoute=(4, 2, 5) cost=275.0165
+1421: start=4 end=5 drone=2 internal=(1, 3) truck=(4, 1, 3, 5) droneRoute=(4, 2, 5) cost=350.9104
+1422: start=4 end=5 drone=2 internal=(3, 1) truck=(4, 3, 1, 5) droneRoute=(4, 2, 5) cost=338.5584
+1423: start=4 end=5 drone=3 internal=() truck=(4, 5) droneRoute=(4, 3, 5) cost=196.7155
+1424: start=4 end=5 drone=3 internal=(1,) truck=(4, 1, 5) droneRoute=(4, 3, 5) cost=224.3069
+1425: start=4 end=5 drone=3 internal=(2,) truck=(4, 2, 5) droneRoute=(4, 3, 5) cost=328.2795
+1426: start=4 end=5 drone=3 internal=(1, 2) truck=(4, 1, 2, 5) droneRoute=(4, 3, 5) cost=361.3820
+1427: start=4 end=5 drone=3 internal=(2, 1) truck=(4, 2, 1, 5) droneRoute=(4, 3, 5) cost=695.4166
+1428: start=5 end=0 drone=1 internal=() truck=(5, 0) droneRoute=(5, 1, 0) cost=172.5492
+1429: start=5 end=0 drone=1 internal=(2,) truck=(5, 2, 0) droneRoute=(5, 1, 0) cost=294.8226
+1430: start=5 end=0 drone=1 internal=(3,) truck=(5, 3, 0) droneRoute=(5, 1, 0) cost=263.0477
+1431: start=5 end=0 drone=1 internal=(4,) truck=(5, 4, 0) droneRoute=(5, 1, 0) cost=249.6719
+1432: start=5 end=0 drone=1 internal=(2, 3) truck=(5, 2, 3, 0) droneRoute=(5, 1, 0) cost=384.0575
+1433: start=5 end=0 drone=1 internal=(2, 4) truck=(5, 2, 4, 0) droneRoute=(5, 1, 0) cost=381.2359
+1434: start=5 end=0 drone=1 internal=(3, 2) truck=(5, 3, 2, 0) droneRoute=(5, 1, 0) cost=708.9559
+1435: start=5 end=0 drone=1 internal=(3, 4) truck=(5, 3, 4, 0) droneRoute=(5, 1, 0) cost=327.9730
+1436: start=5 end=0 drone=1 internal=(4, 2) truck=(5, 4, 2, 0) droneRoute=(5, 1, 0) cost=677.3449
+1437: start=5 end=0 drone=1 internal=(4, 3) truck=(5, 4, 3, 0) droneRoute=(5, 1, 0) cost=299.1835
+1438: start=5 end=0 drone=1 internal=(2, 3, 4) truck=(5, 2, 3, 4, 0) droneRoute=(5, 1, 0) cost=448.9828
+1439: start=5 end=0 drone=1 internal=(2, 4, 3) truck=(5, 2, 4, 3, 0) droneRoute=(5, 1, 0) cost=430.7475
+1440: start=5 end=0 drone=1 internal=(3, 2, 4) truck=(5, 3, 2, 4, 0) droneRoute=(5, 1, 0) cost=795.3693
+1441: start=5 end=0 drone=1 internal=(3, 4, 2) truck=(5, 3, 4, 2, 0) droneRoute=(5, 1, 0) cost=755.6460
+1442: start=5 end=0 drone=1 internal=(4, 2, 3) truck=(5, 4, 2, 3, 0) droneRoute=(5, 1, 0) cost=766.5798
+1443: start=5 end=0 drone=1 internal=(4, 3, 2) truck=(5, 4, 3, 2, 0) droneRoute=(5, 1, 0) cost=745.0917
+1444: start=5 end=0 drone=2 internal=() truck=(5, 0) droneRoute=(5, 2, 0) cost=172.5492
+1445: start=5 end=0 drone=2 internal=(1,) truck=(5, 1, 0) droneRoute=(5, 2, 0) cost=267.0582
+1446: start=5 end=0 drone=2 internal=(3,) truck=(5, 3, 0) droneRoute=(5, 2, 0) cost=263.0477
+1447: start=5 end=0 drone=2 internal=(4,) truck=(5, 4, 0) droneRoute=(5, 2, 0) cost=249.6719
+1448: start=5 end=0 drone=2 internal=(1, 3) truck=(5, 1, 3, 0) droneRoute=(5, 2, 0) cost=326.5896
+1449: start=5 end=0 drone=2 internal=(1, 4) truck=(5, 1, 4, 0) droneRoute=(5, 2, 0) cost=277.2634
+1450: start=5 end=0 drone=2 internal=(3, 1) truck=(5, 3, 1, 0) droneRoute=(5, 2, 0) cost=393.6617
+1451: start=5 end=0 drone=2 internal=(3, 4) truck=(5, 3, 4, 0) droneRoute=(5, 2, 0) cost=327.9730
+1452: start=5 end=0 drone=2 internal=(4, 1) truck=(5, 4, 1, 0) droneRoute=(5, 2, 0) cost=315.5460
+1453: start=5 end=0 drone=2 internal=(4, 3) truck=(5, 4, 3, 0) droneRoute=(5, 2, 0) cost=299.1835
+1454: start=5 end=0 drone=2 internal=(1, 3, 4) truck=(5, 1, 3, 4, 0) droneRoute=(5, 2, 0) cost=391.5148
+1455: start=5 end=0 drone=2 internal=(1, 4, 3) truck=(5, 1, 4, 3, 0) droneRoute=(5, 2, 0) cost=326.7749
+1456: start=5 end=0 drone=2 internal=(3, 1, 4) truck=(5, 3, 1, 4, 0) droneRoute=(5, 2, 0) cost=403.8668
+1457: start=5 end=0 drone=2 internal=(3, 4, 1) truck=(5, 3, 4, 1, 0) droneRoute=(5, 2, 0) cost=393.8470
+1458: start=5 end=0 drone=2 internal=(4, 1, 3) truck=(5, 4, 1, 3, 0) droneRoute=(5, 2, 0) cost=375.0774
+1459: start=5 end=0 drone=2 internal=(4, 3, 1) truck=(5, 4, 3, 1, 0) droneRoute=(5, 2, 0) cost=429.7975
+1460: start=5 end=0 drone=3 internal=() truck=(5, 0) droneRoute=(5, 3, 0) cost=172.5492
+1461: start=5 end=0 drone=3 internal=(1,) truck=(5, 1, 0) droneRoute=(5, 3, 0) cost=267.0582
+1462: start=5 end=0 drone=3 internal=(2,) truck=(5, 2, 0) droneRoute=(5, 3, 0) cost=294.8226
+1463: start=5 end=0 drone=3 internal=(4,) truck=(5, 4, 0) droneRoute=(5, 3, 0) cost=249.6719
+1464: start=5 end=0 drone=3 internal=(1, 2) truck=(5, 1, 2, 0) droneRoute=(5, 3, 0) cost=661.9596
+1465: start=5 end=0 drone=3 internal=(1, 4) truck=(5, 1, 4, 0) droneRoute=(5, 3, 0) cost=277.2634
+1466: start=5 end=0 drone=3 internal=(2, 1) truck=(5, 2, 1, 0) droneRoute=(5, 3, 0) cost=404.1333
+1467: start=5 end=0 drone=3 internal=(2, 4) truck=(5, 2, 4, 0) droneRoute=(5, 3, 0) cost=381.2359
+1468: start=5 end=0 drone=3 internal=(4, 1) truck=(5, 4, 1, 0) droneRoute=(5, 3, 0) cost=315.5460
+1469: start=5 end=0 drone=3 internal=(4, 2) truck=(5, 4, 2, 0) droneRoute=(5, 3, 0) cost=677.3449
+1470: start=5 end=0 drone=3 internal=(1, 2, 4) truck=(5, 1, 2, 4, 0) droneRoute=(5, 3, 0) cost=748.3730
+1471: start=5 end=0 drone=3 internal=(1, 4, 2) truck=(5, 1, 4, 2, 0) droneRoute=(5, 3, 0) cost=704.9364
+1472: start=5 end=0 drone=3 internal=(2, 1, 4) truck=(5, 2, 1, 4, 0) droneRoute=(5, 3, 0) cost=414.3384
+1473: start=5 end=0 drone=3 internal=(2, 4, 1) truck=(5, 2, 4, 1, 0) droneRoute=(5, 3, 0) cost=447.1100
+1474: start=5 end=0 drone=3 internal=(4, 1, 2) truck=(5, 4, 1, 2, 0) droneRoute=(5, 3, 0) cost=710.4474
+1475: start=5 end=0 drone=3 internal=(4, 2, 1) truck=(5, 4, 2, 1, 0) droneRoute=(5, 3, 0) cost=786.6556
+1476: start=5 end=0 drone=4 internal=() truck=(5, 0) droneRoute=(5, 4, 0) cost=172.5492
+1477: start=5 end=0 drone=4 internal=(1,) truck=(5, 1, 0) droneRoute=(5, 4, 0) cost=267.0582
+1478: start=5 end=0 drone=4 internal=(2,) truck=(5, 2, 0) droneRoute=(5, 4, 0) cost=294.8226
+1479: start=5 end=0 drone=4 internal=(3,) truck=(5, 3, 0) droneRoute=(5, 4, 0) cost=263.0477
+1480: start=5 end=0 drone=4 internal=(1, 2) truck=(5, 1, 2, 0) droneRoute=(5, 4, 0) cost=661.9596
+1481: start=5 end=0 drone=4 internal=(1, 3) truck=(5, 1, 3, 0) droneRoute=(5, 4, 0) cost=326.5896
+1482: start=5 end=0 drone=4 internal=(2, 1) truck=(5, 2, 1, 0) droneRoute=(5, 4, 0) cost=404.1333
+1483: start=5 end=0 drone=4 internal=(2, 3) truck=(5, 2, 3, 0) droneRoute=(5, 4, 0) cost=384.0575
+1484: start=5 end=0 drone=4 internal=(3, 1) truck=(5, 3, 1, 0) droneRoute=(5, 4, 0) cost=393.6617
+1485: start=5 end=0 drone=4 internal=(3, 2) truck=(5, 3, 2, 0) droneRoute=(5, 4, 0) cost=708.9559
+1486: start=5 end=0 drone=4 internal=(1, 2, 3) truck=(5, 1, 2, 3, 0) droneRoute=(5, 4, 0) cost=751.1945
+1487: start=5 end=0 drone=4 internal=(1, 3, 2) truck=(5, 1, 3, 2, 0) droneRoute=(5, 4, 0) cost=772.4978
+1488: start=5 end=0 drone=4 internal=(2, 1, 3) truck=(5, 2, 1, 3, 0) droneRoute=(5, 4, 0) cost=463.6646
+1489: start=5 end=0 drone=4 internal=(2, 3, 1) truck=(5, 2, 3, 1, 0) droneRoute=(5, 4, 0) cost=514.6715
+1490: start=5 end=0 drone=4 internal=(3, 1, 2) truck=(5, 3, 1, 2, 0) droneRoute=(5, 4, 0) cost=788.5631
+1491: start=5 end=0 drone=4 internal=(3, 2, 1) truck=(5, 3, 2, 1, 0) droneRoute=(5, 4, 0) cost=818.2666
+1492: start=5 end=1 drone=2 internal=() truck=(5, 1) droneRoute=(5, 2, 1) cost=186.2673
+1493: start=5 end=1 drone=2 internal=(3,) truck=(5, 3, 1) droneRoute=(5, 2, 1) cost=312.8708
+1494: start=5 end=1 drone=2 internal=(4,) truck=(5, 4, 1) droneRoute=(5, 2, 1) cost=234.7551
+1495: start=5 end=1 drone=2 internal=(3, 4) truck=(5, 3, 4, 1) droneRoute=(5, 2, 1) cost=313.0562
+1496: start=5 end=1 drone=2 internal=(4, 3) truck=(5, 4, 3, 1) droneRoute=(5, 2, 1) cost=349.0066
+1497: start=5 end=1 drone=3 internal=() truck=(5, 1) droneRoute=(5, 3, 1) cost=186.2673
+1498: start=5 end=1 drone=3 internal=(2,) truck=(5, 2, 1) droneRoute=(5, 3, 1) cost=323.3424
+1499: start=5 end=1 drone=3 internal=(4,) truck=(5, 4, 1) droneRoute=(5, 3, 1) cost=234.7551
+1500: start=5 end=1 drone=3 internal=(2, 4) truck=(5, 2, 4, 1) droneRoute=(5, 3, 1) cost=366.3192
+1501: start=5 end=1 drone=3 internal=(4, 2) truck=(5, 4, 2, 1) droneRoute=(5, 3, 1) cost=705.8647
+1502: start=5 end=1 drone=4 internal=() truck=(5, 1) droneRoute=(5, 4, 1) cost=186.2673
+1503: start=5 end=1 drone=4 internal=(2,) truck=(5, 2, 1) droneRoute=(5, 4, 1) cost=323.3424
+1504: start=5 end=1 drone=4 internal=(3,) truck=(5, 3, 1) droneRoute=(5, 4, 1) cost=312.8708
+1505: start=5 end=1 drone=4 internal=(2, 3) truck=(5, 2, 3, 1) droneRoute=(5, 4, 1) cost=433.8806
+1506: start=5 end=1 drone=4 internal=(3, 2) truck=(5, 3, 2, 1) droneRoute=(5, 4, 1) cost=737.4758
+1507: start=5 end=2 drone=1 internal=() truck=(5, 2) droneRoute=(5, 1, 2) cost=219.1867
+1508: start=5 end=2 drone=1 internal=(3,) truck=(5, 3, 2) droneRoute=(5, 1, 2) cost=485.3697
+1509: start=5 end=2 drone=1 internal=(4,) truck=(5, 4, 2) droneRoute=(5, 1, 2) cost=453.7587
+1510: start=5 end=2 drone=1 internal=(3, 4) truck=(5, 3, 4, 2) droneRoute=(5, 1, 2) cost=532.0597
+1511: start=5 end=2 drone=1 internal=(4, 3) truck=(5, 4, 3, 2) droneRoute=(5, 1, 2) cost=521.5055
+1512: start=5 end=2 drone=3 internal=() truck=(5, 2) droneRoute=(5, 3, 2) cost=242.6849
+1513: start=5 end=2 drone=3 internal=(1,) truck=(5, 1, 2) droneRoute=(5, 3, 2) cost=438.3734
+1514: start=5 end=2 drone=3 internal=(4,) truck=(5, 4, 2) droneRoute=(5, 3, 2) cost=453.7587
+1515: start=5 end=2 drone=3 internal=(1, 4) truck=(5, 1, 4, 2) droneRoute=(5, 3, 2) cost=481.3501
+1516: start=5 end=2 drone=3 internal=(4, 1) truck=(5, 4, 1, 2) droneRoute=(5, 3, 2) cost=486.8612
+1517: start=5 end=2 drone=4 internal=() truck=(5, 2) droneRoute=(5, 4, 2) cost=226.8793
+1518: start=5 end=2 drone=4 internal=(1,) truck=(5, 1, 2) droneRoute=(5, 4, 2) cost=438.3734
+1519: start=5 end=2 drone=4 internal=(3,) truck=(5, 3, 2) droneRoute=(5, 4, 2) cost=485.3697
+1520: start=5 end=2 drone=4 internal=(1, 3) truck=(5, 1, 3, 2) droneRoute=(5, 4, 2) cost=548.9116
+1521: start=5 end=2 drone=4 internal=(3, 1) truck=(5, 3, 1, 2) droneRoute=(5, 4, 2) cost=564.9769
+1522: start=5 end=3 drone=1 internal=() truck=(5, 3) droneRoute=(5, 1, 3) cost=217.7981
+1523: start=5 end=3 drone=1 internal=(2,) truck=(5, 2, 3) droneRoute=(5, 1, 3) cost=338.8079
+1524: start=5 end=3 drone=1 internal=(4,) truck=(5, 4, 3) droneRoute=(5, 1, 3) cost=253.9339
+1525: start=5 end=3 drone=1 internal=(2, 4) truck=(5, 2, 4, 3) droneRoute=(5, 1, 3) cost=385.4979
+1526: start=5 end=3 drone=1 internal=(4, 2) truck=(5, 4, 2, 3) droneRoute=(5, 1, 3) cost=721.3303
+1527: start=5 end=3 drone=2 internal=() truck=(5, 3) droneRoute=(5, 2, 3) cost=217.7981
+1528: start=5 end=3 drone=2 internal=(1,) truck=(5, 1, 3) droneRoute=(5, 2, 3) cost=281.3400
+1529: start=5 end=3 drone=2 internal=(4,) truck=(5, 4, 3) droneRoute=(5, 2, 3) cost=253.9339
+1530: start=5 end=3 drone=2 internal=(1, 4) truck=(5, 1, 4, 3) droneRoute=(5, 2, 3) cost=281.5254
+1531: start=5 end=3 drone=2 internal=(4, 1) truck=(5, 4, 1, 3) droneRoute=(5, 2, 3) cost=329.8278
+1532: start=5 end=3 drone=4 internal=() truck=(5, 3) droneRoute=(5, 4, 3) cost=217.7981
+1533: start=5 end=3 drone=4 internal=(1,) truck=(5, 1, 3) droneRoute=(5, 4, 3) cost=281.3400
+1534: start=5 end=3 drone=4 internal=(2,) truck=(5, 2, 3) droneRoute=(5, 4, 3) cost=338.8079
+1535: start=5 end=3 drone=4 internal=(1, 2) truck=(5, 1, 2, 3) droneRoute=(5, 4, 3) cost=705.9450
+1536: start=5 end=3 drone=4 internal=(2, 1) truck=(5, 2, 1, 3) droneRoute=(5, 4, 3) cost=418.4151
+1537: start=5 end=4 drone=1 internal=() truck=(5, 4) droneRoute=(5, 1, 4) cost=196.7155
+1538: start=5 end=4 drone=1 internal=(2,) truck=(5, 2, 4) droneRoute=(5, 1, 4) cost=328.2795
+1539: start=5 end=4 drone=1 internal=(3,) truck=(5, 3, 4) droneRoute=(5, 1, 4) cost=275.0165
+1540: start=5 end=4 drone=1 internal=(2, 3) truck=(5, 2, 3, 4) droneRoute=(5, 1, 4) cost=396.0263
+1541: start=5 end=4 drone=1 internal=(3, 2) truck=(5, 3, 2, 4) droneRoute=(5, 1, 4) cost=742.4129
+1542: start=5 end=4 drone=2 internal=() truck=(5, 4) droneRoute=(5, 2, 4) cost=196.7155
+1543: start=5 end=4 drone=2 internal=(1,) truck=(5, 1, 4) droneRoute=(5, 2, 4) cost=224.3069
+1544: start=5 end=4 drone=2 internal=(3,) truck=(5, 3, 4) droneRoute=(5, 2, 4) cost=275.0165
+1545: start=5 end=4 drone=2 internal=(1, 3) truck=(5, 1, 3, 4) droneRoute=(5, 2, 4) cost=338.5584
+1546: start=5 end=4 drone=2 internal=(3, 1) truck=(5, 3, 1, 4) droneRoute=(5, 2, 4) cost=350.9104
+1547: start=5 end=4 drone=3 internal=() truck=(5, 4) droneRoute=(5, 3, 4) cost=196.7155
+1548: start=5 end=4 drone=3 internal=(1,) truck=(5, 1, 4) droneRoute=(5, 3, 4) cost=224.3069
+1549: start=5 end=4 drone=3 internal=(2,) truck=(5, 2, 4) droneRoute=(5, 3, 4) cost=328.2795
+1550: start=5 end=4 drone=3 internal=(1, 2) truck=(5, 1, 2, 4) droneRoute=(5, 3, 4) cost=695.4166
+1551: start=5 end=4 drone=3 internal=(2, 1) truck=(5, 2, 1, 4) droneRoute=(5, 3, 4) cost=361.3820
+1552: start=5 end=5 drone=1 internal=() truck=(5, 5) droneRoute=(5, 1, 5) cost=186.2673
+1553: start=5 end=5 drone=1 internal=(2,) truck=(5, 2, 5) droneRoute=(5, 1, 5) cost=186.2673
+1554: start=5 end=5 drone=1 internal=(3,) truck=(5, 3, 5) droneRoute=(5, 1, 5) cost=435.5962
+1555: start=5 end=5 drone=1 internal=(4,) truck=(5, 4, 5) droneRoute=(5, 1, 5) cost=393.4310
+1556: start=5 end=5 drone=1 internal=(2, 3) truck=(5, 2, 3, 5) droneRoute=(5, 1, 5) cost=556.6060
+1557: start=5 end=5 drone=1 internal=(2, 4) truck=(5, 2, 4, 5) droneRoute=(5, 1, 5) cost=524.9950
+1558: start=5 end=5 drone=1 internal=(3, 2) truck=(5, 3, 2, 5) droneRoute=(5, 1, 5) cost=556.6060
+1559: start=5 end=5 drone=1 internal=(3, 4) truck=(5, 3, 4, 5) droneRoute=(5, 1, 5) cost=471.7320
+1560: start=5 end=5 drone=1 internal=(4, 2) truck=(5, 4, 2, 5) droneRoute=(5, 1, 5) cost=524.9950
+1561: start=5 end=5 drone=1 internal=(4, 3) truck=(5, 4, 3, 5) droneRoute=(5, 1, 5) cost=471.7320
+1562: start=5 end=5 drone=1 internal=(2, 3, 4) truck=(5, 2, 3, 4, 5) droneRoute=(5, 1, 5) cost=592.7418
+1563: start=5 end=5 drone=1 internal=(2, 4, 3) truck=(5, 2, 4, 3, 5) droneRoute=(5, 1, 5) cost=603.2961
+1564: start=5 end=5 drone=1 internal=(3, 2, 4) truck=(5, 3, 2, 4, 5) droneRoute=(5, 1, 5) cost=939.1284
+1565: start=5 end=5 drone=1 internal=(3, 4, 2) truck=(5, 3, 4, 2, 5) droneRoute=(5, 1, 5) cost=603.2961
+1566: start=5 end=5 drone=1 internal=(4, 2, 3) truck=(5, 4, 2, 3, 5) droneRoute=(5, 1, 5) cost=939.1284
+1567: start=5 end=5 drone=1 internal=(4, 3, 2) truck=(5, 4, 3, 2, 5) droneRoute=(5, 1, 5) cost=592.7418
+1568: start=5 end=5 drone=2 internal=() truck=(5, 5) droneRoute=(5, 2, 5) cost=71.2363
+1569: start=5 end=5 drone=2 internal=(1,) truck=(5, 1, 5) droneRoute=(5, 2, 5) cost=372.5346
+1570: start=5 end=5 drone=2 internal=(3,) truck=(5, 3, 5) droneRoute=(5, 2, 5) cost=435.5962
+1571: start=5 end=5 drone=2 internal=(4,) truck=(5, 4, 5) droneRoute=(5, 2, 5) cost=393.4310
+1572: start=5 end=5 drone=2 internal=(1, 3) truck=(5, 1, 3, 5) droneRoute=(5, 2, 5) cost=499.1381
+1573: start=5 end=5 drone=2 internal=(1, 4) truck=(5, 1, 4, 5) droneRoute=(5, 2, 5) cost=421.0224
+1574: start=5 end=5 drone=2 internal=(3, 1) truck=(5, 3, 1, 5) droneRoute=(5, 2, 5) cost=499.1381
+1575: start=5 end=5 drone=2 internal=(3, 4) truck=(5, 3, 4, 5) droneRoute=(5, 2, 5) cost=471.7320
+1576: start=5 end=5 drone=2 internal=(4, 1) truck=(5, 4, 1, 5) droneRoute=(5, 2, 5) cost=421.0224
+1577: start=5 end=5 drone=2 internal=(4, 3) truck=(5, 4, 3, 5) droneRoute=(5, 2, 5) cost=471.7320
+1578: start=5 end=5 drone=2 internal=(1, 3, 4) truck=(5, 1, 3, 4, 5) droneRoute=(5, 2, 5) cost=535.2739
+1579: start=5 end=5 drone=2 internal=(1, 4, 3) truck=(5, 1, 4, 3, 5) droneRoute=(5, 2, 5) cost=499.3235
+1580: start=5 end=5 drone=2 internal=(3, 1, 4) truck=(5, 3, 1, 4, 5) droneRoute=(5, 2, 5) cost=547.6259
+1581: start=5 end=5 drone=2 internal=(3, 4, 1) truck=(5, 3, 4, 1, 5) droneRoute=(5, 2, 5) cost=499.3235
+1582: start=5 end=5 drone=2 internal=(4, 1, 3) truck=(5, 4, 1, 3, 5) droneRoute=(5, 2, 5) cost=547.6259
+1583: start=5 end=5 drone=2 internal=(4, 3, 1) truck=(5, 4, 3, 1, 5) droneRoute=(5, 2, 5) cost=535.2739
+1584: start=5 end=5 drone=3 internal=() truck=(5, 5) droneRoute=(5, 3, 5) cost=217.7981
+1585: start=5 end=5 drone=3 internal=(1,) truck=(5, 1, 5) droneRoute=(5, 3, 5) cost=372.5346
+1586: start=5 end=5 drone=3 internal=(2,) truck=(5, 2, 5) droneRoute=(5, 3, 5) cost=217.7981
+1587: start=5 end=5 drone=3 internal=(4,) truck=(5, 4, 5) droneRoute=(5, 3, 5) cost=393.4310
+1588: start=5 end=5 drone=3 internal=(1, 2) truck=(5, 1, 2, 5) droneRoute=(5, 3, 5) cost=509.6097
+1589: start=5 end=5 drone=3 internal=(1, 4) truck=(5, 1, 4, 5) droneRoute=(5, 3, 5) cost=421.0224
+1590: start=5 end=5 drone=3 internal=(2, 1) truck=(5, 2, 1, 5) droneRoute=(5, 3, 5) cost=509.6097
+1591: start=5 end=5 drone=3 internal=(2, 4) truck=(5, 2, 4, 5) droneRoute=(5, 3, 5) cost=524.9950
+1592: start=5 end=5 drone=3 internal=(4, 1) truck=(5, 4, 1, 5) droneRoute=(5, 3, 5) cost=421.0224
+1593: start=5 end=5 drone=3 internal=(4, 2) truck=(5, 4, 2, 5) droneRoute=(5, 3, 5) cost=524.9950
+1594: start=5 end=5 drone=3 internal=(1, 2, 4) truck=(5, 1, 2, 4, 5) droneRoute=(5, 3, 5) cost=892.1321
+1595: start=5 end=5 drone=3 internal=(1, 4, 2) truck=(5, 1, 4, 2, 5) droneRoute=(5, 3, 5) cost=552.5865
+1596: start=5 end=5 drone=3 internal=(2, 1, 4) truck=(5, 2, 1, 4, 5) droneRoute=(5, 3, 5) cost=558.0975
+1597: start=5 end=5 drone=3 internal=(2, 4, 1) truck=(5, 2, 4, 1, 5) droneRoute=(5, 3, 5) cost=552.5865
+1598: start=5 end=5 drone=3 internal=(4, 1, 2) truck=(5, 4, 1, 2, 5) droneRoute=(5, 3, 5) cost=558.0975
+1599: start=5 end=5 drone=3 internal=(4, 2, 1) truck=(5, 4, 2, 1, 5) droneRoute=(5, 3, 5) cost=892.1321
+1600: start=5 end=5 drone=4 internal=() truck=(5, 5) droneRoute=(5, 4, 5) cost=196.7155
+1601: start=5 end=5 drone=4 internal=(1,) truck=(5, 1, 5) droneRoute=(5, 4, 5) cost=372.5346
+1602: start=5 end=5 drone=4 internal=(2,) truck=(5, 2, 5) droneRoute=(5, 4, 5) cost=196.7155
+1603: start=5 end=5 drone=4 internal=(3,) truck=(5, 3, 5) droneRoute=(5, 4, 5) cost=435.5962
+1604: start=5 end=5 drone=4 internal=(1, 2) truck=(5, 1, 2, 5) droneRoute=(5, 4, 5) cost=509.6097
+1605: start=5 end=5 drone=4 internal=(1, 3) truck=(5, 1, 3, 5) droneRoute=(5, 4, 5) cost=499.1381
+1606: start=5 end=5 drone=4 internal=(2, 1) truck=(5, 2, 1, 5) droneRoute=(5, 4, 5) cost=509.6097
+1607: start=5 end=5 drone=4 internal=(2, 3) truck=(5, 2, 3, 5) droneRoute=(5, 4, 5) cost=556.6060
+1608: start=5 end=5 drone=4 internal=(3, 1) truck=(5, 3, 1, 5) droneRoute=(5, 4, 5) cost=499.1381
+1609: start=5 end=5 drone=4 internal=(3, 2) truck=(5, 3, 2, 5) droneRoute=(5, 4, 5) cost=556.6060
+1610: start=5 end=5 drone=4 internal=(1, 2, 3) truck=(5, 1, 2, 3, 5) droneRoute=(5, 4, 5) cost=923.7431
+1611: start=5 end=5 drone=4 internal=(1, 3, 2) truck=(5, 1, 3, 2, 5) droneRoute=(5, 4, 5) cost=620.1479
+1612: start=5 end=5 drone=4 internal=(2, 1, 3) truck=(5, 2, 1, 3, 5) droneRoute=(5, 4, 5) cost=636.2132
+1613: start=5 end=5 drone=4 internal=(2, 3, 1) truck=(5, 2, 3, 1, 5) droneRoute=(5, 4, 5) cost=620.1479
+1614: start=5 end=5 drone=4 internal=(3, 1, 2) truck=(5, 3, 1, 2, 5) droneRoute=(5, 4, 5) cost=636.2132
+1615: start=5 end=5 drone=4 internal=(3, 2, 1) truck=(5, 3, 2, 1, 5) droneRoute=(5, 4, 5) cost=923.7431
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2836054
+Academic license 2836054 - for non-commercial use only - registered to ed___@ufv.br
+Gurobi Optimizer version 13.0.2 build v13.0.2rc1 (linux64 - "Linux Mint 22.3")
+
+CPU model: AMD Ryzen 5 5600H with Radeon Graphics, instruction set [SSE2|AVX|AVX2]
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+
+Academic license 2836054 - for non-commercial use only - registered to ed___@ufv.br
+Optimize a model with 100 rows, 1622 columns and 33785 nonzeros (Min)
+Model fingerprint: 0x5add30bc
+Model has 1615 linear objective coefficients
+Variable types: 0 continuous, 1622 integer (1622 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 6e+00]
+  Objective range  [4e+01, 1e+03]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Found heuristic solution: objective 966.6952317
+Presolve added 80 rows and 0 columns
+Presolve removed 0 rows and 656 columns
+Presolve time: 0.02s
+Presolved: 180 rows, 966 columns, 13060 nonzeros
+Variable types: 0 continuous, 966 integer (844 binary)
+
+Root relaxation: objective 1.767162e+02, 145 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  176.71623    0   14  966.69523  176.71623  81.7%     -    0s
+H    0     0                     630.3911299  176.71623  72.0%     -    0s
+H    0     0                     610.1255695  176.71623  71.0%     -    0s
+H    0     0                     424.9470527  176.71623  58.4%     -    0s
+H    0     0                     396.1354192  176.71623  55.4%     -    0s
+     0     0  294.40787    0   17  396.13542  294.40787  25.7%     -    0s
+     0     0  294.40787    0   11  396.13542  294.40787  25.7%     -    0s
+     0     0  394.65421    0   12  396.13542  394.65421  0.37%     -    0s
+     0     0  396.13542    0    8  396.13542  396.13542  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 3
+  Cover: 3
+  Clique: 1
+  Zero half: 3
+
+Explored 1 nodes (234 simplex iterations) in 0.08 seconds (0.08 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: 396.135 424.947 424.947 ... 966.695
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.961354191603e+02, best bound 3.961354191603e+02, gap 0.0000%
+
+==============================
+OPTIMAL SOLUTION
+==============================
+
+Total cost: 396.13541916034603
+
+Operation 115
+  start: 0
+  end: 0
+  truck: (0, 1, 4, 3, 0)
+  drone: (0, 2, 0)
+  cost: 223.58624573978403
+
+Operation 305
+  start: 0
+  end: 0
+  truck: (0, 4, 1, 0)
+  drone: (0, 5, 0)
+  cost: 172.54917342056197
+
