@@ -1,5 +1,6 @@
 import os
 import gurobi_model
+from generateRoutes import geraRotas
 import two_opt
 
 def main():
@@ -28,7 +29,10 @@ def main():
             1.0,    # alpha
             1      # T_c
         )
-        
+
+        geraRotas(dados)
+
+        '''
         # Rodando o modelo de programação linear pela primeira vez, para o MIP Start
         modelo, varsX = gurobi_model.runModel(dados)
 
@@ -50,7 +54,7 @@ def main():
         gurobi_model.geraArquivoTexto(dados, modelo, folderName, varsX)
 
         gurobi_model.geraImagemRotas(dados, modelo, folderName, varsX)
-            
+        '''
 
 if __name__ == "__main__":
     main()

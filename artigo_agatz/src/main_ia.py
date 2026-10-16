@@ -18,12 +18,12 @@ droneSpeed = 2.0
 # 1,2,3,4 = customers
 
 coordinates = {
-    0: (23.538033776916443, 19.71269830635222),  # depot
-    1: (6.688034320166812, -59.30148092144562),  # v1
-    2: (247.10237029541915, 16.582726892301235), # u2
-    3: (-20.02811932620873, 31.940292850278276), # v3
-    4: (-6.761722936087144, -23.718941163504528),  # v4j
-    5: (189.94135833817387, -25.928848808968002)   # u5
+    0: (100.0, 0.0),       # depot (vértice 0)
+    1: (50.0, 86.60254),   # v1
+    2: (-50.0, 86.60254),  # v2
+    3: (-100.0, 0.0),      # v3
+    4: (-50.0, -86.60254), # v4
+    5: (50.0, -86.60254)   # v5
 }
 
 depot = 0
@@ -119,7 +119,7 @@ def generateOperations():
     #
     # cost = 0
     # =====================================================
-
+    
     operations.append({
 
         "start": depot,
@@ -140,7 +140,7 @@ def generateOperations():
 
         "nodes": {depot}
     })
-
+    
 
     # =====================================================
     # TYPE 1
@@ -456,12 +456,25 @@ x = model.addVars(
     name="x"
 )
 
+
 y = model.addVars(
     V,
     vtype=gp.GRB.BINARY,
     name="y"
 )
+'''
 
+fType = {}
+for v1 in V:
+    for v2 in V:
+        fType[v1, v2] = 0
+
+f = model.addVars(
+    V,
+    vtype=gp.GRB.INTEGER,
+    name='f'
+)
+'''
 
 # ---------------------------------------------------------
 # OBJECTIVE
@@ -477,6 +490,62 @@ model.setObjective(
     sense=gp.GRB.MINIMIZE
 )
 
+# ========================================================
+# (17) FLUX SUBTOUR ELIMINATION
+# ========================================================
+
+
+
+
+# =========================================================
+# (17) MTZ - SUBTOUR ELIMINATION
+# =========================================================
+
+# Bounds for ordering variables
+'''
+model.addConstr(
+    f[depot] == 0,
+    name="mtz_depot"
+)
+
+model.addConstrs(
+    (
+        f[v] >= 1
+        for v in V if v != depot
+    ),
+    name="mtz_lb"
+)
+
+model.addConstrs(
+    (
+        f[v] <= numVertices - 1
+        for v in V if v != depot
+    ),
+    name="mtz_ub"
+)
+
+# MTZ constraints for operations
+
+model.addConstrs(
+    (
+        f[operations[o]["start"]]
+        - f[operations[o]["end"]]
+        + numVertices * x[o]
+        <= numVertices - 1
+
+        for o in O
+
+        if operations[o]["start"] != depot
+        and operations[o]["end"] != depot
+    ),
+    name="mtz"
+)
+'''
+#model.addConstr(
+#    (
+#        gp.quicksum(x[o] for o in O_v[depot]) == 2
+#    )
+#)
 
 # =========================================================
 # (14)
@@ -616,7 +685,6 @@ for S in subsets:
             )
             + f"_v{v}"
         )
-
 
 # =========================================================
 # (18)
