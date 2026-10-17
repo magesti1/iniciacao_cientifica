@@ -1,16 +1,50 @@
 import gurobipy as gp
+import copy
+
+def calculateDist(p1, p2, largura):
+    x1, y1 = p1 % largura, p1 // largura
+    x2, y2 = p2 % largura, p2 // largura
+    return abs(x1 - x2) + abs(y1 - y2)
+
+def recalcuteDists(dadosProblema):
+    matriz = copy.deepcopy(dadosProblema.dists)
+    for p in dadosProblema.V:
+        divInteira = p // dadosProblema.largura
+        mod = p % dadosProblema.largura
+        p1 = mod
+        p2 = (dadosProblema.altura-1) * dadosProblema.largura + mod
+        p3 = divInteira * dadosProblema.largura
+        p4 = ((divInteira + 1) * dadosProblema.largura) - 1
+        p5 = (divInteira * dadosProblema.largura) + dadosProblema.largura // 2
+        d1 = calculateDist(p, p1, dadosProblema.largura)
+        d2 = calculateDist(p, p2, dadosProblema.largura)
+        d3 = calculateDist(p, p3, dadosProblema.largura)
+        d4 = calculateDist(p, p4, dadosProblema.largura)
+        d5 = calculateDist(p, p5, dadosProblema.largura)
+        minDist = min(d1, d2, d3, d4, d5)
+        matriz[p, dadosProblema.totalPontos] = minDist
+        matriz[dadosProblema.totalPontos, p] = minDist
+
+    return matriz
+
 
 def geraRotas(dadosProblema):
 
-    n = len(dadosProblema.V)
-    depot = dadosProblema.V[0]
+    n = len(dadosProblema.V) 
+    depot = dadosProblema.totalPontos
+
+    nos = dadosProblema.V + [depot]
+
+    matriz = recalcuteDists(dadosProblema)
+    print(matriz)
+    return 
 
     modeloGerador = gp.Model("Gerador_Rotas")
 
     # Variáveis de decisão
     typeX = {}
-    for i in dadosProblema.V:
-        for j in dadosProblema.V:
+    for i in nos:
+        for j in nos:
             if i != j:
                 typeX[i, j] = 0
 
@@ -24,52 +58,96 @@ def geraRotas(dadosProblema):
 
     # Parâmetros
     # Esses parâmetros vão buscar todas soluções possíveis
-    modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 1000)
+    modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 10)
     modeloGerador.setParam(gp.GRB.Param.PoolSearchMode, 2)
 
+    modeloGerador.Params.OutputFlag = 0
+
     # Limite de pontos
-    '''
+    
     modeloGerador.addConstr(
-        gp.quicksum(x[i, j] for i, j in typeX) <= dadosProblema.maxVoos
-        )
-    '''
+        gp.quicksum(x[depot, j] for j in dadosProblema.V) == 1,
+        name='sair_depot'
+    )
+
+    modeloGerador.addConstr(
+        gp.quicksum(x[i, depot] for i in dadosProblema.V) == 1,
+        name='chegar_depot'
+    )
 
     # Sair e chegar de todo nó
     modeloGerador.addConstrs(
-        gp.quicksum(x[i, j] for i in dadosProblema.V if i != j) == 1
-        for j in dadosProblema.V 
+        (gp.quicksum(x[j, i] for j in nos if i != j) ==
+        gp.quicksum(x[i, j] for j in nos if i != j)
+        for i in nos),
+        name='sair_chegar_todos_nos' 
+    )
+
+    # Cada cliente pode ser visitado no máximo 1 vez
+    modeloGerador.addConstrs(
+        gp.quicksum(x[j, i] for j in nos if i != j) <= 1 for i in dadosProblema.V
     )
 
     
-    modeloGerador.addConstrs(
-        gp.quicksum(x[i, j] for j in dadosProblema.V if i != j) == 1
-        for i in dadosProblema.V 
+    #modeloGerador.addConstrs(
+    #    gp.quicksum(x[i, j] for j in dadosProblema.V if i != j) <= 1
+    #    for i in dadosProblema.V 
+    #)
+
+    modeloGerador.addConstr(
+        gp.quicksum(x[j, i] for i in dadosProblema.V for j in nos if i != j) <= dadosProblema.maxVoos,
+        name='limite_max_clientes'
     )
 
     # Restrições de fluxo
-    # Parte com carga |V|-1
+    # Parte com carga do tamanho da rota
     modeloGerador.addConstr(
-        gp.quicksum(f[depot, j] for j in dadosProblema.V if j != depot) == n - 1
-        ) 
+        gp.quicksum(f[depot, j] for j in nos if j != depot) == gp.quicksum(x[j, i] for i in dadosProblema.V for j in nos if i != j),
+        name='sair_com_carga_n-1'
+    ) 
 
     # Conserva o fluxo conforme visita os nós
     modeloGerador.addConstrs(
-        gp.quicksum(f[j, i] for j in dadosProblema.V if i != j) -
-        gp.quicksum(f[i, j] for j in dadosProblema.V if i != j) == 1
-        for i in dadosProblema.V if i != depot
+        (gp.quicksum(f[j, i] for j in nos if i != j) -
+        gp.quicksum(f[i, j] for j in nos if i != j) == gp.quicksum(x[j, i] for j in nos if i != j)
+        for i in dadosProblema.V),
+        name='conserva_fluxo'
     )
 
     # Só conserva nos arcos visitados
     modeloGerador.addConstrs(
-        f[i,j] <= (n-1) * x[i, j]
-        for i,j in typeX
+        (f[i,j] <= (n-1) * x[i, j]
+        for i,j in typeX),
+        name='fluxo_apenas_onde_passar'
     )
-
+    
     
     modeloGerador.optimize()
 
+    if modeloGerador.Status == gp.GRB.INFEASIBLE:
+        print("Modelo inviável. Calculando o IIS...")
+        
+        # 1. Aciona o cálculo do IIS
+        modeloGerador.computeIIS()
+        
+        print("\nRestrições que fazem parte do conflito (IIS):")
+        # 2. Itera sobre as restrições para encontrar quais estão no IIS
+        for c in modeloGerador.getConstrs():
+            if c.IISConstr:
+                print(f"  - Restrição conflitante: {c.ConstrName}")
+                
+        # Opcional: Salvar o IIS em um arquivo .ilp para analisar no Bloco de Notas ou em um visualizador
+        modeloGerador.write("modelo_inviavel.ilp")
+        return
+
     print(modeloGerador.SolCount)
 
-    for i, j in typeX:
-        if(x[i, j].X > 0.5):
-            print(i, j, x[i, j].X)
+    for k in range (modeloGerador.SolCount):
+        #cont = 0
+        modeloGerador.Params.SolutionNumber = k
+        for i, j in typeX:
+            if(x[i, j].Xn > 0.5):
+    #           cont += 1
+                print(i, j, f[i, j].Xn,  x[i, j].Xn * dadosProblema.dists[i, j])
+    #    print(cont)
+        print('='*20)
