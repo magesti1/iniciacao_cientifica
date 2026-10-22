@@ -36,9 +36,7 @@ def geraRotas(dadosProblema):
     nos = dadosProblema.V + [depot]
 
     matriz = recalcuteDists(dadosProblema)
-    print(matriz)
-    return 
-
+    
     modeloGerador = gp.Model("Gerador_Rotas")
 
     # Variáveis de decisão
@@ -58,7 +56,7 @@ def geraRotas(dadosProblema):
 
     # Parâmetros
     # Esses parâmetros vão buscar todas soluções possíveis
-    modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 10)
+    modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 10000)
     modeloGerador.setParam(gp.GRB.Param.PoolSearchMode, 2)
 
     modeloGerador.Params.OutputFlag = 0
@@ -83,24 +81,17 @@ def geraRotas(dadosProblema):
         name='sair_chegar_todos_nos' 
     )
 
-    # Cada cliente pode ser visitado no máximo 1 vez
+    # Cada ponto pode ser visitado no máximo 1 vez
     modeloGerador.addConstrs(
         gp.quicksum(x[j, i] for j in nos if i != j) <= 1 for i in dadosProblema.V
     )
 
-    
-    #modeloGerador.addConstrs(
-    #    gp.quicksum(x[i, j] for j in dadosProblema.V if i != j) <= 1
-    #    for i in dadosProblema.V 
-    #)
-
     modeloGerador.addConstr(
         gp.quicksum(x[j, i] for i in dadosProblema.V for j in nos if i != j) <= dadosProblema.maxVoos,
-        name='limite_max_clientes'
+        name='limite_max_pontos'
     )
 
     # Restrições de fluxo
-    # Parte com carga do tamanho da rota
     modeloGerador.addConstr(
         gp.quicksum(f[depot, j] for j in nos if j != depot) == gp.quicksum(x[j, i] for i in dadosProblema.V for j in nos if i != j),
         name='sair_com_carga_n-1'
@@ -116,7 +107,7 @@ def geraRotas(dadosProblema):
 
     # Só conserva nos arcos visitados
     modeloGerador.addConstrs(
-        (f[i,j] <= (n-1) * x[i, j]
+        (f[i,j] <= (n) * x[i, j]
         for i,j in typeX),
         name='fluxo_apenas_onde_passar'
     )
@@ -124,30 +115,16 @@ def geraRotas(dadosProblema):
     
     modeloGerador.optimize()
 
-    if modeloGerador.Status == gp.GRB.INFEASIBLE:
-        print("Modelo inviável. Calculando o IIS...")
-        
-        # 1. Aciona o cálculo do IIS
-        modeloGerador.computeIIS()
-        
-        print("\nRestrições que fazem parte do conflito (IIS):")
-        # 2. Itera sobre as restrições para encontrar quais estão no IIS
-        for c in modeloGerador.getConstrs():
-            if c.IISConstr:
-                print(f"  - Restrição conflitante: {c.ConstrName}")
-                
-        # Opcional: Salvar o IIS em um arquivo .ilp para analisar no Bloco de Notas ou em um visualizador
-        modeloGerador.write("modelo_inviavel.ilp")
-        return
-
     print(modeloGerador.SolCount)
-
+    
     for k in range (modeloGerador.SolCount):
-        #cont = 0
+        total = 0
+        rota = []
         modeloGerador.Params.SolutionNumber = k
         for i, j in typeX:
             if(x[i, j].Xn > 0.5):
-    #           cont += 1
-                print(i, j, f[i, j].Xn,  x[i, j].Xn * dadosProblema.dists[i, j])
-    #    print(cont)
+                print(i, j, f[i, j].Xn,  x[i, j].Xn * matriz[i, j])
+                total += x[i,j].Xn 
+        print(total)
         print('='*20)
+    
