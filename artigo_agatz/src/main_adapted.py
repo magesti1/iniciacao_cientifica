@@ -65,12 +65,7 @@ model.setObjective(
     sense=gp.GRB.MINIMIZE
 )
 
-# ========================================================
-# (17) FLUX SUBTOUR ELIMINATION
-# ========================================================
-
-
-
+model.Params.OutputFlag = 0
 
 # =========================================================
 # (17) MTZ - SUBTOUR ELIMINATION

@@ -1,4 +1,4 @@
-Teste com tamanhos: 7 4 
+Teste com tamanhos: 5 5
 Foram geradas todas operações e por enquanto colocadas a mão, posteriormente deixar automático
 Forcei o modelo a escolher pelo menos 3 operações para cobrir todo o campo
 ==============================
