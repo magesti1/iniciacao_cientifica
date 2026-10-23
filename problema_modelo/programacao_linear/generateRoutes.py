@@ -35,7 +35,7 @@ def geraRotas(dadosProblema):
 
     nos = dadosProblema.V + [depot]
 
-    matriz = recalcuteDists(dadosProblema)
+    matrizCustos = recalcuteDists(dadosProblema)
     
     modeloGerador = gp.Model("Gerador_Rotas")
 
@@ -56,7 +56,7 @@ def geraRotas(dadosProblema):
 
     # Parâmetros
     # Esses parâmetros vão buscar todas soluções possíveis
-    modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 10000)
+    modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 2147483647)
     modeloGerador.setParam(gp.GRB.Param.PoolSearchMode, 2)
 
     modeloGerador.Params.OutputFlag = 0
@@ -116,15 +116,27 @@ def geraRotas(dadosProblema):
     modeloGerador.optimize()
 
     print(modeloGerador.SolCount)
+    operations = []
+
     
-    for k in range (modeloGerador.SolCount):
-        total = 0
+    for k in range(modeloGerador.SolCount):
         rota = []
+        custo = 0
+        noAtual = depot
         modeloGerador.Params.SolutionNumber = k
-        for i, j in typeX:
-            if(x[i, j].Xn > 0.5):
-                print(i, j, f[i, j].Xn,  x[i, j].Xn * matriz[i, j])
-                total += x[i,j].Xn 
-        print(total)
-        print('='*20)
-    
+        while(True):
+            for j in nos:
+                if noAtual != j and x[noAtual, j].Xn > 0.5:
+                    custo += matrizCustos[noAtual, j]
+                    noAtual = j
+                    if(j != depot): rota.append(noAtual)
+            if(noAtual == depot): break
+
+        operations.append(
+            {
+                "nodes": rota,
+                "cost": custo
+            }
+        )
+
+    print(operations)

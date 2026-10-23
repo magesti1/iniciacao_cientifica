@@ -1,0 +1,24 @@
+Teste com tamanhos: 7 4 
+Foram geradas todas operações e por enquanto colocadas a mão, posteriormente deixar automático
+Forcei o modelo a escolher pelo menos 3 operações para cobrir todo o campo
+==============================
+OPTIMAL SOLUTION
+==============================
+
+Total cost: 9.0
+
+Operation 0
+[8]
+2
+==============
+
+Operation 349
+[6, 11, 16]
+4.0
+==============
+
+Operation 1533
+[13, 18]
+3.0
+==============
+

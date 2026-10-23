@@ -1627,94 +1627,43 @@ CPU model: AMD Ryzen 5 5600H with Radeon Graphics, instruction set [SSE2|AVX|AVX
 Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
 
 Academic license 2836054 - for non-commercial use only - registered to ed___@ufv.br
-Optimize a model with 100 rows, 1622 columns and 33785 nonzeros (Min)
-Model fingerprint: 0xa2d55a0e
+Optimize a model with 6 rows, 1622 columns and 7491 nonzeros (Min)
+Model fingerprint: 0xa9ff0b45
 Model has 1615 linear objective coefficients
 Variable types: 0 continuous, 1622 integer (1622 binary)
 Coefficient statistics:
-  Matrix range     [1e+00, 6e+00]
+  Matrix range     [1e+00, 1e+00]
   Objective range  [1e+02, 9e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 1e+00]
 
-Found heuristic solution: objective 1119.6152392
-Presolve added 69 rows and 0 columns
-Presolve removed 0 rows and 793 columns
-Presolve time: 0.03s
-Presolved: 169 rows, 829 columns, 12335 nonzeros
-Variable types: 0 continuous, 829 integer (617 binary)
+Found heuristic solution: objective 546.4101602
+Presolve added 15 rows and 0 columns
+Presolve removed 0 rows and 1241 columns
+Presolve time: 0.00s
+Presolved: 21 rows, 381 columns, 446 nonzeros
+Variable types: 0 continuous, 381 integer (12 binary)
 
-Root relaxation: objective 2.877007e+02, 204 iterations, 0.00 seconds (0.00 work units)
+Root relaxation: objective 2.366025e+02, 24 iterations, 0.00 seconds (0.00 work units)
 
     Nodes    |    Current Node    |     Objective Bounds      |     Work
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-     0     0  287.70069    0   20 1119.61524  287.70069  74.3%     -    0s
-H    0     0                     819.6152405  287.70069  64.9%     -    0s
-H    0     0                     673.2050794  287.70069  57.3%     -    0s
-H    0     0                     599.9999987  287.70069  52.0%     -    0s
-H    0     0                     573.2050799  287.70069  49.8%     -    0s
-H    0     0                     573.2050796  287.70069  49.8%     -    0s
-H    0     0                     573.2050793  287.70069  49.8%     -    0s
-H    0     0                     546.4101607  287.70069  47.3%     -    0s
-H    0     0                     523.2050798  287.70069  45.0%     -    0s
-H    0     0                     519.6152411  287.70069  44.6%     -    0s
-     0     0  309.28203    0   17  519.61524  309.28203  40.5%     -    0s
-     0     0  309.28203    0   21  519.61524  309.28203  40.5%     -    0s
-H    0     0                     509.8076209  373.82165  26.7%     -    0s
-H    0     0                     499.9999993  373.82165  25.2%     -    0s
-     0     0  373.82165    0   17  500.00000  373.82165  25.2%     -    0s
-H    0     0                     499.9999990  373.82165  25.2%     -    0s
-H    0     0                     473.2050799  373.82165  21.0%     -    0s
-     0     0  374.08209    0   19  473.20508  374.08209  20.9%     -    0s
-     0     0  375.60293    0   16  473.20508  375.60293  20.6%     -    0s
-     0     0  391.15030    0   27  473.20508  391.15030  17.3%     -    0s
-     0     0  391.15030    0   20  473.20508  391.15030  17.3%     -    0s
-     0     0  391.15030    0   13  473.20508  391.15030  17.3%     -    0s
-     0     0  391.15030    0   23  473.20508  391.15030  17.3%     -    0s
-     0     0  391.15030    0   24  473.20508  391.15030  17.3%     -    0s
-     0     0  397.73414    0   23  473.20508  397.73414  15.9%     -    0s
-     0     0  404.99141    0   19  473.20508  404.99141  14.4%     -    0s
-     0     0  404.99141    0   23  473.20508  404.99141  14.4%     -    0s
-H    0     0                     446.4101611  404.99141  9.28%     -    0s
-H    0     0                     446.4101605  404.99141  9.28%     -    0s
-     0     0  412.44578    0   34  446.41016  412.44578  7.61%     -    0s
-     0     0  412.44578    0   16  446.41016  412.44578  7.61%     -    0s
-     0     0  412.44578    0   18  446.41016  412.44578  7.61%     -    0s
-     0     0  412.44578    0   23  446.41016  412.44578  7.61%     -    0s
-     0     0  412.91808    0   29  446.41016  412.91808  7.50%     -    0s
-     0     0  412.95383    0   30  446.41016  412.95383  7.49%     -    0s
-     0     0  417.90734    0   27  446.41016  417.90734  6.38%     -    0s
-     0     0  418.60449    0   26  446.41016  418.60449  6.23%     -    0s
-     0     0  418.60449    0   27  446.41016  418.60449  6.23%     -    0s
-     0     0  422.35224    0   26  446.41016  422.35224  5.39%     -    0s
-     0     0  424.27346    0   29  446.41016  424.27346  4.96%     -    0s
-     0     0  424.27346    0   31  446.41016  424.27346  4.96%     -    0s
-     0     0  424.32777    0   30  446.41016  424.32777  4.95%     -    0s
+*    0     0               0     236.6025401  236.60254  0.00%     -    0s
 
-Cutting planes:
-  Cover: 8
-  Clique: 2
-  MIR: 14
-  StrongCG: 2
-  Flow cover: 2
-  Zero half: 4
-  Mod-K: 3
-  RLT: 1
-
-Explored 1 nodes (962 simplex iterations) in 0.26 seconds (0.25 work units)
+Explored 1 nodes (24 simplex iterations) in 0.01 seconds (0.00 work units)
 Thread count was 12 (of 12 available processors)
 
-Solution count 10: 446.41 446.41 473.205 ... 546.41
+Solution count 2: 236.603 546.41 
 
 Optimal solution found (tolerance 1.00e-04)
-Best objective 4.464101605238e+02, best bound 4.464101605238e+02, gap 0.0000%
+Best objective 2.366025401200e+02, best bound 2.366025401200e+02, gap 0.0000%
 
 ==============================
 OPTIMAL SOLUTION
 ==============================
 
-Total cost: 446.41016052375664
+Total cost: 236.6025401199619
 
 Operation 0
   start: 0
@@ -1723,19 +1672,12 @@ Operation 0
   drone: None
   cost: 0.0
 
-Operation 612
-  start: 0
-  end: 5
-  truck: (0, 5)
-  drone: (0, 1, 5)
-  cost: 136.602539836129
-
-Operation 1256
-  start: 4
-  end: 0
-  truck: (4, 0)
-  drone: (4, 2, 0)
-  cost: 173.2050805676658
+Operation 12
+  start: 2
+  end: 1
+  truck: (2, 1)
+  drone: None
+  cost: 100.0
 
 Operation 1547
   start: 5
