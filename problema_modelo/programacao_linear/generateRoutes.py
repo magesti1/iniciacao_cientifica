@@ -21,7 +21,7 @@ def recalcuteDists(dadosProblema):
         d3 = calculateDist(p, p3, dadosProblema.largura)
         d4 = calculateDist(p, p4, dadosProblema.largura)
         d5 = calculateDist(p, p5, dadosProblema.largura)
-        minDist = min(d1, d2, d3, d4, d5)
+        minDist = 10 * min(d1, d2, d3, d4, d5)
         matriz[p, dadosProblema.totalPontos] = minDist
         matriz[dadosProblema.totalPontos, p] = minDist
 
@@ -52,12 +52,13 @@ def geraRotas(dadosProblema):
     f = modeloGerador.addVars(typeX, vtype=gp.GRB.INTEGER, lb=0, name='f')
 
     # Função objetivo (Não queremos minimizar nada)
-    modeloGerador.setObjective(0)
+    modeloGerador.setObjective(gp.quicksum(x[i, j] * matrizCustos[i, j] for i in nos for j in nos if i != j),
+                               sense=gp.GRB.MINIMIZE)
 
     # Parâmetros
     # Esses parâmetros vão buscar todas soluções possíveis
-    modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 2147483647)
-    modeloGerador.setParam(gp.GRB.Param.PoolSearchMode, 2)
+    #modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 2147483647)
+    #modeloGerador.setParam(gp.GRB.Param.PoolSearchMode, 2)
 
     modeloGerador.Params.OutputFlag = 0
 
@@ -83,7 +84,7 @@ def geraRotas(dadosProblema):
 
     # Cada ponto pode ser visitado no máximo 1 vez
     modeloGerador.addConstrs(
-        gp.quicksum(x[j, i] for j in nos if i != j) <= 1 for i in dadosProblema.V
+        gp.quicksum(x[j, i] for j in nos if i != j) == 1 for i in dadosProblema.V
     )
 
     modeloGerador.addConstr(
@@ -91,6 +92,7 @@ def geraRotas(dadosProblema):
         name='limite_max_pontos'
     )
 
+    
     # Restrições de fluxo
     modeloGerador.addConstr(
         gp.quicksum(f[depot, j] for j in nos if j != depot) == gp.quicksum(x[j, i] for i in dadosProblema.V for j in nos if i != j),
