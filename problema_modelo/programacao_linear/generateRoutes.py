@@ -21,7 +21,7 @@ def recalcuteDists(dadosProblema):
         d3 = calculateDist(p, p3, dadosProblema.largura)
         d4 = calculateDist(p, p4, dadosProblema.largura)
         d5 = calculateDist(p, p5, dadosProblema.largura)
-        minDist = 10 * min(d1, d2, d3, d4, d5)
+        minDist = min(d1, d2, d3, d4, d5)
         matriz[p, dadosProblema.totalPontos] = minDist
         matriz[dadosProblema.totalPontos, p] = minDist
 
@@ -57,8 +57,8 @@ def geraRotas(dadosProblema):
 
     # Parâmetros
     # Esses parâmetros vão buscar todas soluções possíveis
-    #modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 2147483647)
-    #modeloGerador.setParam(gp.GRB.Param.PoolSearchMode, 2)
+    modeloGerador.setParam(gp.GRB.Param.PoolSolutions, 2000)
+    modeloGerador.setParam(gp.GRB.Param.PoolSearchMode, 2)
 
     modeloGerador.Params.OutputFlag = 0
 
@@ -82,11 +82,12 @@ def geraRotas(dadosProblema):
         name='sair_chegar_todos_nos' 
     )
 
-    # Cada ponto pode ser visitado no máximo 1 vez
+    # Máximo 1 arco chegando em algum nó do campo
     modeloGerador.addConstrs(
-        gp.quicksum(x[j, i] for j in nos if i != j) == 1 for i in dadosProblema.V
+        gp.quicksum(x[j, i] for j in nos if i != j) <= 1 for i in dadosProblema.V
     )
 
+    # Limite de pontos
     modeloGerador.addConstr(
         gp.quicksum(x[j, i] for i in dadosProblema.V for j in nos if i != j) <= dadosProblema.maxVoos,
         name='limite_max_pontos'
@@ -102,7 +103,8 @@ def geraRotas(dadosProblema):
     # Conserva o fluxo conforme visita os nós
     modeloGerador.addConstrs(
         (gp.quicksum(f[j, i] for j in nos if i != j) -
-        gp.quicksum(f[i, j] for j in nos if i != j) == gp.quicksum(x[j, i] for j in nos if i != j)
+         gp.quicksum(f[i, j] for j in nos if i != j) == 
+         gp.quicksum(x[j, i] for j in nos if i != j)
         for i in dadosProblema.V),
         name='conserva_fluxo'
     )
@@ -120,7 +122,14 @@ def geraRotas(dadosProblema):
     print(modeloGerador.SolCount)
     operations = []
 
-    
+    for k in range(modeloGerador.SolCount):
+        modeloGerador.Params.SolutionNumber = k
+        for i,j in typeX:
+            if(x[i,j].Xn > 0.5):
+                print(i, j, int(f[i,j].Xn))
+        print("-"*20)
+
+    '''
     for k in range(modeloGerador.SolCount):
         rota = []
         custo = 0
@@ -140,5 +149,5 @@ def geraRotas(dadosProblema):
                 "cost": custo
             }
         )
-
+    '''
     print(operations)

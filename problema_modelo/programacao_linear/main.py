@@ -2,6 +2,7 @@ import os
 import gurobi_model
 from generateRoutes import geraRotas
 import two_opt
+from column_generation import columnGeneration
 
 def main():
     print('---Starting Execution---')
@@ -30,7 +31,8 @@ def main():
             1      # T_c
         )
 
-        geraRotas(dados)
+        columnGeneration(dados)
+        #geraRotas(dados)
 
         '''
         # Rodando o modelo de programação linear pela primeira vez, para o MIP Start
