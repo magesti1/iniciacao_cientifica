@@ -7,11 +7,12 @@ c = [
         droneRoutes[r]["cost"]
         for r in R_d
     ]
+
+delta = {}
+
 def criarMestre(dadosProblema):
     V = dadosProblema.V
     nos = V + [dadosProblema.depot]
-
-    delta = {}
     for r in R_d:
         for i in nos:
             delta[r, i] = 1
@@ -25,18 +26,18 @@ def criarMestre(dadosProblema):
         R_d,
         vtype=gp.GRB.CONTINUOUS,
         name="y",
-        lb=0.5,
+        lb=0,
     )
 
     # Variável artificial
-    mi = mestre.addVar(vtype=gp.GRB.CONTINUOUS, name='mi')
+    mi = mestre.addVars(V, vtype=gp.GRB.CONTINUOUS, name='mi')
 
     mestre.setObjective(
 
         gp.quicksum(
             c[r] * y[r]
             for r in R_d
-        ) + 10e3*mi,
+        ) + 50* gp.quicksum(mi[i] for i in V),
 
         sense=gp.GRB.MINIMIZE
     )
@@ -46,14 +47,14 @@ def criarMestre(dadosProblema):
     restricaoPi = mestre.addConstrs(
 
         (
-            gp.quicksum(delta[r, i] * y[r] for r in R_d) + mi>= 1
-            for i in nos
+            gp.quicksum(delta[r, i] * y[r] for r in R_d) + mi[i]>= 1
+            for i in V
         ),
 
         name="cover"
     )
 
-    return mestre, restricaoPi, y
+    return mestre, restricaoPi
 
 
 def resolverSubproblema(pi, dadosProblema, matrizCustos):
@@ -82,14 +83,16 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
     f = subProblem.addVars(typeX, vtype=gp.GRB.INTEGER, lb=0, name='f')
 
     # Parâmetos
-    subProblem.setParam(gp.GRB.Param.PoolSolutions, 1000)
-    subProblem.setParam(gp.GRB.Param.PoolSearchMode, 2)
+    #subProblem.setParam(gp.GRB.Param.PoolSolutions, 1000)
+    #subProblem.setParam(gp.GRB.Param.PoolSearchMode, 2)
     subProblem.Params.OutputFlag = 0
 
     # Função objetivo
-    subProblem.setObjective(gp.quicksum(matrizCustos[i,j] * x[i,j] for i in nos for j in nos if i != j)
-                            - gp.quicksum(matrizCustos[i,j] * pi[j] for i in nos for j in nos),
-                            sense=gp.GRB.MINIMIZE)
+    subProblem.setObjective(
+    gp.quicksum(matrizCustos[i, j] * x[i, j]for i in nos for j in nos if i != j) -
+    gp.quicksum(pi[i] * gp.quicksum(x[j, i] for j in nos if j != i) for i in V),
+    sense=gp.GRB.MINIMIZE
+    )
     # Restrições 
     # Sair depot
     subProblem.addConstr(gp.quicksum(x[depot, j] for j in V) == 1,
@@ -139,17 +142,41 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
 
     subProblem.optimize()
 
-    print(subProblem.SolCount)
+    #print(subProblem.SolCount)
 
-    for k in range(subProblem.SolCount):
-            subProblem.Params.SolutionNumber = k
-            print(subProblem.PoolObjVal)
-            for i,j in typeX:
-                if(x[i,j].Xn > 0.5):
-                    print(i, j, int(f[i,j].Xn))
-            print("-"*20)
+    #for k in range(subProblem.SolCount):
+    #        subProblem.Params.SolutionNumber = k
+    #        print(subProblem.PoolObjVal)
+    #        for i,j in typeX:
+    #            if(x[i,j].Xn > 0.5):
+    #                print(i, j, int(f[i,j].Xn))
+    #        print("-"*20)
 
-    return subProblem.ObjVal
+    if subProblem.SolCount > 0 and subProblem.PoolObjVal < -1e-6:
+        #subProblem.Params.SolutionNumber = subProblem.SolCount-1
+        rota = [depot]
+        noAtual = depot
+        custo = 0
+        while(True):
+                    for j in nos:
+                        if noAtual != j and x[noAtual, j].X > 0.5:
+                            custo += matrizCustos[noAtual, j]
+                            noAtual = j
+                            if(j != depot): rota.append(noAtual)
+                    if(noAtual == depot): break
+        #print(rota)
+        
+        droneRoutes.append({'nodes': rota, 'cost': custo})
+        c.append(droneRoutes[len(R_d)]['cost'])
+
+        for i in nos:
+            delta[len(R_d), i] = int(i in rota)
+
+    #print(delta)
+
+    #print(droneRoutes, c, R_d, subProblem.PoolObjVal)
+        
+    return subProblem.Objval, len(R_d)
 
 
 def columnGeneration(dadosProblema):
@@ -159,19 +186,51 @@ def columnGeneration(dadosProblema):
     nos = V + [dadosProblema.depot]
 
     # Criando o problema mestre
-    problemaMestre, pi, y = criarMestre(dadosProblema)
+    problemaMestre, pi = criarMestre(dadosProblema)
 
     iteracao = 0
+
     while True:
         iteracao += 1
-        problemaMestre.optimize()
-        duaisPi = {i: pi[i].Pi for i in nos}
-        print(y)
-        print(problemaMestre.ObjVal)
-        print(duaisPi)
-        c_r = resolverSubproblema(duaisPi, dadosProblema, custos)
-        #if(c_r >= -1e-6):
-        #    print("Solução Ótima encontrada!")
-        #   break
 
-        break
+        problemaMestre.optimize()
+
+        duaisPi = {i: pi[i].Pi for i in V}
+        custoReduzido, novaRota = resolverSubproblema(duaisPi, dadosProblema, custos)
+
+        if(custoReduzido >= -1e-6):
+            print(f"Solução Ótima encontrada!")
+            break
+        R_d.append(novaRota)
+        
+        coefs = [delta[novaRota, i] for i in V]
+        constrs = [pi[piConstr] for piConstr in pi]
+
+        custoColuna = droneRoutes[novaRota]['cost']
+        
+        coluna = gp.Column(coefs, constrs)
+
+        problemaMestre.addVar(
+            lb = 0,
+            obj = custoColuna,
+            vtype = gp.GRB.CONTINUOUS,
+            column = coluna,
+            name=f'y[{novaRota}]'
+        )
+
+        teste = problemaMestre.getConstrs()
+
+        vars = problemaMestre.getVars()
+        print(custoReduzido)
+        print(vars)
+        print(coefs)
+        print(constrs)
+        for i in range(len(V)):
+            print(teste[i].Pi)
+        print(duaisPi)
+        #print(vars)
+        #print(duaisPi)
+        print(f"Iteração {iteracao:02d} | Custo Relaxado: {problemaMestre.ObjVal:.2f} | Nova Coluna: {droneRoutes[novaRota]}\n")
+
+    print(f"Custo Relaxado: {problemaMestre.ObjVal:.2f}")
+    print(vars)
