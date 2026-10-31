@@ -32,6 +32,8 @@ def criarMestre(dadosProblema):
     # Variável artificial
     mi = mestre.addVars(V, vtype=gp.GRB.CONTINUOUS, name='mi')
 
+    mestre.Params.TimeLimit = 3600
+
     mestre.setObjective(
 
         gp.quicksum(
@@ -142,19 +144,8 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
 
     subProblem.optimize()
 
-    #print(subProblem.SolCount)
-
-    #for k in range(subProblem.SolCount):
-    #        subProblem.Params.SolutionNumber = k
-    #        print(subProblem.PoolObjVal)
-    #        for i,j in typeX:
-    #            if(x[i,j].Xn > 0.5):
-    #                print(i, j, int(f[i,j].Xn))
-    #        print("-"*20)
-
     if subProblem.SolCount > 0 and subProblem.PoolObjVal < -1e-6:
-        #subProblem.Params.SolutionNumber = subProblem.SolCount-1
-        rota = [depot]
+        rota = []
         noAtual = depot
         custo = 0
         while(True):
@@ -164,17 +155,12 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
                             noAtual = j
                             if(j != depot): rota.append(noAtual)
                     if(noAtual == depot): break
-        #print(rota)
         
         droneRoutes.append({'nodes': rota, 'cost': custo})
         c.append(droneRoutes[len(R_d)]['cost'])
 
         for i in nos:
             delta[len(R_d), i] = int(i in rota)
-
-    #print(delta)
-
-    #print(droneRoutes, c, R_d, subProblem.PoolObjVal)
         
     return subProblem.Objval, len(R_d)
 
@@ -221,16 +207,15 @@ def columnGeneration(dadosProblema):
         teste = problemaMestre.getConstrs()
 
         vars = problemaMestre.getVars()
-        print(custoReduzido)
-        print(vars)
-        print(coefs)
-        print(constrs)
-        for i in range(len(V)):
-            print(teste[i].Pi)
-        print(duaisPi)
+        #print(custoReduzido)
         #print(vars)
+        #print(coefs)
+        #print(constrs)
         #print(duaisPi)
         print(f"Iteração {iteracao:02d} | Custo Relaxado: {problemaMestre.ObjVal:.2f} | Nova Coluna: {droneRoutes[novaRota]}\n")
 
     print(f"Custo Relaxado: {problemaMestre.ObjVal:.2f}")
+
+    print("===========================\nROTAS SELECIONADAS\n===========================")
     print(vars)
+    print(droneRoutes)
