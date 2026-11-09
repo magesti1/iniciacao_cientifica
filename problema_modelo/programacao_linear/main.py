@@ -25,9 +25,9 @@ def main():
             x,      # larguraGrid
             y,      # alturaGrid
             k,      # totalRotas
-            m,      # maxVoos
+            m,      # maxDistância
             True,   # firstSolution
-            1.0,    # alpha
+            2,     # alpha
             1      # T_c
         )
 

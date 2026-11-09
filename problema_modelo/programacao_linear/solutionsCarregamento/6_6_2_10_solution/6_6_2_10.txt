@@ -1,0 +1,15 @@
+Notas do experimento usando:
+Largura: 6
+Altura: 6
+Número de rotas: 2
+Máximo de voos: 10
+Tempo de carregamento: 1
+Alpha: 2
+Foi utilizada a busca 2-opt no MIP Start apenas
+--------------------
+
+Custo total otimizado: 16.24
+
+----Sequência de rota dos drones----
+Drone 0: Trator (O) -> 21 -> 20 -> 14 -> 10 -> 16 -> 22 -> 28 -> 27 -> Trator (O)
+Drone 1: Trator (O) -> 27 -> 26 -> 25 -> 19 -> 13 -> 7 -> 8 -> 9 -> Trator (O)

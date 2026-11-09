@@ -25,11 +25,11 @@ def isHorizontal(P, larguraGrid, alturaGrid):
 
 # Classe principal do problema, fazendo com que todos os dados se organizem de forma melhor, iniciando num único local e inicialização dessas variáveis, incluindo a matriz de distância
 class dadosDoProblema:
-    def __init__(self, larguraGrid, alturaGrid, totalRotas, maxVoos, firstSolution, alpha, T_c):
+    def __init__(self, larguraGrid, alturaGrid, totalRotas, maxDistancia, firstSolution, alpha, T_c):
         self.largura = larguraGrid
         self.altura = alturaGrid
         self.totalRotas = totalRotas
-        self.maxVoos = maxVoos
+        self.maxDistancia = maxDistancia
         self.firstSolution = firstSolution
         self.alpha = alpha
         self.T_c = T_c
