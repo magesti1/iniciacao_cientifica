@@ -1,5 +1,6 @@
 import gurobipy as gp
 from generateRoutes import recalcuteDists
+from itertools import permutations
 
 droneRoutes = []
 R_d = list(range(len(droneRoutes)))
@@ -86,12 +87,11 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
     #subProblem.Params.TimeLimit = 120
 
     # Variável f para controlar o fluxo
-    f = subProblem.addVars(typeX, vtype=gp.GRB.INTEGER, lb=0, name='f')
+    # f = subProblem.addVars(typeX, vtype=gp.GRB.INTEGER, lb=0, name='f')
 
     # Parâmetos
-    #subProblem.setParam(gp.GRB.Param.PoolSolutions, 1000)
-    #subProblem.setParam(gp.GRB.Param.PoolSearchMode, 2)
     subProblem.Params.OutputFlag = 0
+    subProblem.Params.LazyConstraints = 1
 
     # Função objetivo
     subProblem.setObjective(
@@ -124,11 +124,11 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
 
     # Limite de pontos
     subProblem.addConstr(
-            gp.quicksum(matrizCustos[i,j] * x[j, i] for i in V for j in nos if i != j) <= dadosProblema.maxDistancia,
+            gp.quicksum(matrizCustos[i,j] * x[j, i] for i in nos for j in nos if i != j) <= dadosProblema.maxDistancia,
             name='limite_max_pontos'
     )
 
-
+    '''
     # Restrições de fluxo
     subProblem.addConstr(
             gp.quicksum(f[depot, j] for j in nos if j != depot) == (dadosProblema.maxDistancia-1),
@@ -147,7 +147,7 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
             for i,j in typeX),
             name='fluxo_apenas_onde_passar'
     )
-
+    '''
 
     # Guarantee the truck can launch and then recover the drone
     subProblem.addConstrs(
@@ -156,7 +156,12 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
         for i in R for i_prime in R if i != i_prime
     )
 
-    subProblem.optimize()
+    subProblem._vars = x
+    subProblem.addConstrs(
+             x[i, j] + x[j, i] <= 1 for i in nos for j in nos if i != j
+    )
+
+    subProblem.optimize(subtourelim)
 
     if subProblem.SolCount > 0 and subProblem.PoolObjVal < -1e-6:
         rota = []
@@ -236,3 +241,43 @@ def columnGeneration(dadosProblema):
             var = problemaMestre.getVarByName(f'y[{r}]')
             if var is not None and var.X > 1e-7:
                 print(f'y[{r}]={var.X:.6f} | {rota}')
+
+
+def subtourelim(model, where):
+    if where == gp.GRB.Callback.MIPSOL:
+        vals = model.cbGetSolution(model._vars)
+        
+        successor_map = {
+            i: j for (i, j), val in vals.items() if val > 0.5
+        }
+        nodes = [i for (i,j), val in vals.items() if val > 0.5]
+
+        tour = subtour(successor_map, nodes)
+        for t in tour:
+            if len(t) < len(nodes):
+                internal_arcs = gp.quicksum(
+                    model._vars[i, j]
+                    for i, j in permutations(t, 2)
+                    if (i, j) in model._vars
+                )
+                model.cbLazy(internal_arcs <= len(t) - 1)
+
+
+def subtour(successor_map, nodes):
+    unvisited = set(nodes)
+    cycles = []
+    
+    while unvisited:
+        start = unvisited.pop()
+        thiscycle = [start]
+        curr = successor_map.get(start)
+
+        while curr in unvisited:
+            unvisited.remove(curr)
+            thiscycle.append(curr)
+            curr = successor_map.get(curr)
+
+        if curr == start:
+            cycles.append(thiscycle)
+            
+    return cycles

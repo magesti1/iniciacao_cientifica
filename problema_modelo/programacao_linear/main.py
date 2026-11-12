@@ -2,7 +2,7 @@ import os
 import gurobi_model
 from generateRoutes import geraRotas
 import two_opt
-from column_generation_no_truck import columnGeneration
+from column_generation import columnGeneration
 
 def main():
     print('---Starting Execution---')

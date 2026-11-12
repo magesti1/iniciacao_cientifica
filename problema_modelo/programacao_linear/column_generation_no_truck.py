@@ -82,9 +82,6 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
         name='x'
     )
 
-    # Variável f para controlar o fluxo
-    #f = subProblem.addVars(typeX, vtype=gp.GRB.INTEGER, lb=0, name='f')
-
     # Parâmetos
     #subProblem.setParam(gp.GRB.Param.PoolSolutions, 1000)
     #subProblem.setParam(gp.GRB.Param.PoolSearchMode, 2)
@@ -128,26 +125,6 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
          x[i, j] + x[j, i] <= 1 for i in nos for j in nos if i != j
     )
 
-    '''
-    # Restrições de fluxo
-    subProblem.addConstr(
-            gp.quicksum(f[depot, j] for j in nos if j != depot) == (dadosProblema.maxDistancia-1),
-            name='sair_com_carga_n-1'
-    ) 
-
-    subProblem.addConstrs(
-            (gp.quicksum(f[j, i] for j in nos if i != j) -
-            gp.quicksum(f[i, j] for j in nos if i != j) == gp.quicksum(matrizCustos[i,j] * x[j, i] for j in nos if i != j)
-            for i in V),
-            name='conserva_fluxo'
-    )
-
-    subProblem.addConstrs(
-            (f[i,j] <= (dadosProblema.maxDistancia-1) * x[i, j]
-            for i,j in typeX),
-            name='fluxo_apenas_onde_passar'
-    )
-    '''
     subProblem.Params.LazyConstraints = 1
     subProblem._vars = x
 
