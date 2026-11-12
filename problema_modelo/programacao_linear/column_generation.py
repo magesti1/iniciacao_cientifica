@@ -61,7 +61,7 @@ def criarMestre(dadosProblema):
 
     restricaoSigma = mestre.addConstrs(
         (
-            gp.quicksum(y[r] * (start[r, i] - finish[r, i]) for r in R_d) == 0
+            gp.quicksum(y[r] * (start[r, i] - finish[r, i]) for r in R_d) <= 0
             for i in dadosProblema.R
         )
     )
