@@ -10,6 +10,8 @@ c = [
     ]
 
 delta = {}
+start = {}
+finish = {}
 
 def criarMestre(dadosProblema):
     V = dadosProblema.V
@@ -57,10 +59,18 @@ def criarMestre(dadosProblema):
         name="cover"
     )
 
-    return mestre, restricaoPi
+    restricaoSigma = mestre.addConstrs(
+        (
+            gp.quicksum(y[r] * (start[r, i] - finish[r, i]) for r in R_d) == 0
+            for i in dadosProblema.R
+        )
+    )
+    
+
+    return mestre, restricaoPi, restricaoSigma
 
 
-def resolverSubproblema(pi, dadosProblema, matrizCustos):
+def resolverSubproblema(pi, sigma, dadosProblema, matrizCustos):
     # Dados do subproblema
     R = dadosProblema.R
     V = dadosProblema.V
@@ -96,7 +106,8 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
     # Função objetivo
     subProblem.setObjective(
         gp.quicksum(matrizCustos[i, j] * x[i, j]for i in nos for j in nos if i != j) -
-        gp.quicksum(pi[i] * gp.quicksum(x[j, i] for j in nos if j != i) for i in V),
+        gp.quicksum(pi[i] * gp.quicksum(x[j, i] for j in nos if j != i) for i in V) -
+        gp.quicksum(sigma[i] * (x[depot, i] - x[i, depot]) for i in R),
         sense=gp.GRB.MINIMIZE
     )
     # Restrições 
@@ -149,17 +160,28 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
     )
     '''
 
-    # Guarantee the truck can launch and then recover the drone
+    distTotal = subProblem.addVar(lb=0, name='distTotal')
+    subProblem.addConstr(
+        distTotal == gp.quicksum(matrizCustos[i, j] * x[i, j] for i, j in typeX),
+        name='def_dist_total'
+    )
+
+    subProblem.addConstr(distTotal <= dadosProblema.maxDistancia, name='limite_max_dist')
+
     subProblem.addConstrs(
-        gp.quicksum(matrizCustos[i, j] * x[i, j] for i,j in typeX) >=
-        alpha * matrizCustos[i, i_prime] - 200 *(2 - x[depot, i] - x[i_prime, depot])
-        for i in R for i_prime in R if i != i_prime
+        (distTotal >= alpha * matrizCustos[i, i_prime] * (x[depot, i] + x[i_prime, depot] - 1)
+         for i in R for i_prime in R if i != i_prime),
+        name='sincronizacao_caminhao_drone'
     )
 
     subProblem._vars = x
     subProblem.addConstrs(
              x[i, j] + x[j, i] <= 1 for i in nos for j in nos if i != j
     )
+
+    subProblem._vars = x
+    subProblem._nos = nos
+    subProblem._depot = depot
 
     subProblem.optimize(subtourelim)
 
@@ -179,18 +201,24 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
         c.append(droneRoutes[len(R_d)]['cost'])
         for i in nos:
             delta[len(R_d), i] = int(i in rota)
+
+        for i in R:
+            start[len(R_d), i] = int(x[depot, i].X)
+            finish[len(R_d), i] = int(x[i, depot].X) 
+    
         
     return subProblem.Objval, len(R_d)
 
 
 def columnGeneration(dadosProblema):
     # Dados específicos
+    R = dadosProblema.R
     V = dadosProblema.V
     custos = recalcuteDists(dadosProblema)
     nos = V + [dadosProblema.depot]
 
     # Criando o problema mestre
-    problemaMestre, pi = criarMestre(dadosProblema)
+    problemaMestre, pi, sigma = criarMestre(dadosProblema)
 
     iteracao = 0
 
@@ -200,7 +228,8 @@ def columnGeneration(dadosProblema):
         problemaMestre.optimize()
 
         duaisPi = {i: pi[i].Pi for i in V}
-        custoReduzido, novaRota = resolverSubproblema(duaisPi, dadosProblema, custos)
+        duaisSigma = {i: sigma[i].Pi for i in R}
+        custoReduzido, novaRota = resolverSubproblema(duaisPi, duaisSigma, dadosProblema, custos)
 
         if(custoReduzido >= -1e-6):
             droneRoutes.pop()
@@ -209,8 +238,8 @@ def columnGeneration(dadosProblema):
 
         R_d.append(novaRota)
         
-        coefs = [delta[novaRota, i] for i in V]
-        constrs = [pi[piConstr] for piConstr in pi]
+        coefs = [delta[novaRota, i] for i in V] + [start[novaRota, i] - finish[novaRota, i] for i in R] 
+        constrs = [pi[piConstr] for piConstr in pi] + [sigma[sigmaConstr] for sigmaConstr in sigma]
 
         custoColuna = droneRoutes[novaRota]['cost']
         
@@ -246,21 +275,35 @@ def columnGeneration(dadosProblema):
 def subtourelim(model, where):
     if where == gp.GRB.Callback.MIPSOL:
         vals = model.cbGetSolution(model._vars)
-        
+        nos = model._nos
+        depot = model._depot
+
         successor_map = {
             i: j for (i, j), val in vals.items() if val > 0.5
         }
-        nodes = [i for (i,j), val in vals.items() if val > 0.5]
+        nodes = list(successor_map.keys())
 
         tour = subtour(successor_map, nodes)
         for t in tour:
-            if len(t) < len(nodes):
-                internal_arcs = gp.quicksum(
+            # qualquer ciclo que não contém o depot é obrigatoriamente um subtour
+            if depot not in t:
+                t_set = set(t)
+                fora_de_t = [j for j in nos if j not in t_set]
+
+                arcos_saida = gp.quicksum(
                     model._vars[i, j]
-                    for i, j in permutations(t, 2)
+                    for i in t
+                    for j in fora_de_t
                     if (i, j) in model._vars
                 )
-                model.cbLazy(internal_arcs <= len(t) - 1)
+
+                for k in t:
+                    visita_k = gp.quicksum(
+                        model._vars[j, k]
+                        for j in nos
+                        if j != k and (j, k) in model._vars
+                    )
+                    model.cbLazy(arcos_saida >= visita_k)
 
 
 def subtour(successor_map, nodes):
