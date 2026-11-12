@@ -1,5 +1,6 @@
 import gurobipy as gp
 from generateRoutes import recalcuteDists
+from itertools import permutations
 
 droneRoutes = []
 R_d = list(range(len(droneRoutes)))
@@ -82,7 +83,7 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
     )
 
     # Variável f para controlar o fluxo
-    f = subProblem.addVars(typeX, vtype=gp.GRB.INTEGER, lb=0, name='f')
+    #f = subProblem.addVars(typeX, vtype=gp.GRB.INTEGER, lb=0, name='f')
 
     # Parâmetos
     #subProblem.setParam(gp.GRB.Param.PoolSolutions, 1000)
@@ -116,35 +117,41 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
     subProblem.addConstrs(
         gp.quicksum(x[j, i] for j in nos if i != j) <= 1 for i in V
     )
-
+    
     # Limite de pontos
     subProblem.addConstr(
-            gp.quicksum(x[j, i] for i in V for j in nos if i != j) <= dadosProblema.maxVoos,
+            gp.quicksum(matrizCustos[i, j] * x[j, i] for i in nos for j in nos if i != j) <= dadosProblema.maxDistancia,
             name='limite_max_pontos'
     )
 
+    subProblem.addConstrs(
+         x[i, j] + x[j, i] <= 1 for i in nos for j in nos if i != j
+    )
+
+    '''
     # Restrições de fluxo
     subProblem.addConstr(
-            gp.quicksum(f[depot, j] for j in nos if j != depot) == (dadosProblema.maxVoos-1),
+            gp.quicksum(f[depot, j] for j in nos if j != depot) == (dadosProblema.maxDistancia-1),
             name='sair_com_carga_n-1'
     ) 
 
     subProblem.addConstrs(
             (gp.quicksum(f[j, i] for j in nos if i != j) -
-            gp.quicksum(f[i, j] for j in nos if i != j) == gp.quicksum(x[j, i] for j in nos if i != j)
+            gp.quicksum(f[i, j] for j in nos if i != j) == gp.quicksum(matrizCustos[i,j] * x[j, i] for j in nos if i != j)
             for i in V),
             name='conserva_fluxo'
     )
 
     subProblem.addConstrs(
-            (f[i,j] <= (dadosProblema.maxVoos-1) * x[i, j]
+            (f[i,j] <= (dadosProblema.maxDistancia-1) * x[i, j]
             for i,j in typeX),
             name='fluxo_apenas_onde_passar'
     )
-
+    '''
+    subProblem.Params.LazyConstraints = 1
     subProblem._vars = x
 
-    subProblem.optimize()
+    subProblem.optimize(subtourelim)
 
     if subProblem.SolCount > 0 and subProblem.PoolObjVal < -1e-6:
         rota = []
@@ -214,7 +221,7 @@ def columnGeneration(dadosProblema):
         #print(coefs)
         #print(constrs)
         #print(duaisPi)
-        print(f"Iteração {iteracao:02d} | Custo Relaxado: {problemaMestre.ObjVal:.2f} | Nova Coluna: {droneRoutes[novaRota]}")
+        print(f"Iteração {iteracao:02d} | Custo Relaxado: {problemaMestre.ObjVal:.2f} | Custo Reduzido: {custoReduzido} | Nova Coluna: {droneRoutes[novaRota]}")
 
     print(f"Custo Relaxado: {problemaMestre.ObjVal:.2f}")
 
@@ -229,17 +236,38 @@ def columnGeneration(dadosProblema):
 def subtourelim(model, where):
     if where == gp.GRB.Callback.MIPSOL:
         vals = model.cbGetSolution(model._vars)
-        # Build a successor mapping: successor_map[i] = j where x[i,j] > 0.5
-        successor_map = {}
-        points = []
-        for (i, j), val in vals.items():
-            if val > 0.5:
-                points.append(i)
-                successor_map[i] = j
-
-        tour = subtour(successor_map)
-
         
+        successor_map = {
+            i: j for (i, j), val in vals.items() if val > 0.5
+        }
+        nodes = [i for (i,j), val in vals.items() if val > 0.5]
 
-def subtour(edges):
-     
+        tour = subtour(successor_map, nodes)
+        for t in tour:
+            if len(t) < len(nodes):
+                internal_arcs = gp.quicksum(
+                    model._vars[i, j]
+                    for i, j in permutations(t, 2)
+                    if (i, j) in model._vars
+                )
+                model.cbLazy(internal_arcs <= len(t) - 1)
+
+
+def subtour(successor_map, nodes):
+    unvisited = set(nodes)
+    cycles = []
+    
+    while unvisited:
+        start = unvisited.pop()
+        thiscycle = [start]
+        curr = successor_map.get(start)
+
+        while curr in unvisited:
+            unvisited.remove(curr)
+            thiscycle.append(curr)
+            curr = successor_map.get(curr)
+
+        if curr == start:
+            cycles.append(thiscycle)
+            
+    return cycles
