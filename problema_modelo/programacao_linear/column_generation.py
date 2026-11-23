@@ -94,11 +94,6 @@ def resolverSubproblema(pi, sigma, dadosProblema, matrizCustos):
         name='x'
     )
 
-    #subProblem.Params.TimeLimit = 120
-
-    # Variável f para controlar o fluxo
-    # f = subProblem.addVars(typeX, vtype=gp.GRB.INTEGER, lb=0, name='f')
-
     # Parâmetos
     subProblem.Params.OutputFlag = 0
     subProblem.Params.LazyConstraints = 1
@@ -138,27 +133,6 @@ def resolverSubproblema(pi, sigma, dadosProblema, matrizCustos):
             gp.quicksum(matrizCustos[i,j] * x[j, i] for i in nos for j in nos if i != j) <= dadosProblema.maxDistancia,
             name='limite_max_pontos'
     )
-
-    '''
-    # Restrições de fluxo
-    subProblem.addConstr(
-            gp.quicksum(f[depot, j] for j in nos if j != depot) == (dadosProblema.maxDistancia-1),
-            name='sair_com_carga_n-1'
-    ) 
-
-    subProblem.addConstrs(
-            (gp.quicksum(f[j, i] for j in nos if i != j) -
-            gp.quicksum(f[i, j] for j in nos if i != j) == gp.quicksum(matrizCustos[i, j] * x[j, i] for j in nos if i != j)
-            for i in R + V),
-            name='conserva_fluxo'
-    )
-
-    subProblem.addConstrs(
-            (f[i,j] <= (dadosProblema.maxDistancia-1) * x[i, j]
-            for i,j in typeX),
-            name='fluxo_apenas_onde_passar'
-    )
-    '''
 
     distTotal = subProblem.addVar(lb=0, name='distTotal')
     subProblem.addConstr(
@@ -270,6 +244,7 @@ def columnGeneration(dadosProblema):
             var = problemaMestre.getVarByName(f'y[{r}]')
             if var is not None and var.X > 1e-7:
                 print(f'y[{r}]={var.X:.6f} | {rota}')
+
 
 
 def subtourelim(model, where):
