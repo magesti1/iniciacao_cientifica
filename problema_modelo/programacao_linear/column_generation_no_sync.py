@@ -90,7 +90,7 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
     # Parâmetos
     subProblem.Params.OutputFlag = 0
     subProblem.Params.LazyConstraints = 1
-    subProblem.Params.PoolSolutions = 20
+    subProblem.Params.PoolSolutions = 100
     subProblem.Params.TimeLimit = 60
 
 
@@ -203,6 +203,7 @@ def columnGeneration(dadosProblema):
             droneRoutes.pop()
             print(f"Solução Ótima encontrada!")
             break
+        
         total_colunas += quantasRotas
         print(quantasRotas)
         for q in range(1, quantasRotas+1):
@@ -229,7 +230,7 @@ def columnGeneration(dadosProblema):
             #print(coefs)
             #print(constrs)
             #print(duaisPi)
-            print(f"Iteração {iteracao:02d} | Custo Relaxado: {problemaMestre.ObjVal:.2f} | Custo Reduzido: {custoReduzido} | Nova Coluna: {droneRoutes[novaRota - q]}")
+            print(f"Iteração {iteracao:02d} | Custo Relaxado: {problemaMestre.ObjVal:.2f} | Custo Reduzido: {custoReduzido:.4f} | Nova Coluna: {droneRoutes[novaRota - q]['nodes']}, cost: {droneRoutes[novaRota - q]['cost']:.2f}")
 
     print(f"Custo Relaxado: {problemaMestre.ObjVal:.2f} | Colunas totais: {total_colunas}")
 
