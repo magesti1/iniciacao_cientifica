@@ -1,6 +1,10 @@
 import gurobipy as gp
 from generateRoutes import recalcuteDists
 from itertools import permutations
+from gurobi_model import geraImagemRotas
+import matplotlib.pyplot as plt
+from gurobi_model import getCoords
+import os
 
 droneRoutes = []
 R_d = list(range(len(droneRoutes)))
@@ -362,3 +366,62 @@ def solveBinaryMasterProblem(dadosProblema):
         if var is not None and var.X > 1e-7:
             print(f'y[{r}]={var.X:.6f} | {rota}')
     print(f"Custo total: {mestreInteiro.objVal}")
+    geraImagemRotasMestre(dadosProblema, mestreInteiro, "solutionsMestre/", droneRoutes)
+
+def geraImagemRotasMestre(dadosProblema, model, folderName, droneRoutes):
+    fig, ax = plt.subplots(figsize=(10, 10))
+    
+    # 1. Desenha todos os nós da grade (Campo e Estrada)
+    for n in range(dadosProblema.totalPontos):
+        linha, coluna = getCoords(n, dadosProblema.largura)
+        if n in dadosProblema.V:
+            ax.scatter(coluna, linha, c='blue', marker='s', s=100, alpha=0.6, 
+                       label='Campo (V)' if n == dadosProblema.V[0] else "")
+        else:
+            ax.scatter(coluna, linha, c='black', marker='o', s=50, alpha=0.3, 
+                       label='Estrada (R)' if n == dadosProblema.R[0] else "")
+        ax.text(coluna + 0.1, linha + 0.1, str(n), fontsize=8, color='black', alpha=0.7)
+
+    # 2. Desenha todas as rotas selecionadas (y[r] == 1) do início ao fim
+    if model.status == gp.GRB.OPTIMAL or model.Status == gp.GRB.Status.TIME_LIMIT:
+        colors = ['red', 'blue', 'green', 'orange', 'purple', 'brown', 'cyan', 
+                  'magenta', 'teal', 'navy', 'crimson', 'olive', 'gold', 'indigo']
+        cor_idx = 0
+
+        for r, rota in enumerate(droneRoutes):
+            var = model.getVarByName(f'y[{r}]')
+            
+            if var is not None and var.X > 0.5:
+                rota_color = colors[cor_idx % len(colors)]
+                cor_idx += 1
+                nos = rota['nodes']
+
+                # Percorre TODOS os pares consecutivos da rota até o último nó
+                for idx in range(len(nos) - 1):
+                    atual = nos[idx]
+                    proximo = nos[idx + 1]
+
+                    li, ci = getCoords(atual, dadosProblema.largura)
+                    lj, cj = getCoords(proximo, dadosProblema.largura)
+
+                    is_service = (atual in dadosProblema.V or proximo in dadosProblema.V)
+                    line_style = '-' if is_service else '--'
+                    line_width = 2.5 if is_service else 1.2
+                    line_alpha = 1.0 if is_service else 0.6
+
+                    ax.annotate('', xy=(cj, lj), xytext=(ci, li),
+                                arrowprops=dict(arrowstyle='->', color=rota_color, lw=line_width,
+                                                linestyle=line_style, alpha=line_alpha))
+
+    # 3. Ajustes visuais e salvamento
+    ax.set_title("Visualização Final: Rotas Escolhidas no Problema Mestre")
+    ax.set_xlabel("Colunas (Y)")
+    ax.set_ylabel("Linhas (X)")
+    ax.invert_yaxis()
+    ax.grid(True, linestyle=':', alpha=0.4)
+    plt.legend(loc='upper right', bbox_to_anchor=(1.2, 1))
+
+    imageName = f'{dadosProblema.largura}_{dadosProblema.altura}_{dadosProblema.totalRotas}_{dadosProblema.maxDistancia}_mestre.png'
+    imagePath = os.path.join(folderName, imageName)
+    plt.savefig(imagePath, dpi=300, bbox_inches='tight')
+    plt.close()

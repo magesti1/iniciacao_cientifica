@@ -47,12 +47,12 @@ def main():
         # Setando a variável firstSolution para False, para então gerar a solução definitiva
         dados.firstSolution = False
         modelo, varsX = gurobi_model.runModel(dados)
-
-        # Criando a pasta em que ficará salva a solução da instância
-        experimentFolderName = f'{x}_{y}_{k}_{m}_solution'
         folderName = os.path.join("solutionsCarregamento", experimentFolderName) 
 
         os.makedirs(folderName, exist_ok=True)
+
+        # Criando a pasta em que ficará salva a solução da instância
+        experimentFolderName = f'{x}_{y}_{k}_{m}_solution'
 
         # Gerando o arquivo texto e imagem e os salvando na pasta da instância
         gurobi_model.geraArquivoTexto(dados, modelo, folderName, varsX)
