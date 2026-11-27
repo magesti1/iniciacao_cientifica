@@ -3,6 +3,7 @@ import gurobi_model
 from generateRoutes import geraRotas
 import two_opt
 from column_generation import columnGeneration
+from column_generation import solveBinaryMasterProblem
 
 def main():
     print('---Starting Execution---')
@@ -32,6 +33,7 @@ def main():
         )
 
         columnGeneration(dados)
+        solveBinaryMasterProblem(dados)
         #geraRotas(dados)
 
         '''

@@ -33,7 +33,7 @@ def criarMestre(dadosProblema):
     # Variável artificial
     mi = mestre.addVars(V, vtype=gp.GRB.CONTINUOUS, name='mi')
 
-    mestre.Params.TimeLimit = 3600
+    mestre.Params.TimeLimit = 600
 
     mestre.setObjective(
 
@@ -155,10 +155,12 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
 
     subProblem.optimize(subtourelim)
 
+    quantasAdicionadas = 0
 
     if subProblem.SolCount > 0 and subProblem.PoolObjVal < -1e-6:
         for k in range(subProblem.SolCount):
             subProblem.Params.SolutionNumber = k
+            quantasAdicionadas += 1
             rota = []
             noAtual = depot
             custo = 0
@@ -176,7 +178,7 @@ def resolverSubproblema(pi, dadosProblema, matrizCustos):
                 delta[len(R_d), i] = int(i in rota)
             R_d.append(len(R_d))
 
-    return subProblem.Objval, len(R_d), subProblem.SolCount
+    return subProblem.Objval, len(R_d), quantasAdicionadas
 
 
 def columnGeneration(dadosProblema):
@@ -200,7 +202,6 @@ def columnGeneration(dadosProblema):
         custoReduzido, novaRota, quantasRotas = resolverSubproblema(duaisPi, dadosProblema, custos)
 
         if(custoReduzido >= -1e-6):
-            droneRoutes.pop()
             print(f"Solução Ótima encontrada!")
             break
         
@@ -239,6 +240,7 @@ def columnGeneration(dadosProblema):
             var = problemaMestre.getVarByName(f'y[{r}]')
             if var is not None and var.X > 1e-7:
                 print(f'y[{r}]={var.X:.6f} | {rota}')
+    print(f"Custo total: {problemaMestre.objVal}")
 
 
 def subtourelim(model, where):
@@ -293,3 +295,46 @@ def subtour(successor_map, nodes):
             cycles.append(thiscycle)
             
     return cycles
+
+def solveBinaryMasterProblem(dadosProblema):
+    V = dadosProblema.V
+    nos = V + [dadosProblema.depot]
+
+    mestreInteiro = gp.Model("master_problem")
+    # Adicionando variáveis
+    # Escolha das rotas dos drones
+    y = mestreInteiro.addVars(
+        R_d,
+        vtype=gp.GRB.BINARY,
+        name="y",
+    )
+
+    mestreInteiro.Params.TimeLimit = 600
+
+    mestreInteiro.setObjective(
+        gp.quicksum(
+            c[r] * y[r]
+            for r in R_d
+        ),
+        sense=gp.GRB.MINIMIZE
+    )
+
+    mestreInteiro.Params.OutputFlag = 0
+
+    restrs = mestreInteiro.addConstrs(
+
+        (
+            gp.quicksum(delta[r, i] * y[r] for r in R_d)>= 1
+            for i in V
+        ),
+
+        name="cover"
+    )
+
+    mestreInteiro.optimize()
+    print("==== ROTAS ESCOLHIDAS FINAIS ===")
+    for r, rota in enumerate(droneRoutes):
+        var = mestreInteiro.getVarByName(f'y[{r}]')
+        if var is not None and var.X > 1e-7:
+            print(f'y[{r}]={var.X:.6f} | {rota}')
+    print(f"Custo total: {mestreInteiro.objVal}")
